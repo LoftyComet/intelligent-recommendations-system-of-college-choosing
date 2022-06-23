@@ -5,5 +5,29 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route('/index')
+def home():
+    return index()
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template("portfolio.html")
+
+@app.route('/pricing')
+def pricing():
+    return render_template("pricing.html")
+
+@app.route('/services')
+def services():
+    return render_template("services.html")
+
+
 if __name__ == '__main__':
     app.run()
