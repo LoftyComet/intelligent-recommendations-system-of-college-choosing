@@ -13,7 +13,12 @@
 	<link href="static/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="static/css/flexslider.css" rel="stylesheet" />
+
+	<!-- Vendor Styles -->
+	<link href="static/css/magnific-popup.css" rel="stylesheet">
+	<!-- Block Styles -->
 	<link href="static/css/style.css" rel="stylesheet" />
+	<link href="static/css/gallery-1.css" rel="stylesheet">
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -71,7 +76,7 @@
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li><a class="waves-effect waves-dark" href="/index">首页</a></li>
+							<li><a class="waves-effect waves-dark" href="index.html">首页</a></li>
 							<li class="dropdown">
 								<a href="#" data-toggle="dropdown" class="dropdown-toggle">志愿推荐<b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -82,8 +87,8 @@
 								</ul>
 							</li>
 							<li><a class="waves-effect waves-dark" href="/services">分数查询</a></li>
-							<li><a class="waves-effect waves-dark" href="/predict">分数预测</a></li>
-							<li class="active"><a href="/pricing" class="waves-effect waves-dark">团队</a></li>
+							<li class="active"><a href="/predict" class="waves-effect waves-dark">分数预测</a></li>
+							<li><a class="waves-effect waves-dark" href="/pricing">团队</a></li>
 							<li><a class="waves-effect waves-dark" href="/load">登录/注册</a></li>
 						</ul>
 					</div>
@@ -92,141 +97,178 @@
 		</header><!-- end header -->
 		<section id="inner-headline">
 			<div class="container">
-
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="pageTitle">Pricing</h2>
+						<h2 class="pageTitle">predict</h2>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section id="content">
-			<section id="pricing">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="about-logo">
-								<h3>Our Price<span class="color">List</span></h3>
-								<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-									doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-									veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-									voluptatem quia voluptas</p>
-								<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-									doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-									veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-									voluptatem quia voluptas</p>
-							</div>
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="about-logo">
+							<h3>Our <span class="color">Gallery</span></h3>
+							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
+								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+							</p>
+							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
+								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+							</p>
 						</div>
 					</div>
-
 				</div>
-				<!--container-fluid close-->
 
+			</div>
+		</section>
+		<!-- Start Gallery 1-2 -->
+		<section id="gallery-1" class="content-block section-wrapper gallery-1">
+			<div class="container">
 
-				<section>
-					<div class="container">
-						<div class="row">
-							<!-- item -->
-							<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-								<div class="panel panel-pricing">
-									<div class="panel-heading">
-										<i class="fa fa-windows"></i>
-										<h3>Plan -1</h3>
+				<div class="editContent">
+					<ul class="filter">
+						<li class="active"><a href="#" data-filter="*">All</a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-filter=".artwork">Artwork</a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-filter=".creative">Creative</a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-filter=".nature">Nature</a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-filter=".outside">Outside</a></li>
+						<li><a class="waves-effect waves-dark" href="#" data-filter=".photography">Photography</a></li>
+					</ul>
+				</div>
+				<!-- /.gallery-filter -->
+
+				<div class="row">
+					<div id="isotope-gallery-container">
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/1.jpg" class="img-responsive" alt="1st gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/1.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>1st gallery Item</h5>
 									</div>
-									<!--panel-heading close-->
-									<div class="panel-body text-center">
-										<p class="p-title">Subscription Duration</p>
-										<!--p-title close-->
-										<p class="p-time">2 days - 30 Mins</p>
-										<!--p-time close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-body text-center">
-										<p class="p-price">₦ 50.00 </p>
-										<!--p-price close-->
-										<p class="p-tax">All inclusive</p>
-										<!--p-tax close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-footer">
-										<a class="btn sub-btn" href="#">Subscribe Now</a>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
 									</div>
 								</div>
-								<!--panel panel-pricing close-->
 							</div>
-							<!--col-md-4 col-sm-4 col-xs-12 text-center close-->
-
-
-							<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-								<div class="panel panel-pricing">
-									<div class="panel-heading">
-										<i class="fa fa-windows"></i>
-										<h3>Plan -2</h3>
-									</div>
-									<!--panel-heading close-->
-									<div class="panel-body text-center">
-										<p class="p-title">Subscription Duration</p>
-										<!--p-title close-->
-										<p class="p-time">7 days - 90 Mins</p>
-										<!--p-time close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-body text-center">
-										<p class="p-price">₦ 150.00 </p>
-										<!--p-price close-->
-										<p class="p-tax">All inclusive</p>
-										<!--p-tax close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-footer">
-										<a class="btn sub-btn" href="#">Subscribe Now</a>
-									</div>
-								</div>
-								<!--panel panel-pricing close-->
-							</div>
-							<!--col-md-4 col-sm-4 col-xs-12 text-center close-->
-
-
-
-							<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-								<div class="panel panel-pricing">
-									<div class="panel-heading">
-										<i class="fa fa-windows"></i>
-										<h3>Plan -3</h3>
-									</div>
-									<!--panel-heading close-->
-									<div class="panel-body text-center">
-										<p class="p-title">Subscription Duration</p>
-										<!--p-title close-->
-										<p class="p-time">30 days - 250 Mins</p>
-										<!--p-time close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-body text-center">
-										<p class="p-price">₦ 400.00 </p>
-										<!--p-price close-->
-										<p class="p-tax">All inclusive</p>
-										<!--p-tax close-->
-									</div>
-									<!--panel-body text-center close-->
-									<div class="panel-footer">
-										<a class="btn sub-btn" href="#">Subscribe Now</a>
-									</div>
-								</div>
-								<!--panel panel-pricing close-->
-							</div>
-							<!--col-md-4 col-sm-4 col-xs-12 text-center close-->
-
 						</div>
-						<!--row close-->
-					</div>
-					<!--container close-->
-	</div>
-	</section>
+						<!-- /.gallery-item-wrapper -->
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature outside">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/2.jpg" class="img-responsive" alt="2nd gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/2.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
 
-	</section>
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>2nd gallery Item</h5>
+									</div>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.gallery-item-wrapper -->
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper photography artwork">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/3.jpg" class="img-responsive" alt="3rd gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/3.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>3rd gallery Item</h5>
+									</div>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.gallery-item-wrapper -->
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper creative nature">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/4.jpg" class="img-responsive" alt="4th gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/4.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>4th gallery Item</h5>
+									</div>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.gallery-item-wrapper -->
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/5.jpg" class="img-responsive" alt="5th gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/5.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>5th gallery Item</h5>
+									</div>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.gallery-item-wrapper -->
+						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
+							<div class="gallery-item">
+								<div class="gallery-thumb">
+									<img src="img/works/6.jpg" class="img-responsive" alt="6th gallery Thumb">
+									<div class="image-overlay"></div>
+									<a href="img/works/6.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
+
+								</div>
+								<div class="gallery-details">
+									<div class="editContent">
+										<h5>6th gallery Item</h5>
+									</div>
+									<div class="editContent">
+										<p>Nullam id dolor id nibh ultricies vehicula.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /.isotope-gallery-container -->
+				</div>
+				<!-- /.row -->
+				<!-- /.container -->
+			</div>
+		</section>
+		<!--// End Gallery 1-2 -->
+	</div>
 	<footer>
 		<div class="container">
+
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="widget">
@@ -331,6 +373,7 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script>
+
 </body>
 
 </html>

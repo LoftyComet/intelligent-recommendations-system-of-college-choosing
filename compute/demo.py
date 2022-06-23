@@ -24,10 +24,12 @@ test_rdd = sc.textFile("hdfs://192.168.88.168:9000/house/ershoufang_price.txt")
 
 
 ## ---------    分析结束   --------- ##
+
 schema_demo = spark.createDataFrame(pair_rdd)
 conn_param = {}
 conn_param['user'] = MysqlConfig.MYSQL_USER
 conn_param['password'] = MysqlConfig.MYSQL_PWD
 conn_param['driver'] = MysqlConfig.MYSQL_DRIVER
-schema_demo.write.jdbc(MysqlConfig.MYSQL_CONN, 'every_regions_ershoufang_count', 'overwrite', conn_param)
+
+schema_demo.write.jdbc(MysqlConfig.MYSQL_CONN, 'test', 'overwrite', conn_param)
 print("执行完毕")

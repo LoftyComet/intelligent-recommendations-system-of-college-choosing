@@ -15,10 +15,6 @@
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -81,10 +77,10 @@
 									<li><a class="waves-effect waves-dark" href="#">Investors</a></li>
 								</ul>
 							</li>
-							<li class="active"><a href="services.html" class="waves-effect waves-dark">分数查询</a></li>
-							<li><a class="waves-effect waves-dark" href="/predict">分数预测</a></li>
+							<li><a class="waves-effect waves-dark" href="/services">分数预测</a></li>
+							<li><a class="waves-effect waves-dark" href="/predict">分数查询</a></li>
 							<li><a class="waves-effect waves-dark" href="/pricing">团队</a></li>
-							<li><a class="waves-effect waves-dark" href="/load">登录/注册</a></li>
+							<li class="active"><a href="/load" class="waves-effect waves-dark">登录/注册</a></li>
 						</ul>
 					</div>
 				</div>
@@ -94,19 +90,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="pageTitle">Services</h2>
+						<h2 class="pageTitle">考生登录</h2>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section id="content">
-			<div class="container content">
-				<!-- Service Blcoks -->
 
+			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="about-logo">
-							<h3>Our Best <span class="color">Services</span></h3>
+							<h3>欢迎使用<span class="color">高考志愿推荐平台</span></h3>
 							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
 								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
 								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
@@ -118,128 +113,67 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Info Blcoks -->
 				<div class="row">
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-bell-o"></i>
-						<div class="info-blocks-in">
-							<h3>Awesome Design</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
-						</div>
+					<div class="col-md-6">
+						<form method="POST">
+							<span class="q">*</span>
+							<label for="name">
+								<h5><strong>姓名</strong></h5>
+							</label>
+							<input type="text" required="required" name="name" id="name" class="register" value=''
+								placeholder='张三'>
+
+							<span class="q">*</span>
+							<label for="num">
+								<h5><strong>身份证号</strong></h5>
+							</label>
+							<input type="text" required="required" name="num" id="num" class="register" value=''
+								placeholder="500xxxxxxxxxxxxxxx">
+
+							<span class="q">*</span>
+							<label for="area">
+								<h5><strong>生源地</strong></h5>
+							</label>
+							<input type="text" required="required" name="area" id="area" class="register" value=''
+								placeholder="重庆">
+
+							<span class="q">*</span>
+							<label for="socre">
+								<h5><strong>高考分数</strong></h5>
+							</label>
+							<input type="text" required="required" name="socre" id="socre" class="register" value=''
+								placeholder="645">
+
+							<br><br>
+							<input type="checkbox" required="required" class="checkbox" name="">
+							<span style="font-size:15px">我已阅读并同意《考生隐私保护注意事项》</span>
+							<br><br>
+							<input type="submit" value="同意以上协议并注册" class="submit">
+
+							<button type="submit"
+								class="btn btn-primary waves-effect waves-dark pull-right">Send</button><br />
+						</form>
 					</div>
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-hdd-o"></i>
-						<div class="info-blocks-in">
-							<h3>FontAwesome</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
+					<div class="col-md-6">
+						<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+						<div style="overflow:hidden;height:500px;width:600px;">
+							<div id="gmap_canvas" style="height:500px;width:600px;"></div>
+							<style>
+								#gmap_canvas img {
+									max-width: none !important;
+									background: none !important
+								}
+							</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo</a>
 						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-lightbulb-o"></i>
-						<div class="info-blocks-in">
-							<h3>Bootstrap</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
-						</div>
+						<script
+							type="text/javascript"> function init_map() { var myOptions = { zoom: 14, center: new google.maps.LatLng(40.805478, -73.96522499999998), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(40.805478, -73.96522499999998) }); infowindow = new google.maps.InfoWindow({ content: "<b>The Breslin</b><br/>2880 Broadway<br/> New York" }); google.maps.event.addListener(marker, "click", function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
 					</div>
 				</div>
-				<!-- End Info Blcoks -->
-
-
-				<!-- Info Blcoks -->
-				<div class="row">
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-code"></i>
-						<div class="info-blocks-in">
-							<h3>SEO Ready</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
-						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-compress"></i>
-						<div class="info-blocks-in">
-							<h3>Fully Responsive</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
-						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<i class="icon-info-blocks fa fa-html5"></i>
-						<div class="info-blocks-in">
-							<h3>CSS3 + HTML5</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur
-								aliquam, incidunt</p>
-						</div>
-					</div>
-				</div>
-				<!-- End Info Blcoks -->
-				<div class="row service-v1 margin-bottom-40">
-					<div class="col-md-4 md-margin-bottom-40">
-						<div class="card small">
-							<div class="card-image">
-								<img class="img-responsive" src="img/service1.jpg" alt="">
-								<span class="card-title">Material Design</span>
-							</div>
-							<div class="card-content">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 md-margin-bottom-40">
-						<div class="card small">
-							<div class="card-image">
-								<img class="img-responsive" src="img/service2.jpg" alt="">
-								<span class="card-title">Bootstrap</span>
-							</div>
-							<div class="card-content">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 md-margin-bottom-40">
-						<div class="card small">
-							<div class="card-image">
-								<img class="img-responsive" src="img/service3.jpg" alt="">
-								<span class="card-title">HTML5/CSS3</span>
-							</div>
-							<div class="card-content">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro
-									consequatur aliquam, incidunt
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Service Blcoks -->
-
-
-
-
 			</div>
 		</section>
+
+
+
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -346,6 +280,9 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/animate.js"></script>
 	<script src="js/custom.js"></script>
+
+	<script src="load/jqBootstrapValidation.js"></script>
+	<script src="load/load_me.js"></script>
 </body>
 
 </html>
