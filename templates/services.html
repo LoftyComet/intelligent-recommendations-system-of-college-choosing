@@ -94,11 +94,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="pageTitle">Services</h2>
+						<h2 class="pageTitle">按条件查询分数线</h2>
 					</div>
 				</div>
 			</div>
 		</section>
+		
 		<section id="content">
 			<div class="container content">
 				<!-- Service Blcoks -->
@@ -106,19 +107,44 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="about-logo">
-							<h3>Our Best <span class="color">Services</span></h3>
-							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-							</p>
-							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-							</p>
+
+								<form action='/loginaction/' method="post">
+									<div class="center"><span class="color"><strong>按地区查询：</strong></span><input name="key0" type="text" id="key0" onkeydown="onSearch()" value=""/></div>
+									<div class="center"><span class="color"><strong>按院校查询：</strong></span><input name="key1" type="text" id="key1" onkeydown="onSearch()" value=""/></div>
+									<div class="center"><span class="color"><strong>按专业查询：</strong></span><input name="key1" type="text" id="key1" onkeydown="onSearch()" value=""/></div>
+									<div class="center"><input type="submit" value="查询"></div>
+								</form>
+								<br></br>
+								<br></br>
+								<table id="store" class="table">
+									<thead>
+									<tr>
+										<th>年份</th>
+										<th>学校</th>
+										<th>专业</th>
+										<th>专业详情</th>
+										<th>分数线</th>
+									</tr>
+									</thead>
+									<tbody>
+										{% for item in collegelast %}
+        								<tr>
+            								<td> {{ item.year_int }}</td>
+            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.school_text }}</td>
+            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.major_text }}</td>
+            								<td> {{ item.major_situation_text }}</td>
+            								<td> {{ item.rank_int }}</td>
+        								</tr>
+    									{% endfor %}
+									</tbody>
+								</table>
 						</div>
 					</div>
 				</div>
-
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
 				<!-- Info Blcoks -->
 				<div class="row">
 					<div class="col-sm-4 info-blocks">
