@@ -18,9 +18,9 @@ def get_college_info():
         school_name=request.form.get('school') #
         print(school_name)
         print("---------------------------")
-        data = db.session.query(Collegeinfo).filter(Collegeinfo.school_name==school_name).first()
+        data = db.session.query(Collegeinfo).filter(Collegeinfo.school_name==school_name).all()
         
-        print(data.school_name)
+        print(data[0].school_name)
         print("---------------------------")
         # view_data = {}
         # view_data["series"] = []
@@ -34,4 +34,4 @@ def get_college_info():
         # [build_view_data(item) for item in data]
 
         # return json.dumps(view_data, ensure_ascii=False)
-    return render_template("predict.html")
+    return render_template("services.html",collegelast=data)
