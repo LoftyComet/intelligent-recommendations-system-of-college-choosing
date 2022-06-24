@@ -99,7 +99,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="pageTitle">predict</h2>
+						<h2 class="pageTitle">智能预测</h2>
 					</div>
 				</div>
 			</div>
@@ -110,158 +110,73 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="about-logo">
-							<h3>Our <span class="color">Gallery</span></h3>
-							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-							</p>
-							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-							</p>
+							<div class="card-image">
+								<h3><span class="color">国家线</span></h3>
+								<img class="img-responsive" src="static/img/guojiaxian2.png" alt="">
+							</div>
+							
+							
 						</div>
 					</div>
 				</div>
 
 			</div>
+
+			<div>
+				<p><span class="opacity-8">请填写您的 <b>高考信息</b></span></p>
+                <form action="/predictfenshuxian" method="POST">
+					<div>
+                        <select>
+                            <option selected="selected" value='' disabled>省份</option>
+                            <option >山东</option>
+                        </select>
+                        <input type="number" required="required" class="input-9 ae-5 fromCenter" name="input_range" value='' placeholder="排位"
+                                step="1" min="1" val=""/>
+                        <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="location">
+                            <option selected="selected" value='' disabled>目标区域</option>
+                            <option value="1">长三角</option>
+                            <option value="0">京津冀</option>
+                            <option value="2">内陆</option>
+                            <option value="-1">不限</option>
+                        </select>
+                        <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="title">
+                            <option selected="selected" value='' disabled>学校等级</option>
+                            <option value="0">985及以上</option>
+                            <option value="1">211及以上</option>
+                            <option value="-1">不限</option>
+                        </select>
+					</div>
+				</form>
+			</div>
+
 		</section>
 		<!-- Start Gallery 1-2 -->
-		<section id="gallery-1" class="content-block section-wrapper gallery-1">
-			<div class="container">
-
-				<div class="editContent">
-					<ul class="filter">
-						<li class="active"><a href="#" data-filter="*">All</a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-filter=".artwork">Artwork</a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-filter=".creative">Creative</a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-filter=".nature">Nature</a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-filter=".outside">Outside</a></li>
-						<li><a class="waves-effect waves-dark" href="#" data-filter=".photography">Photography</a></li>
-					</ul>
-				</div>
-				<!-- /.gallery-filter -->
-
-				<div class="row">
-					<div id="isotope-gallery-container">
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/1.jpg" class="img-responsive" alt="1st gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/1.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>1st gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /.gallery-item-wrapper -->
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature outside">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/2.jpg" class="img-responsive" alt="2nd gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/2.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>2nd gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /.gallery-item-wrapper -->
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper photography artwork">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/3.jpg" class="img-responsive" alt="3rd gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/3.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>3rd gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /.gallery-item-wrapper -->
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper creative nature">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/4.jpg" class="img-responsive" alt="4th gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/4.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>4th gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /.gallery-item-wrapper -->
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper nature">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/5.jpg" class="img-responsive" alt="5th gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/5.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>5th gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /.gallery-item-wrapper -->
-						<div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper artwork creative">
-							<div class="gallery-item">
-								<div class="gallery-thumb">
-									<img src="img/works/6.jpg" class="img-responsive" alt="6th gallery Thumb">
-									<div class="image-overlay"></div>
-									<a href="img/works/6.jpg" class="gallery-zoom"><i class="fa fa-eye"></i></a>
-
-								</div>
-								<div class="gallery-details">
-									<div class="editContent">
-										<h5>6th gallery Item</h5>
-									</div>
-									<div class="editContent">
-										<p>Nullam id dolor id nibh ultricies vehicula.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
+		<section>
+			<div>
+				<p><span class="opacity-8">请填写您的 <b>高考信息</b></span></p>
+                <form action="/predictfenshuxian" method="POST">
+					<div>
+                        <select>
+                            <option selected="selected" value='' disabled>省份</option>
+                            <option >山东</option>
+                        </select>
+                        <input type="number" required="required" class="input-9 ae-5 fromCenter" name="input_range" value='' placeholder="排位"
+                                step="1" min="1" val=""/>
+                        <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="location">
+                            <option selected="selected" value='' disabled>目标区域</option>
+                            <option value="1">长三角</option>
+                            <option value="0">京津冀</option>
+                            <option value="2">内陆</option>
+                            <option value="-1">不限</option>
+                        </select>
+                        <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="title">
+                            <option selected="selected" value='' disabled>学校等级</option>
+                            <option value="0">985及以上</option>
+                            <option value="1">211及以上</option>
+                            <option value="-1">不限</option>
+                        </select>
 					</div>
-					<!-- /.isotope-gallery-container -->
-				</div>
-				<!-- /.row -->
-				<!-- /.container -->
+				</form>
 			</div>
 		</section>
 		<!--// End Gallery 1-2 -->
