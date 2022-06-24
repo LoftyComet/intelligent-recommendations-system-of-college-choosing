@@ -2,8 +2,8 @@ from config import db
 
 class Collegeinfo(db.Model):
     __tablename__ = "collegeinfo"
-    id = db.Column(db.Integer, primary_key=True)
-    shool_name = db.Column(db.String(50))
+    school_id = db.Column(db.Integer, primary_key=True)
+    school_name = db.Column(db.String(50))
     address = db.Column(db.String(50))
     dual_class_name = db.Column(db.String(50))
     school_site = db.Column(db.String(50))
