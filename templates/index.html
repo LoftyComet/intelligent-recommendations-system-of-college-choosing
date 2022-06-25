@@ -332,7 +332,58 @@
 						</div>
 					</div>
 				</div>
+				<input type="text"> 
+				<select>
+					<!-- 请选择不被提交  selected表示默认选中的-->
+						  <option value="">--请选择--</option>
+						  <option value="1">北京</option>
+						  <option value="2">上海</option>
+						  <option value="3">陕西</option>
+				</select>
+				<br>
+				<br>
+				<br>
+				<div>
+					<style type="text/css">
+						.mydiv{
+							width: 65px;
+							height: 35px;
+							border-left: 1px solid #ccc;
+							border-top: 1px solid rgb(212, 20, 20);
+							border-bottom: 1px solid #ccc;
+							border-right: 1px solid #ccc
+						}
+					</style>
+						<input class = "mydiv" type="text">
+						<select class = "mydiv">
+							<!-- 请选择不被提交  selected表示默认选中的-->
+								  <option value="">--请选择--</option>
+								  <option value="1">北京</option>
+								  <option value="2">上海</option>
+								  <option value="3">陕西</option>
+						</select>
+				</div>
 				<div class="row">
+					{% if orders %}
+					{% if order = "计算机" %}
+
+					{% if order = "法学" %}
+
+					{% if order = "金融" %}
+
+					{% if order = "机械" %}
+
+					{% if order = "临床医学" %}
+
+					{% if order = "建筑" %}
+
+					{% if order = "数学" %}
+
+					{% if order = "物理" %}
+
+					{% if order = "工商管理" %}
+					
+					{% if order = "经管" %}
 					<div class="col-sm-4 info-blocks">
 						<div class="info-blocks-in">
 								<i class="icon-info-blocks material-icons">perm_identity</i>
