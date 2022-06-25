@@ -38,3 +38,4 @@ def pricing():
 @page.route('/services')
 def services():
     return render_template("services.html")
+

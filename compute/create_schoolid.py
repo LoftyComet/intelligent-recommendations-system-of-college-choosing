@@ -6,18 +6,18 @@
 #学校与编号链接表
 import os
 
-from compute import MysqlConfig
+import MysqlConfig
 from pyspark import Row
 from pyspark.sql import SparkSession
 import pandas as pd
-os.environ["PYSPARK_PYTHON"] = r"D:\anaconda\envs\douban3.6\python.exe"
+os.environ["PYSPARK_PYTHON"] = r"C:\Users\61X\miniconda3\envs\py36\python.exe"
 
 spark = SparkSession \
     .builder \
     .appName("Python Spark SQL basic example") \
     .config("spark.some.config.option", "some-value") \
     .getOrCreate()
-df = pd.read_excel("E:\\360MoveData\\Users\lenovo\Desktop\scoredata\specialdata\高校编号.xlsx")
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\specialdata\高校编号.xlsx")
 df= df.astype(dtype={'sid':'int'})
 df = df.replace(pd.NA,'')#空值替换
 df_spark_excel = spark.createDataFrame(df)  # 转换为spark格式
