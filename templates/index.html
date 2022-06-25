@@ -9,7 +9,7 @@
 	<meta name="author" content="http://webthemez.com" />
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />
+	<!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />-->
 	<link href="static/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="static/css/flexslider.css" rel="stylesheet" />
@@ -332,109 +332,88 @@
 						</div>
 					</div>
 				</div>
-				<input type="text"> 
-				<select>
-					<!-- 请选择不被提交  selected表示默认选中的-->
-						  <option value="">--请选择--</option>
-						  <option value="1">北京</option>
-						  <option value="2">上海</option>
-						  <option value="3">陕西</option>
-				</select>
 				<br>
 				<br>
 				<br>
-				<div>
-					<style type="text/css">
-						.mydiv{
-							width: 65px;
-							height: 35px;
-							border-left: 1px solid #ccc;
-							border-top: 1px solid rgb(212, 20, 20);
-							border-bottom: 1px solid #ccc;
-							border-right: 1px solid #ccc
-						}
-					</style>
-						<input class = "mydiv" type="text">
-						<select class = "mydiv">
-							<!-- 请选择不被提交  selected表示默认选中的-->
-								  <option value="">--请选择--</option>
-								  <option value="1">北京</option>
-								  <option value="2">上海</option>
-								  <option value="3">陕西</option>
-						</select>
-				</div>
-				<div class="row">
-					{% if orders %}
-					{% if order = "计算机" %}
+				<form action="/zhuanyeresercher" method="post">
+					<div>
 
-					{% if order = "法学" %}
+							<strong>学校:  </strong>
+							<input type = "text">
 
-					{% if order = "金融" %}
-
-					{% if order = "机械" %}
-
-					{% if order = "临床医学" %}
-
-					{% if order = "建筑" %}
-
-					{% if order = "数学" %}
-
-					{% if order = "物理" %}
-
-					{% if order = "工商管理" %}
+						<strong>专业:  </strong>
+						<select class="center" name="university">
 					
-					{% if order = "经管" %}
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">perm_identity</i>
-							<h3>计算机专业</h3>
-							<div class="line"></div>
-							<p></p>
-						</div>
+						  	<option value="0" selected>--请选择--</option>
+						  	<option value="1">计算机</option>
+						  	<option value="2">新闻</option>
+						  	<option value="3">金融</option>
+							<option value="3">医学</option>
+							<option value="3">数学</option>
+							<option value="3">建筑</option>
+							<option value="3">土木</option>
+							<option value="3">机械</option>
+						</select>
+						<input type="submit" value="查询">
 					</div>
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">card_travel</i>
-							<h3>新闻专业</h3>
-							<div class="line"></div>
-							<p></p>
+					<br>
+				</form>
+				<br>
+				<br>
+				<br>
+				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+					<div class="panel panel-pricing">
+
+						<div class="panel-body text-center">
+							<p class="p-price">学校</p>
 						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">important_devices</i>
-							<h3>金融专业</h3>
-							<div class="line"></div>
-							<p></p>
+						<div class="panel-body text-center">
+							<!--<img class="img-responsive" src="static/img/chongqing.webp" alt="">-->
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">perm_identity</i>
-							<h3>医学专业</h3>
-							<div class="line"></div>
-							<p></p>
+						<div class="panel-body text-center">
+							<p class="p-price">学校简介</p>
 						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">card_travel</i>
-							<h3>建筑专业</h3>
-							<div class="line"></div>
-							<p></p>
-						</div>
-					</div>
-					<div class="col-sm-4 info-blocks">
-						<div class="info-blocks-in">
-								<i class="icon-info-blocks material-icons">important_devices</i>
-							<h3>机械专业</h3>
-							<div class="line"></div>
-							<p></p>
+						<div class="panel-footer">
+							<a class="btn sub-btn" href="#">learn more</a>
 						</div>
 					</div>
 				</div>
+
+
+				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+					<div class="panel panel-pricing">
+						
+						<div class="panel-body text-center">
+							<p class="p-price">专业</p>
+						</div>
+						<div class="panel-body text-center">
+							<p class="p-price">专业简介</p>
+						</div>
+						<div class="panel-footer">
+							<a class="btn sub-btn" href="#">learn more</a>
+						</div>
+					</div>
+					<!--panel panel-pricing close-->
+				</div>
+				<!--col-md-4 col-sm-4 col-xs-12 text-center close-->
+
+
+
+				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+					<div class="panel panel-pricing">
+						<div class="panel-body text-center">
+							<p class="p-price">就业率</p>
+						</div>
+						<div class="panel-body text-center">
+							<img class="img-responsive" src="static/img/shuju1.png" alt="">
+						</div>
+						<div class="panel-footer">
+							<a class="btn sub-btn" href="#">learn more</a>
+						</div>
+					</div>
+					<!--panel panel-pricing close-->
+				</div>
+				
 				
 			</div>
 		</section>

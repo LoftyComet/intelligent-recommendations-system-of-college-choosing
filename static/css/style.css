@@ -674,7 +674,13 @@ section.hero-text h1{
 ==================================== */
 
 #inner-headline{background: #43ca83;position: relative;margin: 0;padding: 0;color: white;border-top: 1px solid #43ca83;}
+#inner-headlineplus section.hero{
 
+    background: url(../img/img-75.jpg) no-repeat;
+
+    background-size: 100%;
+
+}
 
 #inner-headline h2.pageTitle{
 	color: #0e3655;
