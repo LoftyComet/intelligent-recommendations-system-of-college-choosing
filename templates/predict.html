@@ -19,7 +19,7 @@
 	<!-- Block Styles -->
 	<link href="static/css/style.css" rel="stylesheet" />
 	<link href="static/css/gallery-1.css" rel="stylesheet">
-
+	<link href="static/css/style2.css" rel="stylesheet" />
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,6 +27,60 @@
 	<style>
 		.center {
             text-align: center;
+        }
+		table {
+            width: 70%;
+            background: #ccc;
+            margin: 15px auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            white-space: nowrap;
+        }
+
+        td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+            overflow: visible;
+            white-space: normal;
+        }
+
+        td a {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+
+        .table tr:nth-child(odd) {
+            background-color: #dcecf9;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #ffffff;
         }
 	</style>
 </head>
@@ -106,14 +160,15 @@
 				</div>
 			</div>
 		</section>
-		<section id="content">
+
+		<section class="hero">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-md-12">
 						<div class="about-logo">
 							<div class="card-image">
-								<h3><span class="color">国家线</span></h3>
+								<h3><span style="color: #FFFFFF; ">国家线</span></h3>
 								<img class="img-responsive" src="static/img/guojiaxian2.png" alt="">
 							</div>
 							
@@ -123,29 +178,26 @@
 				</div>
 
 			</div>
-
-		</section>
-		<!-- Start Gallery 1-2 -->
-		<section>
+			<br>
+			<br>
 			<div>
-				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
                 <form action="/predictfenshuxian" method="POST">
 						<div class = "center">
-							<strong>专业:  </strong>
+							<strong style="color: #FFFFFF; ">地区:  </strong>
                         	<select>
                             	<option selected="selected" value='' disabled>-请选择-</option>
-                            	<option value="0">山东</option>
-								<option value="0">安徽</option>
-								<option value="0">四川</option>
+                            	<option value="0" >山东</option>
+								<option value="1" >安徽</option>
+								<option value="2" >四川</option>
 
                         	</select>
 						</div>
 						<div class = "center">
-							<strong>类别:  </strong>
+							<strong style="color: #FFFFFF; ">类别:  </strong>
 							<select>
-                            	<option selected="selected" value='' disabled>-请选择-</option>
-                            	<option value="0">浙江</option>
-								<option value="0">上海</option>
+                            	<option selected="selected" value='' disabled style="color: #FFFFFF; ">-请选择-</option>
+                            	<option value="0" >综合</option>
+								<option value="1" >文理</option>
 
                        		</select>
 						</div>
@@ -155,7 +207,44 @@
 					</div>
 				</form>
 			</div>
+
+			<br></br>
+			<table id="store" class="table">
+				<thead>
+					<tr>
+					<th>学校名称</th>
+				    <th>学校最低投档线</th>
+					<th>专业最低投档线</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for predict in predictlist %}
+        			<tr>
+            			<td> {{ predict.school_name }}</td>
+            			<td> {{ predict.school_min }}</td>
+            			<td> {{ predict.major_mint }}</td>
+        			</tr>
+    				{% endfor %}
+				</tbody>
+			</table>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
 		</section>
+
 		<!--// End Gallery 1-2 -->
 	</div>
 	
