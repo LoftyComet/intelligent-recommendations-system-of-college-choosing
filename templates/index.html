@@ -14,7 +14,7 @@
 	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
-
+	<script src="static/js/echarts.min.js"></script>
 
 </head>
 
@@ -371,7 +371,7 @@
 							<!--<img class="img-responsive" src="static/img/chongqing.webp" alt="">-->
 						</div>
 						<div class="panel-body text-center">
-							<p class="p-price">学校简介</p>
+							<p class="p-price" style=word-break:break-all>学校简介专业简介dadqfwendfssssssssssssss大撒大撒aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssssssssssssssofnoeqwfasndqklwdnasssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
 						</div>
 						<div class="panel-footer">
 							<a class="btn sub-btn" href="#">learn more</a>
@@ -387,7 +387,13 @@
 							<p class="p-price">专业</p>
 						</div>
 						<div class="panel-body text-center">
-							<p class="p-price">专业简介</p>
+							<!--<img class="img-responsive" src="static/img/chongqing.webp" alt="">-->
+						</div>
+						<div class="panel-body text-center">
+							<p class="p-price" style=word-break:break-all>专业简介dadqfwendfasdakdnoidaldnalfnoifqnwdasssssssssssa
+								2daaaaaaaaaaaaaaaaaaaaaaaaaaaaaasssssssssssssssssssssssssssssssss
+								sssssssssssssssssssssssssssssssssssssssssssssssssofnoeqwfasndqklwdnasss
+								ssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
 						</div>
 						<div class="panel-footer">
 							<a class="btn sub-btn" href="#">learn more</a>
@@ -398,20 +404,48 @@
 				<!--col-md-4 col-sm-4 col-xs-12 text-center close-->
 
 
-
-				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<div class="row">
 					<div class="panel panel-pricing">
 						<div class="panel-body text-center">
-							<p class="p-price">就业率</p>
+							<!--<p class="p-price">就业率</p>-->
 						</div>
-						<div class="panel-body text-center">
-							<img class="img-responsive" src="static/img/shuju1.png" alt="">
+						<div class="panel-body">
+							<p class="p-price">就业率</p>
+							<div id="main" style="width: 600px;height:400px;"></div>
+    						<script type="text/javascript">
+        					// 基于准备好的dom，初始化echarts实例
+        					var myChart = echarts.init(document.getElementById('main'));
+
+        					// 指定图表的配置项和数据
+        					var option = {
+            					title: {
+                					text: '专业就业前景'
+            					},
+            					tooltip: {},
+            					legend: {
+                					data:['销量']
+            					},
+            					xAxis: {
+                					data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+           						},
+            					yAxis: {},
+            					series: [{
+                					name: '销量',
+                					type: 'bar',
+                					data: [5, 20, 36, 10, 10, 20]
+            					}]
+        					};
+
+        					// 使用刚指定的配置项和数据显示图表。
+       						 myChart.setOption(option);
+    						</script>
 						</div>
 						<div class="panel-footer">
-							<a class="btn sub-btn" href="#">learn more</a>
+							<a class="btn sub-btn text-center" href="#">learn more</a>
 						</div>
 					</div>
-					<!--panel panel-pricing close-->
+
+
 				</div>
 				
 				

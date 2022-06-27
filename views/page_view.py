@@ -42,3 +42,7 @@ def services():
 @page.route('/test')
 def test():
     return render_template("test.html")
+
+@page.route('/baidu')
+def baidu():
+    return render_template("baidu.html")
