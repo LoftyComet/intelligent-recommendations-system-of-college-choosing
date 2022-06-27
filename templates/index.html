@@ -69,8 +69,8 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a class="waves-effect waves-dark" href="/index">首页</a></li>
 							<li class="dropdown">
-								<a href="#" data-toggle="dropdown"
-									class="dropdown-toggle waves-effect waves-dark" href="/about">志愿推荐<b class="caret"></b></a>
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle waves-effect waves-dark"
+									href="/about">志愿推荐<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a class="waves-effect waves-dark" href="/about">Company</a></li>
 									<li><a class="waves-effect waves-dark" href="/about">Our Team</a></li>
@@ -200,7 +200,7 @@
 							</div>
 
 							<div class="card-content">
-								
+
 								<p>
 									重庆大学计算机学院近年分数线变化
 								</p>
@@ -335,24 +335,23 @@
 				<br>
 				<br>
 				<br>
-				<form action="/zhuanyeresercher" method="post">
+				<form action="/getMajorInfo" method="post">
 					<div>
+						<strong>学校: </strong>
+						<input type="text" name="college">
 
-							<strong>学校:  </strong>
-							<input type = "text">
+						<strong>专业: </strong>
+						<select class="center" name="major">
 
-						<strong>专业:  </strong>
-						<select class="center" name="university">
-					
-						  	<option value="0" selected>--请选择--</option>
-						  	<option value="1">计算机</option>
-						  	<option value="2">新闻</option>
-						  	<option value="3">金融</option>
-							<option value="3">医学</option>
-							<option value="3">数学</option>
-							<option value="3">建筑</option>
-							<option value="3">土木</option>
-							<option value="3">机械</option>
+							<option value="0" selected>--请选择--</option>
+							<option value="1">计算机科学与技术</option>
+							<option value="2">新闻</option>
+							<option value="3">金融</option>
+							<option value="4">医学</option>
+							<option value="5">数学</option>
+							<option value="6">建筑</option>
+							<option value="7">土木</option>
+							<option value="8">机械</option>
 						</select>
 						<input type="submit" value="查询">
 					</div>
@@ -367,12 +366,18 @@
 						<div class="panel-body text-center">
 							<p class="p-price">学校</p>
 						</div>
-						<div class="panel-body text-center">
-							<!--<img class="img-responsive" src="static/img/chongqing.webp" alt="">-->
-						</div>
+						
+						{% for item in collegelast %}
+						<div><p>{{ item.school_name }}</p></div>
+						{% endfor %}														
+						
 						<div class="panel-body text-center">
 							<p class="p-price">学校简介</p>
 						</div>
+
+						{% for item in collegelast %}
+						<div><p>{{ item.address }}</p></div>
+						{% endfor %}
 						<div class="panel-footer">
 							<a class="btn sub-btn" href="#">learn more</a>
 						</div>
@@ -382,13 +387,23 @@
 
 				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
 					<div class="panel panel-pricing">
-						
+
 						<div class="panel-body text-center">
 							<p class="p-price">专业</p>
 						</div>
+
+						{% for item in majorlast %}
+						<div><p>{{ item.name }}</p></div>
+						{% endfor %}
+
 						<div class="panel-body text-center">
 							<p class="p-price">专业简介</p>
 						</div>
+
+						{% for item in majorlast %}
+						<div><p>{{ item.description }}</p></div>
+						{% endfor %}
+
 						<div class="panel-footer">
 							<a class="btn sub-btn" href="#">learn more</a>
 						</div>
@@ -413,8 +428,8 @@
 					</div>
 					<!--panel panel-pricing close-->
 				</div>
-				
-				
+
+
 			</div>
 		</section>
 

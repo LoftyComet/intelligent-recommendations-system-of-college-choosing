@@ -2,7 +2,7 @@ from config import db
 
 class Majorinfo(db.Model):
     __tablename__ = "majorinfo"
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True) #limit_year
+    m_id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     limit_year = db.Column(db.String(50))  #就读年份
     degree = db.Column(db.String(50)) #毕业学位名称
     name = db.Column(db.String(50)) #专业名称
