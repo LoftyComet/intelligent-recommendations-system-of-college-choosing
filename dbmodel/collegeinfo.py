@@ -2,7 +2,7 @@ from config import db
 
 class Collegeinfo(db.Model):
     __tablename__ = "collegeinfo"
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True) #id
+    school_id = db.Column(db.Integer, primary_key=True, autoincrement=True) #id
     school_name = db.Column(db.String(50)) #学校名称
     address = db.Column(db.String(50))  # 具体地址
     dual_class_name = db.Column(db.String(50))  # 双一流标签

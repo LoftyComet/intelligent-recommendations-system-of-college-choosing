@@ -17,8 +17,8 @@ data = Blueprint('data', __name__)
 
 @data.route('/getCollegeInfo', methods=['GET','POST'])
 def get_college_info():
-    # 不修改数据库应为get请求
-    if request.method == 'GET': # 判断用户请求是否是get请求
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        college_data = []
         school_name=request.form.get('school') #
         print(school_name)
         print("---------------------------")
@@ -27,19 +27,27 @@ def get_college_info():
             print("查询到的学校有：",x.school_name)
         print("---------------------------")
     return render_template("services.html",collegelast=college_data)
+    # return render_template("services.html")
 
 @data.route('/getMajorInfo', methods=['GET','POST'])
 def get_major_info():
-    # 不修改数据库应为get请求
-    if request.method == 'GET': # 判断用户请求是否是get请求
-        major_name=request.form.get('major') #
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        majors = ["计算机科学与技术","新闻","金融","医学","数学","建筑","土木","机械","None"]
+        major=request.form.get('major') 
+        college_name=request.form.get('college')
+        major_name = majors[int(major)-1]
+        print("college_name:",college_name)
         print(major_name)
         print("---------------------------")
         major_data = db.session.query(Majorinfo).filter(Majorinfo.name==major_name).all()        
         for x in major_data:
             print("查询到的专业有：",x.name)
+
+        college_data = db.session.query(Collegeinfo).filter(Collegeinfo.school_name==college_name).all()        
+        for x in college_data:
+            print("查询到的学校有：",x.school_name)
         print("---------------------------")
-    return render_template("services.html",collegelast=major_data)
+    return render_template("index.html",collegelast=college_data,majorlast=major_data)
 
 @data.route('/register', methods=['GET','POST'])
 def register():
