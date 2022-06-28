@@ -1,2 +1,2 @@
 str = "12345%"
-print(str[:-1])
+print(str[:4])

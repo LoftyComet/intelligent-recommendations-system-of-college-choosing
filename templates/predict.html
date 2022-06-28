@@ -201,6 +201,10 @@
 								<option value="2" >理科</option>
                        		</select>
 						</div>
+						<div class = "center">
+							<strong>排名: </strong>
+						 	<input type="text" style="border:1px solid black; "name="rank">
+						</div>
 					<br>
 					<div class = "center">
                         <input type="submit" value="预测">
@@ -220,9 +224,9 @@
 				<tbody>
 					{% for predict in predictlist %}
         			<tr>
-            			<td> {{ predict.school_name }}</td>
-            			<td> {{ predict.school_min }}</td>
-            			<td> {{ predict.major_mint }}</td>
+            			<td> {{ predict }}</td>
+            			<!-- <td> {{ predict.school_min }}</td> -->
+            			<!-- <td> {{ predict.major_mint }}</td> -->
         			</tr>
     				{% endfor %}
 				</tbody>
