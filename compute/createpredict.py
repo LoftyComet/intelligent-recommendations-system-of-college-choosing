@@ -23,10 +23,10 @@ spark = SparkSession \
 
 #将文件上传
 #理科
-df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankL_region.xlsx")
+# df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankL_region.xlsx")
 #文科
-# df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankW_region.xlsx")
-col = ['min_section17','min_section18','min_section19','min_section20','min_section21','dc','ds']
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankW_region.xlsx")
+col = ['min_section17','min_section18','min_section19','min_section20','min_section21','dc','ds',]
 
 
 
@@ -35,5 +35,5 @@ conn_param = {}
 conn_param['user'] = MysqlConfig.MYSQL_USER
 conn_param['password'] = MysqlConfig.MYSQL_PWD
 conn_param['driver'] = MysqlConfig.MYSQL_DRIVER
-df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'predict_data', 'overwrite', conn_param)##第一次用下面的iverwrite之后用append
+df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'predict_data_W', 'overwrite', conn_param)##第一次用下面的iverwrite之后用append
 print("执行完毕")
