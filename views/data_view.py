@@ -32,8 +32,11 @@ def get_college_info():
 @data.route('/getMajorInfo', methods=['GET','POST'])
 def get_major_info():
     if request.method == 'POST': # 判断用户请求是否是post请求
+        
+
         majors = ["计算机科学与技术","新闻","金融","医学","数学","建筑","土木","机械","None"]
-        major=request.form.get('major') 
+        major=request.form.get('major')
+        print(major)
         college_name=request.form.get('college')
         major_name = majors[int(major)-1]
         print("college_name:",college_name)
@@ -47,7 +50,28 @@ def get_major_info():
         for x in college_data:
             print("查询到的学校有：",x.school_name)
         print("---------------------------")
-    return render_template("index.html",collegelast=college_data,majorlast=major_data)
+        jsonlist = {}
+        # # 处理就业率
+        years = ["2019","2020","2021"]
+        # rates_max = [float(major_data[0].rate_1),float(major_data[0].rate_1),float(major_data[0].rate_1)]
+        rate1s = major_data[0].rate_1.split("-")
+        rate2s = major_data[0].rate_2.split("-")
+        rate3s = major_data[0].rate_3.split("-")
+        rates_max = [int(rate1s[0][:-1]),int(rate2s[0][:-1]),int(rate3s[0][:-1])] #切片去掉百分号
+        rates_min = [int(rate1s[1][:-1]),int(rate2s[1][:-1]),int(rate3s[1][:-1])]
+
+        # # 添加年份就业率字典方便转换为json
+        # for i in range(len(years)):
+        #     ratesjson.update(years[i],rates[i])
+        jsonlist["years"]=years
+        jsonlist["rates_min"]=rates_min
+        jsonlist["rates_max"]=rates_max
+        jsonlist["college_name"]=college_name
+        jsonlist["major_name"]=major_name
+        jsonlist["description"]=major_data[0].description
+        jsonlist["address"]=college_data[0].address
+    return jsonify(json.dumps(jsonlist, ensure_ascii=False))
+    # return render_template("index.html",collegelast=college_data,majorlast=major_data,years=years,rates=rates))
 
 @data.route('/register', methods=['GET','POST'])
 def register():
