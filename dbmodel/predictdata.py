@@ -17,3 +17,4 @@ class PredictData(db.Model):
     RankMin = db.Column(db.Integer)
     dc = db.Column(db.Float)
     ds = db.Column(db.Float)
+    region = db.Column(db.String(50)) #所在地区

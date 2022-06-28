@@ -22,7 +22,10 @@ spark = SparkSession \
 # sc = spark.sparkContext
 
 #将文件上传
-df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\djj.xlsx")
+#理科
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankL_region.xlsx")
+#文科
+# df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\rankW_region.xlsx")
 col = ['min_section17','min_section18','min_section19','min_section20','min_section21','dc','ds']
 
 

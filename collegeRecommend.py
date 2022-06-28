@@ -14,15 +14,15 @@ from pandas.core.frame import DataFrame
 from config import db
 from dbmodel.predictdata import PredictData
 
-Ldata = [515,426,150]
-Wdata = [538,466,150]
-Linedata = [[74116,160852,268653],
-            [75149,165840,264617],
-            [77749,166864,259573],
-            [81375,171036,260431],
-            [82994,176326,258428]]
-line_list=[272187,269189,260034,260697,258770]#17 18 19 20 21
-
+# # Ldata = [515,426,150]
+# # Wdata = [538,466,150]
+# Linedata = [[74116,160852,268653],
+#             [75149,165840,264617],
+#             [77749,166864,259573],
+#             [81375,171036,260431],
+#             [82994,176326,258428]]
+# line_list=[272187,269189,260034,260697,258770]#17 18 19 20 21
+# lineW_list=[272187,269189,260034,260697,258770]#17 18 19 20 21
 college_data = db.session.query(PredictData).order_by(PredictData.RankMin).all()
 school_list=[]
 banch_list=[]
@@ -39,6 +39,7 @@ rankmin_list=[]
 dc_list=[]
 ds_list=[]
 id_prilist=[]
+region_list=[]
 
 for x in college_data:
    school_list.append(x.school_name)
@@ -56,16 +57,18 @@ for x in college_data:
    dc_list.append(x.dc)
    ds_list.append(x.ds)
    id_prilist.append(x.id)
+   region_list.append(x.region)
 df = pd.concat([DataFrame(school_list),DataFrame(banch_list),
                 DataFrame(zslx_list),DataFrame(province_list),
                 DataFrame(type_list),DataFrame(min17_list),
                 DataFrame(min18_list),DataFrame(min19_list),
                 DataFrame(min20_list),DataFrame(min21_list),
                 DataFrame(rankavg_list),DataFrame(rankmin_list),
-                DataFrame(dc_list),DataFrame(ds_list),DataFrame(id_prilist)],axis=1)
+                DataFrame(dc_list),DataFrame(ds_list),DataFrame(id_prilist),
+                DataFrame(region_list)],axis=1)
 df.columns=['school_name','local_batch_name','zslx_name','province',
             'type','min_section17','min_section18','min_section19','min_section20',
-            'min_section21','RankAvg','RankMin','dc','ds','id']
+            'min_section21','RankAvg','RankMin','dc','ds','id','region']
 # print(df)
 # print(global_list)
 def select50(rank):
