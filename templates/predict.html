@@ -6,7 +6,9 @@
 	<title>高考志愿推荐平台</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
-	<meta name="author" content="http://webthemez.com" />
+	<script src="static/js/echarts.js"></script>
+
+
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />-->
@@ -25,10 +27,29 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<style>
+		.auto_height
+		{
+			height:auto;
+		}
 		.center {
             text-align: center;
         }
+        .f20{font-size:20pt; }
+
+         .sel{
+		  border:1px solid #c9c9c9;
+		  background-color:#fff;
+		  color:#666;
+		  margin-top:auto;
+		  margin-bottom:auto;
+		  padding:4px 6px;
+		  font-size:14px;
+		  border-radius:8pt;
+		  cursor:pointer;
+		  outline:none;
+		}
 	</style>
+
 </head>
 
 <body>
@@ -97,6 +118,7 @@
 				</div>
 			</div>
 		</header><!-- end header -->
+
 		<section id="inner-headline">
 			<div class="container">
 				<div class="row">
@@ -106,56 +128,78 @@
 				</div>
 			</div>
 		</section>
-		<section id="content">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="about-logo">
-							<div class="card-image">
-								<h3><span class="color">国家线</span></h3>
-								<img class="img-responsive" src="static/img/guojiaxian2.png" alt="">
-							</div>
-							
-							
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</section>
-		<!-- Start Gallery 1-2 -->
+				<!-- Start Gallery 1-2 -->
 		<section>
-			<div>
+			<script src="static/js/predict_pro_line.js"></script>
+			<div class="auto_height">
 				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
-                <form action="/predictfenshuxian" method="POST">
-						<div class = "center">
-							<strong>专业:  </strong>
-                        	<select>
-                            	<option selected="selected" value='' disabled>-请选择-</option>
-                            	<option value="0">山东</option>
-								<option value="0">安徽</option>
-								<option value="0">四川</option>
-
-                        	</select>
-						</div>
-						<div class = "center">
-							<strong>类别:  </strong>
-							<select>
-                            	<option selected="selected" value='' disabled>-请选择-</option>
-                            	<option value="0">浙江</option>
-								<option value="0">上海</option>
-
-                       		</select>
-						</div>
 					<br>
-					<div class = "center">
-                        <input type="submit" value="预测">
+					<div class = "center f20 auto_height"align="center">
+						<strong >专业:  </strong>
+						<select class ="center sel" style="margin-right:30pt;" id="select_pro" name="select_pro" onchange="onSelectPro();"  >
+<!--                            	<option selected="selected"  value='' disabled>-请选择-</option>-->
+							<option value="11">北京</option>
+							<option value="12">天津</option>
+							<option value="13">河北</option>
+							<option value="14">山西</option>
+							<option value="15">内蒙古</option>
+							<option value="21">辽宁</option>
+							<option value="22">吉林</option>
+							<option value="23">黑龙江</option>
+							<option value="31">上海</option>
+							<option value="32">江苏</option>
+							<option value="33">浙江</option>
+							<option value="34">安徽</option>
+							<option value="35">福建</option>
+							<option value="36">江西</option>
+							<option value="37">山东</option>
+							<option value="41">河南</option>
+							<option value="42">湖北</option>
+							<option value="43">湖南</option>
+							<option value="44">广东</option>
+							<option value="45">广西</option>
+							<option value="46">海南</option>
+							<option value="50">重庆</option>
+							<option value="51">四川</option>
+							<option value="52">贵州</option>
+							<option value="53">云南</option>
+							<option value="54">西藏</option>
+							<option value="61">陕西</option>
+							<option value="62">甘肃</option>
+							<option value="63">青海</option>
+							<option value="64">宁夏</option>
+							<option value="65">新疆</option>
+<!--							<option value="81">香港</option>-->
+<!--							<option value="82">澳门</option>-->
+
+						</select>
+
+						<strong style="margin-left:30pt;">类别:  </strong>
+						<select class ="center sel" id="select_type" onchange="onSelectType();">
+<!--                            	<option selected="selected" value='' disabled>-请选择-</option>-->
+							<option value="0" selected="selected">理科</option>
+							<option value="0">文科</option>
+
+						</select>
 					</div>
-				</form>
+					<br>
+
+				<div id="main" style="width: 1200px;height:400px;margin:auto"></div>
+<!--				<script>onSelectPro();</script>-->
 			</div>
 		</section>
+
+		<section id="content">
+<!--			<div class="container">-->
+
+		</section>
+		<section id="content2">
+<!--			<div class="container">-->
+			<div id="main2" style="width: 1200px;height:400px;margin:auto"></div>
+			<p>fffff</p>
+
+		</section>
+
 		<!--// End Gallery 1-2 -->
 	</div>
 	
