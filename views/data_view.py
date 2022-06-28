@@ -95,13 +95,14 @@ def register():
 def get_prediction():
     if request.method == 'POST': # 判断用户请求是否是post请求
         provinces = ["山东","安徽","四川"]        
-        province=provinces[request.form.get('province')]
+        province=provinces[int(request.form.get('province'))]
         kind_names = ["综合","文科","理科"]        
-        kind_name=kind_names[request.form.get('kind_name')]
-        rank = request.form.get('rank')
+        kind_name=kind_names[int(request.form.get('kind_name'))]
+        # rank = request.form.get('rank')
+        rank = 5000
         # 以下根据排名计算出推荐学校
         df1 = select50(rank=rank)
-        
+        # print(df1)
         jsonlist = {}
     return jsonify(json.dumps(jsonlist, ensure_ascii=False))
 
