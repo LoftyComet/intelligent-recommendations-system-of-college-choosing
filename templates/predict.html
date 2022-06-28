@@ -174,10 +174,10 @@
 			<br>
 			<br>
 			<div>
-                <form action="/predictfenshuxian" method="POST">
+                <form action="/getPrediction" method="POST">
 						<div class = "center">
 							<strong style="color: #FFFFFF; ">地区:  </strong>
-                        	<select>
+                        	<select name="province">
                             	<option selected="selected" value='' disabled>-请选择-</option>
                             	<option value="0" >山东</option>
 								<option value="1" >安徽</option>
@@ -187,12 +187,16 @@
 						</div>
 						<div class = "center">
 							<strong style="color: #FFFFFF; ">类别:  </strong>
-							<select>
+							<select name="kind_name">
                             	<option selected="selected" value='' disabled style="color: #FFFFFF; ">-请选择-</option>
                             	<option value="0" >综合</option>
-								<option value="1" >文理</option>
-
+								<option value="1" >文科</option>
+								<option value="2" >理科</option>
                        		</select>
+						</div>
+						<div class = "center">
+							<strong>排名: </strong>
+						 	<input type="text" style="border:1px solid black; "name="rank">
 						</div>
 					<br>
 					<div class = "center">
@@ -213,9 +217,9 @@
 				<tbody>
 					{% for predict in predictlist %}
         			<tr>
-            			<td> {{ predict.school_name }}</td>
-            			<td> {{ predict.school_min }}</td>
-            			<td> {{ predict.major_mint }}</td>
+            			<td> {{ predict }}</td>
+            			<!-- <td> {{ predict.school_min }}</td> -->
+            			<!-- <td> {{ predict.major_mint }}</td> -->
         			</tr>
     				{% endfor %}
 				</tbody>
