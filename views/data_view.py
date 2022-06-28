@@ -9,6 +9,7 @@ from config import db
 from dbmodel.collegeinfo import Collegeinfo
 from dbmodel.majorinfo import Majorinfo
 from dbmodel.user import User
+from collegeRecommend import select50
 
 """
 本视图专门用于处理ajax数据
@@ -90,5 +91,18 @@ def register():
     # 暂时先回到主页
     return render_template("index.html")
 
+@data.route('/getPrediction', methods=['GET','POST'])
+def get_prediction():
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        provinces = ["山东","安徽","四川"]        
+        province=provinces[request.form.get('province')]
+        kind_names = ["综合","文科","理科"]        
+        kind_name=kind_names[request.form.get('kind_name')]
+        rank = request.form.get('rank')
+        # 以下根据排名计算出推荐学校
+        df1 = select50(rank=rank)
+        
+        jsonlist = {}
+    return jsonify(json.dumps(jsonlist, ensure_ascii=False))
 
     

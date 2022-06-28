@@ -12,7 +12,7 @@ from pyspark import Row
 from pyspark.sql import SparkSession
 import pandas as pd
 
-os.environ["PYSPARK_PYTHON"] = r"D:\anaconda\envs\douban3.6\python.exe"
+os.environ["PYSPARK_PYTHON"] = r"C:\Users\61X\miniconda3\envs\py36\python.exe"
 
 spark = SparkSession \
     .builder \
@@ -22,13 +22,8 @@ spark = SparkSession \
 # sc = spark.sparkContext
 
 #将文件上传
-# df = pd.read_excel("E:\\360MoveData\\Users\lenovo\Desktop\scoredata\Data\\2019四川理科高校分专业数据.xlsx")
-df = pd.read_excel("E:\\360MoveData\\Users\lenovo\Desktop\scoredata\djj.xlsx")
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\djj.xlsx")
 col = ['min_section17','min_section18','min_section19','min_section20','min_section21','dc','ds']
-# df[col] = df[col].fillna(0.0)
-# df = df.replace(pd.NA,'')#空值替换
-
-# df= df.astype(dtype={'min_section17':float,'min_section18':float,'min_section19':float,'min_section20':float,'min_section21':float,'dc':float,'ds':float})
 
 
 
@@ -38,5 +33,4 @@ conn_param['user'] = MysqlConfig.MYSQL_USER
 conn_param['password'] = MysqlConfig.MYSQL_PWD
 conn_param['driver'] = MysqlConfig.MYSQL_DRIVER
 df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'predict_data', 'overwrite', conn_param)##第一次用下面的iverwrite之后用append
-# df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'data_sichuan', 'overwrite', conn_param)
 print("执行完毕")
