@@ -1,7 +1,7 @@
 import email
 from itertools import count
 import json
-
+import numpy as np
 from flask import Blueprint, jsonify, render_template, request
 
 from config import db
@@ -9,6 +9,8 @@ from config import db
 from dbmodel.collegeinfo import Collegeinfo
 from dbmodel.majorinfo import Majorinfo
 from dbmodel.user import User
+from dbmodel.divbymajor import DivById
+from collegeRecommend import select50
 
 """
 本视图专门用于处理ajax数据
@@ -17,8 +19,8 @@ data = Blueprint('data', __name__)
 
 @data.route('/getCollegeInfo', methods=['GET','POST'])
 def get_college_info():
-    # 不修改数据库应为get请求
-    if request.method == 'GET': # 判断用户请求是否是get请求
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        college_data = []
         school_name=request.form.get('school') #
         print(school_name)
         print("---------------------------")
@@ -27,19 +29,51 @@ def get_college_info():
             print("查询到的学校有：",x.school_name)
         print("---------------------------")
     return render_template("services.html",collegelast=college_data)
+    # return render_template("services.html")
 
 @data.route('/getMajorInfo', methods=['GET','POST'])
 def get_major_info():
-    # 不修改数据库应为get请求
-    if request.method == 'GET': # 判断用户请求是否是get请求
-        major_name=request.form.get('major') #
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        
+
+        majors = ["计算机科学与技术","新闻","金融","医学","数学","建筑","土木","机械","None"]
+        major=request.form.get('major')
+        print(major)
+        college_name=request.form.get('college')
+        major_name = majors[int(major)-1]
+        print("college_name:",college_name)
         print(major_name)
         print("---------------------------")
         major_data = db.session.query(Majorinfo).filter(Majorinfo.name==major_name).all()        
         for x in major_data:
             print("查询到的专业有：",x.name)
+
+        college_data = db.session.query(Collegeinfo).filter(Collegeinfo.school_name==college_name).all()        
+        for x in college_data:
+            print("查询到的学校有：",x.school_name)
         print("---------------------------")
-    return render_template("services.html",collegelast=major_data)
+        jsonlist = {}
+        # # 处理就业率
+        years = ["2019","2020","2021"]
+        # rates_max = [float(major_data[0].rate_1),float(major_data[0].rate_1),float(major_data[0].rate_1)]
+        rate1s = major_data[0].rate_1.split("-")
+        rate2s = major_data[0].rate_2.split("-")
+        rate3s = major_data[0].rate_3.split("-")
+        rates_max = [int(rate1s[0][:-1]),int(rate2s[0][:-1]),int(rate3s[0][:-1])] #切片去掉百分号
+        rates_min = [int(rate1s[1][:-1]),int(rate2s[1][:-1]),int(rate3s[1][:-1])]
+
+        # # 添加年份就业率字典方便转换为json
+        # for i in range(len(years)):
+        #     ratesjson.update(years[i],rates[i])
+        jsonlist["years"]=years
+        jsonlist["rates_min"]=rates_min
+        jsonlist["rates_max"]=rates_max
+        jsonlist["college_name"]=college_name
+        jsonlist["major_name"]=major_name
+        jsonlist["description"]=major_data[0].description
+        jsonlist["address"]=college_data[0].address
+    return jsonify(json.dumps(jsonlist, ensure_ascii=False))
+    # return render_template("index.html",collegelast=college_data,majorlast=major_data,years=years,rates=rates))
 
 @data.route('/register', methods=['GET','POST'])
 def register():
@@ -58,5 +92,41 @@ def register():
     # 暂时先回到主页
     return render_template("index.html")
 
+@data.route('/getPrediction', methods=['GET','POST'])
+def get_prediction():
+    if request.method == 'POST': # 判断用户请求是否是post请求
+        provinces = ["山东","安徽","四川"]        
+        province=provinces[int(request.form.get('province'))]
+        kind_names = ["综合","文科","理科"]        
+        kind_name=kind_names[int(request.form.get('kind_name'))]
+        rank = int(request.form.get('rank'))
+        # 以下根据排名计算出推荐学校
+        df1 = select50(rank,kind_name)
+        # print(df1["school_name"])
+        print("------------------")
+        schools = np.array(df1["school_name"]).tolist()
+        predicted = np.array(df1["predict"]).tolist()
+        # 根据0.6 0.8 划分稳 冲 保
+        rush = [] # 冲吖~
+        attempt = [] # 稳一稳
+        safe = [] # 摆烂
+        for i in range(len(predicted)):
+            if float(predicted[i]) < 0.6:
+                rush.append(schools[i])
+            elif float(predicted[i]) > 0.6 and float(predicted[i]) < 0.8:
+                attempt.append(schools[i])
+            else:
+                safe.append(schools[i]) 
+        # 选出前三甲
+        rush = rush[:3]
+        attempt = attempt[:3]
+        safe = safe[:3]
+        selected = rush + attempt + safe
+        # 根据推荐的学校名字调取专业信息,其中专业最低排名大于用户排名
+        for college in selected:
+            majors = db.session.query(DivById).filter(DivById.school_name==college,DivById.min_section>rank).all() 
+            
+
+    return render_template("predict.html",predictlist=schools)
 
     

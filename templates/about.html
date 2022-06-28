@@ -11,10 +11,38 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />
 	<link href="static/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<!-- <link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">  -->
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
+	<link href="static/css/style4.css" rel="stylesheet" />
 
+	<link data-n-head="ssr" rel="dns-prefetch" href="https://static-qiniu.mnzy.gaokao.cn">
+    <link data-n-head="ssr" rel="dns-prefetch" href="https://static-api.syeol.cn">
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="static/css/style4.css" rel="stylesheet" />
+    <link data-n-head="ssr" data-hid="shortcut-icon" rel="shortcut icon" href="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/icons/icon_64x64.a27dba.png"><link data-n-head="ssr" data-hid="apple-touch-icon" rel="apple-touch-icon" href="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/icons/icon_512x512.a27dba.png" sizes="512x512">
+    <link data-n-head="ssr" rel="manifest" href="/_nuxt/manifest.ed44376e.json" data-hid="manifest" crossorigin="use-credentials">
+    <script async="" src="https://assets.giocdn.com/2.1/gio.js"></script>
+    <script charset="utf-8" src="https://hmcdn.baidu.com/static/tongji/plugins/UrlChangeTracker.js"></script>
+    <script data-n-head="ssr">
+        if (navigator && /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent || '')) {
+            window.location.href = "https://mnzy.gaokao.cn/m";
+        }
+    </script>
+    <script data-n-head="ssr" src="https://hm.baidu.com/hm.js?4fa2e0fd1c4f0859e658d15c45c72711"></script>
+    <script data-n-head="ssr" src="https://hm.baidu.com/hm.js?405f06b9bd0034c6ecfeef855f5816bd"></script>
+    <script data-n-head="ssr">
+        document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1281095230'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1281095230' type='text/javascript'%3E%3C/script%3E"));
+    </script> 
+
+    <script charset="utf-8" src="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/ebc2ca4.modern.js"></script>
+
+
+	<script type="text/javascript" async="" src="https://captcha.gtimg.com/1/tcaptcha-frame.d5734cf3.js"></script>
+    <script charset="utf-8" src="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/6291626.modern.js"></script>
+    <script charset="utf-8" src="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/4b6c1fd.modern.js"></script>
+    <script charset="utf-8" src="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/f351ce3.modern.js"></script>
+    <script charset="utf-8" src="https://static-qiniu.mnzy.gaokao.cn/zsgk-volunteer/gaokao/36226ee.modern.js"></script>
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -100,421 +128,230 @@
 				</div>
 			</div>
 		</section>
-		<section id="content">
-			<section class="section-padding">
-				<div class="container">
-					<div class="row showcase-section">
-						<div class="col-md-6">
-							<img src="img/dev1.png" alt="showcase image">
-						</div>
-						<div class="col-md-6">
-							<div class="about-text">
-								<h3>Our <span class="color">Company</span></h3>
-								<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-									doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-									veritatis et quasi architecto beatae vitae dicta sunt explicabo. Vivamus suscipit
-									tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta.
-									Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
-								<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-									doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-									veritatis et quasi architecto beatae vitae dicta sunt explicabo..</p>
-							</div>
-						</div>
-					</div>
+		
+		<section>
+			<div class="m-t-20 warp_2wwbq">
+				<h4 class="title_2NEfO">
+					<span>当前成绩</span> 
+					<button type="button" class="ant-btn ant-btn-primary ant-btn-sm btn_2dVCh btnzoom_34GRa">
+						<span>激活VIP</span>
+					</button>
+				</h4> 
+				<ul class="info_24_vt">
+					<li>高考地区：北京</li> 
+					<li>选考科目：物/化/生</li> 
+					<li>高考分数：750分</li> 
+					<li>对应排名：100位</li>
+				</ul> 
+				<div class="change_1x0Mt">
+					<button type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost ant-btn-block">
+						<span>修改成绩</span>
+						<i aria-label="图标: edit" class="m-l-8 hand anticon anticon-edit">
+							<svg viewBox="64 64 896 896" data-icon="edit" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class="">
+								<path d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z"></path>
+							</svg>
+						</i>
+					</button>
+				</div> 
+				<div class="minimum_3T--u">
+					<div role="separator" class="ant-divider ant-divider-horizontal ant-divider-with-text-center">
+						<span class="ant-divider-inner-text">分数线</span>
+					</div> 
+				<div>
+				<div class="minimum-group_YQX4M">
+					<span>425分</span> 
+
+					<span>本科批</span>
 				</div>
-			</section>
-			<div class="container">
-
-				<div class="about">
-
-
-					<div class="row">
-						<div class="col-md-4">
-							<!-- Heading and para -->
-							<div class="block-heading-two">
-								<h3><span>Why Choose Us?</span></h3>
-							</div>
-							<p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-								architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-								sit aspernatur. <br /><br />Sed ut perspiciaatis iste natus error sit voluptatem
-								probably haven't heard of them accusamus.</p>
-						</div>
-						<div class="col-md-4">
-							<div class="block-heading-two">
-								<h3><span>Our Solution</span></h3>
-							</div>
-							<!-- Accordion starts -->
-							<div class="panel-group" id="accordion-alt3">
-								<!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
-								<div class="panel">
-									<!-- Panel heading -->
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion-alt3"
-												href="#collapseOne-alt3">
-												<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 1
-											</a>
-										</h4>
-									</div>
-									<div id="collapseOne-alt3" class="panel-collapse collapse">
-										<!-- Panel body -->
-										<div class="panel-body">
-											Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-											doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-											veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-											ipsam voluptatem quia voluptas
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion-alt3"
-												href="#collapseTwo-alt3">
-												<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 2
-											</a>
-										</h4>
-									</div>
-									<div id="collapseTwo-alt3" class="panel-collapse collapse">
-										<div class="panel-body">
-											Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-											doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-											veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-											ipsam voluptatem quia voluptas
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion-alt3"
-												href="#collapseThree-alt3">
-												<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 3
-											</a>
-										</h4>
-									</div>
-									<div id="collapseThree-alt3" class="panel-collapse collapse">
-										<div class="panel-body">
-											Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-											doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-											veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-											ipsam voluptatem quia voluptas
-										</div>
-									</div>
-								</div>
-								<div class="panel">
-									<div class="panel-heading">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordion-alt3"
-												href="#collapseFour-alt3">
-												<i class="fa fa-angle-right"></i> Accordion Heading Text Item # 4
-											</a>
-										</h4>
-									</div>
-									<div id="collapseFour-alt3" class="panel-collapse collapse">
-										<div class="panel-body">
-											Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium
-											doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-											veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-											ipsam voluptatem quia voluptas
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Accordion ends -->
-
-						</div>
-
-						<div class="col-md-4">
-							<div class="block-heading-two">
-								<h3><span>Our Expertise</span></h3>
-							</div>
-							<h6>Web Development</h6>
-							<div class="progress pb-sm">
-								<!-- White color (progress-bar-white) -->
-								<div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="40"
-									aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-									<span class="sr-only">40% Complete (success)</span>
-								</div>
-							</div>
-							<h6>Designing</h6>
-							<div class="progress pb-sm">
-								<div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="60"
-									aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-									<span class="sr-only">40% Complete (success)</span>
-								</div>
-							</div>
-							<h6>User Experience</h6>
-							<div class="progress pb-sm">
-								<div class="progress-bar progress-bar-lblue" role="progressbar" aria-valuenow="80"
-									aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-									<span class="sr-only">40% Complete (success)</span>
-								</div>
-							</div>
-							<h6>Development</h6>
-							<div class="progress pb-sm">
-								<div class="progress-bar progress-bar-yellow" role="progressbar" aria-valuenow="30"
-									aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-									<span class="sr-only">40% Complete (success)</span>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-
-					<div class="about home-about">
-						<div class="container">
-
-							<div class="row">
-								<div class="col-md-4">
-									<div class="block-heading-two">
-										<h3><span>Features</span></h3>
-									</div>
-									<div class="tab-section">
-										<div class="s12">
-											<ul class="tabs">
-												<li class="tab col s4"><a href="#test1"
-														class="waves-effect waves-dark">Test 1</a></li>
-												<li class="tab col s4"><a class="waves-effect waves-dark active"
-														href="#test2">Test 2</a></li>
-												<li class="tab col s4"><a href="#test3"
-														class="waves-effect waves-dark">Test 3</a></li>
-											</ul>
-										</div>
-										<div id="test1" class="col s12 container">Ande omnis iste natus error sit
-											voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-											quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-											explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. </div>
-										<div id="test2" class="col s12 container">Terspiciaatis unde omnis iste natus
-											error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-											eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-											dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-											aspernatur. </div>
-										<div id="test3" class="col s12 container">Perspiciaatis unde omnis iste natus
-											error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-											eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-											dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-											aspernatur. </div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="block-heading-two">
-										<h3><span>Latest News</span></h3>
-									</div>
-									<!-- Accordion starts -->
-									<ul class="collapsible" id="accordionSection" data-collapsible="accordion">
-										<li>
-											<div class="collapsible-header active"><i
-													class="material-icons">filter_drama</i>First</div>
-											<div class="collapsible-body">
-												<p>Perspiciaatis unde omnis iste natus error Nemo enim ipsam voluptatem
-													quia voluptas sit aspernatur. sit voluptatem accusanti</p>
-											</div>
-										</li>
-										<li>
-											<div class="collapsible-header"><i class="material-icons">place</i>Second
-											</div>
-											<div class="collapsible-body">
-												<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.
-													Perspiciaatis unde omnis iste natus error sit voluptatem accusanti
-												</p>
-											</div>
-										</li>
-										<li>
-											<div class="collapsible-header"><i class="material-icons">whatshot</i>Third
-											</div>
-											<div class="collapsible-body">
-												<p>Perspiciaatis Nemo enim ipsam voluptatem quia voluptas sit
-													aspernatur. unde omnis iste natus error sit voluptatem accusanti</p>
-											</div>
-										</li>
-									</ul>
-									<!-- Accordion ends -->
-
-								</div>
-
-								<div class="col-md-4">
-									<div class="block-heading-two">
-										<h3><span>Testimonials</span></h3>
-									</div>
-									<div class="testimonials">
-										<div class="active item">
-											<blockquote>
-												<p>Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met
-													consectetur adipisicing sit amet, consectetur adipisicing elit, of
-													them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p>
-											</blockquote>
-											<div class="carousel-info">
-												<img alt="" src="img/team4.jpg" class="pull-left">
-												<div class="pull-left">
-													<span class="testimonials-name">Marc Cooper</span>
-													<span class="testimonials-post">Technical Director</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							<br>
-						</div>
-					</div>
-
-
-					<br>
-					<!-- Our Team starts -->
-
-					<!-- Heading -->
-					<div class="block-heading-six">
-						<h4 class="bg-color">Our Team</h4>
-					</div>
-					<br>
-
-					<!-- Our team starts -->
-
-					<div class="team-six">
-						<div class="row">
-							<div class="col-md-3 col-sm-6">
-								<!-- Team Member -->
-								<div class="team-member">
-									<!-- Image -->
-									<img class="img-responsive" src="img/team1.jpg" alt="">
-									<!-- Name -->
-									<h4>Johne Doe</h4>
-									<span class="deg">Master</span>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<!-- Team Member -->
-								<div class="team-member">
-									<!-- Image -->
-									<img class="img-responsive" src="img/team2.jpg" alt="">
-									<!-- Name -->
-									<h4>Jennifer</h4>
-									<span class="deg">Master</span>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<!-- Team Member -->
-								<div class="team-member">
-									<!-- Image -->
-									<img class="img-responsive" src="img/team3.jpg" alt="">
-									<!-- Name -->
-									<h4>Christean</h4>
-									<span class="deg">Master</span>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<!-- Team Member -->
-								<div class="team-member">
-									<!-- Image -->
-									<img class="img-responsive" src="img/team4.jpg" alt="">
-									<!-- Name -->
-									<h4>Kerinele rase</h4>
-									<span class="deg">Master</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Our team ends -->
-
-
-				</div>
-
-			</div>
+			</div> <!---->
 		</section>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="widget">
-							<h5 class="widgetheading">Our load</h5>
-							<address>
-								<strong>Bootstrap company Inc</strong><br>
-								JC Main Road, Near Silnile tower<br>
-								Pin-21542 NewYork US.
-							</address>
-							<p>
-								<i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-								<i class="icon-envelope-alt"></i> email@domainname.com
-							</p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="widget">
-							<h5 class="widgetheading">Quick Links</h5>
-							<ul class="link-list">
-								<li><a class="waves-effect waves-dark" href="#">Latest Events</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Terms and conditions</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Privacy policy</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Career</a></li>
-								<li><a class="waves-effect waves-dark" href="#">load us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="widget">
-							<h5 class="widgetheading">Latest posts</h5>
-							<ul class="link-list">
-								<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit.</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque
-										at tempor ligula</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium
-										doloremque</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="widget">
-							<h5 class="widgetheading">Recent News</h5>
-							<ul class="link-list">
-								<li><a class="waves-effect waves-dark" href="#">Lorem ipsum dolor sit amet, consectetur
-										adipiscing elit.</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Pellentesque et pulvinar enim. Quisque
-										at tempor ligula</a></li>
-								<li><a class="waves-effect waves-dark" href="#">Natus error sit voluptatem accusantium
-										doloremque</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="sub-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="copyright">
-								<p>
-									<span>&copy; <a href="https://webthemez.com/free-bootstrap-templates/"
-											target="_blank">Bootstrap Template</a> 2018 All right reserved. Template By
-									</span><a href="https://webthemez.com/tag/free" target="_blank">WebThemez</a>
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<ul class="social-network">
-								<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Facebook"><i
-											class="fa fa-facebook"></i></a></li>
-								<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Twitter"><i
-											class="fa fa-twitter"></i></a></li>
-								<li><a class="waves-effect waves-dark" href="#" data-placement="top" title="Linkedin"><i
-											class="fa fa-linkedin"></i></a></li>
-								<li><a class="waves-effect waves-dark" href="#" data-placement="top"
-										title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-								<li><a class="waves-effect waves-dark" href="#" data-placement="top"
-										title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<section>
+			<div class="flex-1" style="overflow: visible; width: 0;">
+				<div filtrate="[object Object]"
+				<div class="warp_3qsrI">
+					<div class="ant-row" style="margin-left:-10px;margin-right:-10px;">
+						<div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;">
+							<div class="ant-row" style="margin-left:-10px;margin-right:-10px;">
+								<div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;">
+									<div class="group_P75hD"><span>填报批次：</span> 
+										<div tabindex="0" class="ant-select ant-select-enabled item_1_Gdx" width="100%">
+											<div role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-controls="90b9a2cc-9168-4651-9464-f190c5c28ec6" class="ant-select-selection ant-select-selection--single">
+												<div class="ant-select-selection__rendered">
+													<div unselectable="on" class="ant-select-selection__placeholder" style="display:none;user-select:none;webkit-user-select:none;">请选择批次</div>
+													<div title="本科批" class="ant-select-selection-selected-value" style="display:block;opacity:1;">本科批</div>
+												</div>
+												<span unselectable="on" class="ant-select-arrow" style="user-select:none;webkit-user-select:none;">
+													<i aria-label="图标: down" class="anticon anticon-down ant-select-arrow-icon">
+														<svg viewBox="64 64 896 896" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class="">
+															<path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+														</svg>
+													</i>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div> 
+								<div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;">
+									<div class="group_P75hD">
+										<span>就读地区：</span> 
+										<div tabindex="0" class="ant-select ant-select-enabled select_1wNog item_1_Gdx" width="100%">
+											<div role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-controls="37343b4d-243c-4845-bf21-7c499558532e" class="ant-select-selection ant-select-selection--single">
+												<div class="ant-select-selection__rendered">
+													<div unselectable="on" class="ant-select-selection__placeholder" style="display:none;user-select:none;webkit-user-select:none;">不限</div>
+													<div title="不限" class="ant-select-selection-selected-value" style="display:block;opacity:1;">不限</div>
+												</div>
+												<span unselectable="on" class="ant-select-arrow" style="user-select:none;webkit-user-select:none;">
+													<i aria-label="图标: down" class="anticon anticon-down ant-select-arrow-icon">
+														<svg viewBox="64 64 896 896" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class="">
+															<path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path>
+														</svg>
+													</i>
+												</span>
+											</div>
+										</div>
+  <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+	<div>
+		<div class="ant-select-dropdown batch_2km2D ant-select-dropdown--single ant-select-dropdown--empty ant-select-dropdown-placement-bottomLeft" style="width: 150px; left: 80.5px; top: 41px; display: none;">
+			<div class="ant-select-dropdown-content">
+				<div class="ant-row">
+					<div class="ant-col ant-col-8 item_2d_yl">
+						<div class="active-stair_10iUQ">热门城市</div>
+	<div class="stair_3tUz5">
+	  北京
 	</div>
+	<div class="stair_3tUz5">
+	  天津
+	</div>
+	<div class="stair_3tUz5">
+	  河北
+	</div>
+	<div class="stair_3tUz5">
+	  山西
+	</div>
+	<div class="stair_3tUz5">
+	  内蒙古
+	</div>
+	<div class="stair_3tUz5">
+	  辽宁
+	</div>
+	<div class="stair_3tUz5">
+	  吉林
+	</div>
+	<div class="stair_3tUz5">
+	  黑龙江
+	</div>
+	<div class="stair_3tUz5">
+	  上海
+	</div>
+	<div class="stair_3tUz5">
+	  江苏
+	</div>
+	<div class="stair_3tUz5">
+	  浙江
+	</div>
+	<div class="stair_3tUz5">
+	  安徽
+	</div>
+	<div class="stair_3tUz5">
+	  福建
+	</div>
+	<div class="stair_3tUz5">
+	  江西
+	</div>
+	<div class="stair_3tUz5">
+	  山东
+	</div>
+	<div class="stair_3tUz5">
+	  河南
+	</div>
+	<div class="stair_3tUz5">
+	  湖北
+	</div>
+	<div class="stair_3tUz5">
+	  湖南
+	</div>
+	<div class="stair_3tUz5">
+	  广东
+	</div>
+	<div class="stair_3tUz5">
+	  广西
+	</div>
+	<div class="stair_3tUz5">
+	  海南
+	</div>
+	<div class="stair_3tUz5">
+	  重庆
+	</div>
+	<div class="stair_3tUz5">
+	  四川
+	</div>
+	<div class="stair_3tUz5">
+	  贵州
+	</div>
+	<div class="stair_3tUz5">
+	  云南
+	</div>
+	<div class="stair_3tUz5">
+	  陕西
+	</div>
+	<div class="stair_3tUz5">
+	  甘肃
+	</div>
+	<div class="stair_3tUz5">
+	  青海
+	</div>
+	<div class="stair_3tUz5">
+	  宁夏
+	</div>
+	<div class="stair_3tUz5">
+	  新疆
+	</div>
+</div> 
+	<div class="ant-col ant-col-16 item_2d_yl" style="padding-left: 30px;">
+		<div class="access-item_G8ftQ">
+			<span>北京市</span> 
+			<label class="ant-checkbox-wrapper">
+				<span class="ant-checkbox">
+					<input type="checkbox" class="ant-checkbox-input" value="">
+					<span class="ant-checkbox-inner"></span>
+				</span>
+			</label>
+		</div>
+		<div class="access-item_G8ftQ stair_3tUz5">
+			<span>天津市</span> 
+			<label class="ant-checkbox-wrapper">
+				<span class="ant-checkbox">
+					<input type="checkbox" class="ant-checkbox-input" value="">
+					<span class="ant-checkbox-inner"></span>
+				</span>
+			</label>
+		</div>
+		<div class="access-item_G8ftQ stair_3tUz5"><span>上海市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>杭州市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>广州市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>深圳市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>成都市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>重庆市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div><div class="access-item_G8ftQ stair_3tUz5"><span>武汉市</span> <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input type="checkbox" class="ant-checkbox-input" value=""><span class="ant-checkbox-inner"></span></span></label></div></div></div> <div class="ant-btn-group" style="margin-top: 20px; width: 100%;"><button type="button" class="ant-btn" style="width: 50%;"><span>重 置</span></button><button type="button" class="ant-btn ant-btn-primary" style="width: 50%;"><span>确 定</span></button></div></div></div></div></div></div></div></div></div> <div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;"><div class="ant-row" style="margin-left:-10px;margin-right:-10px;"><div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;"><div class="group_P75hD"><span>大学类型：</span> <div tabindex="0" class="ant-select ant-select-enabled select_1wNog item_1_Gdx" width="100%"><div role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-controls="e3ed14f8-03ed-4b08-e87d-7331e0c6568d" class="ant-select-selection ant-select-selection--single"><div class="ant-select-selection__rendered"><div unselectable="on" class="ant-select-selection__placeholder" style="display:none;user-select:none;webkit-user-select:none;">不限</div><div title="不限" class="ant-select-selection-selected-value" style="display:block;opacity:1;">不限</div></div><span unselectable="on" class="ant-select-arrow" style="user-select:none;webkit-user-select:none;"><i aria-label="图标: down" class="anticon anticon-down ant-select-arrow-icon"><svg viewBox="64 64 896 896" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></i></span></div></div></div></div> <div class="ant-col ant-col-12" style="padding-left:10px;padding-right:10px;"><div class="group_P75hD"><span>专业类别：</span> <div tabindex="0" class="ant-select ant-select-enabled select_1wNog item_1_Gdx" width="100%"><div role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-controls="d084906f-cc7c-4b80-e7d6-86b094ba7aa9" class="ant-select-selection ant-select-selection--single"><div class="ant-select-selection__rendered"><div unselectable="on" class="ant-select-selection__placeholder" style="display:none;user-select:none;webkit-user-select:none;">不限</div><div title="不限" class="ant-select-selection-selected-value" style="display:block;opacity:1;">不限</div></div><span unselectable="on" class="ant-select-arrow" style="user-select:none;webkit-user-select:none;"><i aria-label="图标: down" class="anticon anticon-down ant-select-arrow-icon"><svg viewBox="64 64 896 896" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></i></span></div></div></div></div></div></div> <div class="ant-col ant-col-24" style="padding-left:10px;padding-right:10px;"><div class="ant-row" style="margin-left:-10px;margin-right:-10px;"><div class="ant-col ant-col-11" style="padding-left:10px;padding-right:10px;"><div class="group_P75hD"><span>搜索大学：</span> <div class="item_1_Gdx"><span class="ant-input-search ant-input-search-enter-button ant-input-group-wrapper"><span class="ant-input-wrapper ant-input-group"><input placeholder="请输入大学名称" type="text" value="" class="ant-input"><span class="ant-input-group-addon"><button type="button" class="ant-btn ant-btn-primary ant-input-search-button"><span>搜 索</span></button></span></span></span></div></div></div> <div class="ant-col ant-col-11" style="padding-left:10px;padding-right:10px;"><div class="group_P75hD"><span>搜索专业：</span> <div class="item_1_Gdx"><span class="ant-input-search ant-input-search-enter-button ant-input-group-wrapper"><span class="ant-input-wrapper ant-input-group"><input placeholder="请输入专业名称" type="text" value="" class="ant-input"><span class="ant-input-group-addon"><button type="button" class="ant-btn ant-btn-primary ant-input-search-button"><span>搜 索</span></button></span></span></span></div></div></div> <div class="ant-col ant-col-2" style="padding-left:10px;padding-right:10px;"><button type="button" class="ant-btn ant-btn-primary ant-btn-background-ghost reset_2ibok"><span>重 置</span></button></div></div></div></div></div> <!----> <div class="tabs_2xWxT"><ul><li class="active-tabs_AMKNg">
+	  全部1203
+	</li> <li class="">
+	  可冲击0
+	</li> <li class="">
+	  较稳妥0
+	</li> <li class="">
+	  可保底0
+	</li></ul> <div class="hint_3rod_"><i aria-label="图标: form" class="anticon anticon-form"><svg viewBox="64 64 896 896" data-icon="form" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M904 512h-56c-4.4 0-8 3.6-8 8v320H184V184h320c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V520c0-4.4-3.6-8-8-8z"></path><path d="M355.9 534.9L354 653.8c-.1 8.9 7.1 16.2 16 16.2h.4l118-2.9c2-.1 4-.9 5.4-2.3l415.9-415c3.1-3.1 3.1-8.2 0-11.3L785.4 114.3c-1.6-1.6-3.6-2.3-5.7-2.3s-4.1.8-5.7 2.3l-415.8 415a8.3 8.3 0 0 0-2.3 5.6zm63.5 23.6L779.7 199l45.2 45.1-360.5 359.7-45.7 1.1.7-46.4z"></path></svg></i>填报提醒
+</div></div> <div class="ant-table-wrapper table_2Lofh"><div class="ant-spin-nested-loading"><div class="ant-spin-container"><div class="ant-table ant-table-scroll-position-left ant-table-layout-fixed ant-table-default ant-table-bordered"><div class="ant-table-content"><div class="ant-table-scroll"><!----><div tabindex="-1" class="ant-table-body" style="overflow-x:scroll;webkit-transform:translate3d (0, 0, 0);"><table class="ant-table-fixed" style="width:980px;"><colgroup><col style="width:100px;min-width:100px;"><col style="width:150px;min-width:150px;"><col style="width:160px;min-width:160px;"><col style="width:120px;min-width:120px;"><col><col><col style="width:130px;min-width:130px;"></colgroup><thead class="ant-table-thead"><tr><th key="0" class="ant-table-align-center ant-table-row-cell-break-word" style="text-align:center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title"><span class="probabilitytitle_MA311">
+	  录取概率
+	  <i aria-label="图标: question-circle" class="anticon anticon-question-circle"><svg viewBox="64 64 896 896" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" class=""><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0 1 30.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1 0 80 0 40 40 0 1 0-80 0z"></path></svg></i></span></span><span class="ant-table-column-sorter"></span></div></span></th><th key="1" class="ant-table-align-left ant-table-row-cell-break-word" style="text-align:left;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">
+  招生院校专业组
+</span><span class="ant-table-column-sorter"></span></div></span></th><th key="2" class="ant-table-align-left ant-table-row-cell-break-word" style="text-align:left;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">
+  招生计划2022
+</span><span class="ant-table-column-sorter"></span></div></span></th><th key="3" class="ant-table-row-cell-break-word"><span class="ant-table-header-column"><div><span class="ant-table-column-title">组内录取最低</span><span class="ant-table-column-sorter"></span></div></span></th><th key="4" class="ant-table-align-center" style="text-align:center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">2021招录</span><span class="ant-table-column-sorter"></span></div></span></th><th key="5" class="ant-table-align-center" style="text-align:center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">2020招录</span><span class="ant-table-column-sorter"></span></div></span></th><th key="6" class="ant-table-align-center ant-table-row-cell-break-word ant-table-row-cell-last" style="text-align:center;"><span class="ant-table-header-column"><div><span class="ant-table-column-title">操作</span><span class="ant-table-column-sorter"></span></div></span></th></tr></thead><tbody class="ant-table-tbody"><tr class="ant-table-row ant-table-row-level-0" data-row-key="102301"><td class="ant-table-row-cell-break-word" style="text-align: center;"><div><div class="warp_ky9Ur"><span class="ratio_3S8xF">&gt;95%</span> <div class="name_2kvoC" style="background-color: rgb(191, 94, 255);">
+	浪费
+  </div></div></div></td><td class="ant-table-row-cell-break-word" style="text-align: left;"><div class="warp_3ZVIY"><h3 style="cursor: pointer;"><!----> <span data-font="清华大学(01)"></span></h3> <div class="ant-space ant-space-vertical" style="width: 100%;"><div class="ant-space-item" style="margin-bottom: 6px;"><div class="ant-space ant-space-horizontal ant-space-align-center" style="flex-wrap: wrap;"><div class="ant-space-item" style="margin-right: 8px;"><span data-font="北京"></span></div><div class="ant-space-item" style="margin-right: 8px;"><span data-font="公办"></span></div><div class="ant-space-item"><span data-font="综合"></span></div></div></div><div class="ant-space-item"><div class="tags_qnDhs"><div data-font="985" class="tags-item_2EkXF"></div><div data-font="211" class="tags-item_2EkXF"></div><div data-font="双一流" class="tags-item_2EkXF"></div><div data-font="强基计划" class="tags-item_2EkXF"></div></div></div></div></div></td><td class="ant-table-row-cell-break-word" style="text-align: left;"><div class="warp_1bsKu"><div class="ant-space ant-space-vertical"><div class="ant-space-item" style="margin-bottom: 6px;"><p>招生代码：1023</p></div><div class="ant-space-item" style="margin-bottom: 6px;"><p>招生人数：10</p></div><div class="ant-space-item"><p>
+  科目：
+  </td>
+		</section>
+		
+
+
+
+			
 	<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
     ================================================== -->

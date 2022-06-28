@@ -7,10 +7,6 @@ from flask import Blueprint, render_template
 page = Blueprint('page', __name__)
 
 
-# @page.route('/', endpoint="index")
-# def login():
-#     return render_template("index.html")
-
 
 @page.route('/')
 def index():
@@ -19,6 +15,11 @@ def index():
 @page.route('/index')
 def home():
     return index()
+
+# @page.route('/getMajorInfo')
+# def major():
+#     return index()
+
 @page.route('/about')
 def about():
     return render_template("about.html")
@@ -42,3 +43,7 @@ def services():
 @page.route('/test')
 def test():
     return render_template("test.html")
+
+@page.route('/baidu')
+def baidu():
+    return render_template("baidu.html")
