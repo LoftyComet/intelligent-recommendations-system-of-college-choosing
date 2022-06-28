@@ -6,7 +6,8 @@
 	<title>高考志愿推荐平台</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
-	<meta name="author" content="http://webthemez.com" />
+	<script src="static/js/echarts.js"></script>
+
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />-->
@@ -19,70 +20,37 @@
 	<!-- Block Styles -->
 	<link href="static/css/style.css" rel="stylesheet" />
 	<link href="static/css/gallery-1.css" rel="stylesheet">
-	<link href="static/css/style2.css" rel="stylesheet" />
+
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<style>
-		.center {
+		.auto_height
+		{
+			height:auto;
+		}
+		.center
+		{
             text-align: center;
         }
-		table {
-            width: 70%;
-            background: #ccc;
-            margin: 15px auto;
-            border-collapse: collapse;
-            table-layout: fixed;
-            white-space: nowrap;
-        }
+        .f20{font-size:20pt; }
 
-        td {
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        th {
-            background: #eee;
-            font-weight: normal;
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            border: 1px solid #ccc;
-        }
-
-        tr {
-            background: #fff;
-        }
-
-        tr:hover {
-            background: #cc0;
-            overflow: visible;
-            white-space: normal;
-        }
-
-        td a {
-            color: #06f;
-            text-decoration: none;
-        }
-
-        td a:hover {
-            color: #06f;
-            text-decoration: underline;
-        }
-
-        .table tr:nth-child(odd) {
-            background-color: #dcecf9;
-        }
-
-        .table tr:nth-child(even) {
-            background-color: #ffffff;
-        }
+		.sel
+		{
+			border:1px solid #c9c9c9;
+			background-color:#fff;
+			color:#666;
+			margin-top:auto;
+			margin-bottom:auto;
+			padding:4px 6px;
+			font-size:14px;
+			border-radius:8pt;
+			cursor:pointer;
+			outline:none;
+		}
 	</style>
+
 </head>
 
 <body>
@@ -133,7 +101,14 @@
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li><a class="waves-effect waves-dark" href="/index">首页</a></li>
-							<li class="dropdown"><a class="waves-effect waves-dark" href="/test">志愿推荐</a>
+							<li class="dropdown">
+								<a href="#" data-toggle="dropdown" class="dropdown-toggle">志愿推荐<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a class="waves-effect waves-dark" href="/about">Company</a></li>
+									<li><a class="waves-effect waves-dark" href="#">Our Team</a></li>
+									<li><a class="waves-effect waves-dark" href="#">News</a></li>
+									<li><a class="waves-effect waves-dark" href="#">Investors</a></li>
+								</ul>
 							</li>
 							<li><a class="waves-effect waves-dark" href="/services">分数查询</a></li>
 							<li class="active"><a href="/predict" class="waves-effect waves-dark">分数预测</a></li>
@@ -144,6 +119,7 @@
 				</div>
 			</div>
 		</header><!-- end header -->
+
 		<section id="inner-headline">
 			<div class="container">
 				<div class="row">
@@ -153,93 +129,76 @@
 				</div>
 			</div>
 		</section>
-
-		<section class="hero">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="about-logo">
-							<div class="card-image">
-								<h3><span style="color: #FFFFFF; ">国家线</span></h3>
-								<img class="img-responsive" src="static/img/guojiaxian2.png" alt="">
-							</div>
-							
-							
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<br>
-			<br>
-			<div>
-                <form action="/getPrediction" method="POST">
-						<div class = "center">
-							<strong style="color: #FFFFFF; ">地区:  </strong>
-                        	<select name="province">
-                            	<option selected="selected" value='' disabled>-请选择-</option>
-                            	<option value="0" >山东</option>
-								<option value="1" >安徽</option>
-								<option value="2" >四川</option>
-
-                        	</select>
-						</div>
-						<div class = "center">
-							<strong style="color: #FFFFFF; ">类别:  </strong>
-							<select name="kind_name">
-                            	<option selected="selected" value='' disabled style="color: #FFFFFF; ">-请选择-</option>
-                            	<option value="0" >综合</option>
-								<option value="1" >文科</option>
-								<option value="2" >理科</option>
-                       		</select>
-						</div>
-						<div class = "center">
-							<strong>排名: </strong>
-						 	<input type="text" style="border:1px solid black; "name="rank">
-						</div>
+				<!-- Start Gallery 1-2 -->
+		<section>
+			<script src="static/js/predict_pro_line.js"></script>
+			<div class="auto_height">
+				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
 					<br>
-					<div class = "center">
-                        <input type="submit" value="预测">
-					</div>
-				</form>
-			</div>
+					<div class = "center f20 auto_height"align="center">
+						<strong >专业:  </strong>
+						<select class ="center sel" style="margin-right:30pt;" id="select_pro" name="select_pro" onchange="onSelectPro();"  >
+<!--                            	<option selected="selected"  value='' disabled>-请选择-</option>-->
+							<option value="11">北京</option>
+							<option value="12">天津</option>
+							<option value="13">河北</option>
+							<option value="14">山西</option>
+							<option value="15">内蒙古</option>
+							<option value="21">辽宁</option>
+							<option value="22">吉林</option>
+							<option value="23">黑龙江</option>
+							<option value="31">上海</option>
+							<option value="32">江苏</option>
+							<option value="33">浙江</option>
+							<option value="34">安徽</option>
+							<option value="35">福建</option>
+							<option value="36">江西</option>
+							<option value="37">山东</option>
+							<option value="41">河南</option>
+							<option value="42">湖北</option>
+							<option value="43">湖南</option>
+							<option value="44">广东</option>
+							<option value="45">广西</option>
+							<option value="46">海南</option>
+							<option value="50">重庆</option>
+							<option value="51">四川</option>
+							<option value="52">贵州</option>
+							<option value="53">云南</option>
+							<option value="54">西藏</option>
+							<option value="61">陕西</option>
+							<option value="62">甘肃</option>
+							<option value="63">青海</option>
+							<option value="64">宁夏</option>
+							<option value="65">新疆</option>
+<!--							<option value="81">香港</option>-->
+<!--							<option value="82">澳门</option>-->
 
-			<br></br>
-			<table id="store" class="table">
-				<thead>
-					<tr>
-					<th>学校名称</th>
-				    <th>学校最低投档线</th>
-					<th>专业最低投档线</th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for predict in predictlist %}
-        			<tr>
-            			<td> {{ predict }}</td>
-            			<!-- <td> {{ predict.school_min }}</td> -->
-            			<!-- <td> {{ predict.major_mint }}</td> -->
-        			</tr>
-    				{% endfor %}
-				</tbody>
-			</table>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
-			<br></br>
+						</select>
+
+						<strong style="margin-left:30pt;">类别:  </strong>
+						<select class ="center sel" id="select_type" onchange="onSelectType();">
+<!--                            	<option selected="selected" value='' disabled>-请选择-</option>-->
+							<option value="0" selected="selected">理科</option>
+							<option value="0">文科</option>
+
+						</select>
+					</div>
+					<br>
+
+				<div id="main" style="width: 1200px;height:400px;margin:auto"></div>
+<!--				<script>onSelectPro();</script>-->
+			</div>
+		</section>
+
+		<section id="content">
+<!--			<div class="container">-->
+
+		</section>
+		<section id="content2">
+<!--			<div class="container">-->
+			<div id="main2" style="width: 1200px;height:400px;margin:auto"></div>
+			<p>fffff</p>
+
 		</section>
 
 		<!--// End Gallery 1-2 -->
