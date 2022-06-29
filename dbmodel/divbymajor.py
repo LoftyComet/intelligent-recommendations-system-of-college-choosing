@@ -1,7 +1,7 @@
 from config import db
 
-class DivById(db.Model):
-    __tablename__ = "div_by_id"
+class DivByMajor(db.Model):
+    __tablename__ = "div_by_major"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     school_name = db.Column(db.String(50)) #学校名称
     type_name = db.Column(db.String(50)) #分科类型
@@ -14,3 +14,5 @@ class DivById(db.Model):
     level3_name = db.Column(db.String(50)) #专业分级3
     spname = db.Column(db.String(50)) #专业名称
     local_batch_name = db.Column(db.String(50)) #招生批次
+    province_name = db.Column(db.String(50)) #学校所在省市
+    year = db.Column(db.Integer) #年份

@@ -20,7 +20,7 @@ spark = SparkSession \
 # sc = spark.sparkContext
 
 #将文件上传
-df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\DivByMajor\2021四川理科高校分专业数据.xlsx")
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\DivByMajor\2021四川理科高校分专业数据_region.xlsx")
 df["year"]=2021 #pandas新增一列，加在最后
 col = ['min1','max1','min_section','year']
 df[col] = df[col].fillna(0.0)
@@ -36,6 +36,6 @@ conn_param = {}
 conn_param['user'] = MysqlConfig.MYSQL_USER
 conn_param['password'] = MysqlConfig.MYSQL_PWD
 conn_param['driver'] = MysqlConfig.MYSQL_DRIVER
-df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'div_by_id', 'append', conn_param)##第一次用下面的overwrite之后用append
-# df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'div_by_id', 'overwrite', conn_param)
+df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'div_by_major', 'append', conn_param)##第一次用下面的overwrite之后用append
+# df_spark_excel.write.jdbc(MysqlConfig.MYSQL_CONN, 'div_by_major', 'overwrite', conn_param)
 print("执行完毕")
