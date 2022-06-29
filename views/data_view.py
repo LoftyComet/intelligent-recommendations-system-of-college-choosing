@@ -101,7 +101,7 @@ def get_prediction():
         kind_name=kind_names[int(request.form.get('kind_name'))]
         rank = int(request.form.get('rank'))
         # 以下根据排名计算出推荐学校
-        df1 = select50(rank=rank)
+        df1 = select50(rank,kind_name)
         # print(df1["school_name"])
         print("------------------")
         schools = np.array(df1["school_name"]).tolist()
@@ -113,7 +113,7 @@ def get_prediction():
         for i in range(len(predicted)):
             if float(predicted[i]) < 0.6:
                 rush.append(schools[i])
-            elif float(predicted[i]) > 0.6 & float(predicted[i]) < 0.8:
+            elif float(predicted[i]) > 0.6 and float(predicted[i]) < 0.8:
                 attempt.append(schools[i])
             else:
                 safe.append(schools[i]) 

@@ -5,7 +5,7 @@ class DivById(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True) 
     school_name = db.Column(db.String(50)) #学校名称
     type_name = db.Column(db.String(50)) #分科类型
-    province_name = db.Column(db.String(50)) #省市
+    province = db.Column(db.String(50)) #省市
     min1 = db.Column(db.Integer) #最低分
     max1 = db.Column(db.Integer) #最高分
     min_section = db.Column(db.Integer) #全省排名

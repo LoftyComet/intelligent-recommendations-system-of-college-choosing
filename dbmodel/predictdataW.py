@@ -1,7 +1,7 @@
 from config import db
 
-class PredictData(db.Model):
-    __tablename__ = "predict_data"
+class PredictDataW(db.Model):
+    __tablename__ = "predict_data_W"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     school_name = db.Column(db.String(50)) #学校名称
     local_batch_name = db.Column(db.String(50))  # 录取批次
