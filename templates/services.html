@@ -204,16 +204,11 @@
 											<option value="8">电气类</option>
 											<option value="8">电气类</option>
 										</select>
-										<!-- <select>
-											<option value="" selected>--请选择--</option>
-											<option value="1">文科</option>
-											<option value="2">理科</option>
-										</select> -->
 									</div>
 									<br></br>
 									<div class="center">
-										<label style="color: #FFFFFF; "><input type="checkbox" name="wenke" value=1 onclick="chkbox(this);">文科</label>
-                        				<label style="color: #FFFFFF; "><input type="checkbox" name="like" value=1 onclick="chkbox(this);">理科</label>
+										<label style="color: #FFFFFF; "><input type="checkbox" name="wenke" value=1>文科</label>
+                        				<label style="color: #FFFFFF; "><input type="checkbox" name="like" value=1>理科</label>
 									</div>
 
 									<br>
@@ -230,6 +225,7 @@
 										<th>专业</th>
 										<th>所在地区</th>
 										<th>分数线</th>
+										<th>文理分科</th>
 									</tr>
 									</thead>
 									<tbody>
@@ -240,6 +236,7 @@
             								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.spname }}</td>
             								<td> {{ item.major_situation_text }}</td>
             								<td> {{ item.min1 }}</td>
+											<td> {{ item.type_name }}</td>
         								</tr>
     									{% endfor %}
 									</tbody>
