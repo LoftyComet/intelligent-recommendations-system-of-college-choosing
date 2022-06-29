@@ -47,3 +47,11 @@ def test():
 @page.route('/baidu')
 def baidu():
     return render_template("baidu.html")
+
+@page.route('/yuce')
+def yuce():
+    return render_template("yuce.html")
+
+@page.route('/tuijian')
+def tuijian():
+    return render_template("tuijian.html")

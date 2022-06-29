@@ -7,6 +7,26 @@ Note: Licence under Creative Commons Attribution 3.0
 @import url('font-awesome.css');  
 @import url('animate.css');
 
+
+.title_2NEfO{display:flex;justify-content:space-between;align-items:center;height:48px;margin-bottom:0;padding:0 16px;line-height:48px;color:#fff;font-weight:700;font-size:16px;background:linear-gradient(141deg,orange,#ff6500)}
+
+.firstElement{
+	position:absolute;
+	left:200px;
+	width:50px;
+	height:50px;
+	background-color:red
+}
+  
+.secondElement{
+	position:absolute;
+	left:200px;
+	width:40px;
+	height:50px;
+	background-color:blue;
+	transform:translateX(-100%)
+}
+
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-weight:300;

@@ -8,57 +8,349 @@
 	<meta name="description" content="" />
 	<meta name="author" content="http://webthemez.com" />
 	<!-- css -->
-	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-	<!--<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="static/materialize/css/materialize.min.css" media="screen,projection" />
 	<link href="static/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
-    <style>
-		body {
-			background-image: url( "../static/img/img-75.jpg");
-		}
-	</style>
+    <link href="static/css/style2.css" rel="stylesheet" />
+    <!-- bootstrap.min css -->
+    <!-- <link rel="stylesheet" href="static/css2/bootstrap.css"> -->
+    <!-- Iconfont Css -->
+    <link rel="stylesheet" href="static/css2/all.css">
+    <link rel="stylesheet" href="static/css2/themify-icons.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="static/css2/animate.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="static/css2/slick.css">
+    <link rel="stylesheet" href="static/css2/slick-theme.css">
+    <link rel="stylesheet" href="static/css2/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css2/owl.theme.default.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css2/style.css">
+    <link rel="stylesheet" href="static/css2/responsive.css">
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- <style>
+		.center {
+            text-align: center;
+        }
+		table {
+            width: 70%;
+            background: #ccc;
+            margin: 15px auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            white-space: nowrap;
+        }
+
+        td {
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        th {
+            background: #eee;
+            font-weight: normal;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        tr {
+            background: #fff;
+        }
+
+        tr:hover {
+            background: #cc0;
+            overflow: visible;
+            white-space: normal;
+        }
+
+        td a {
+            color: #06f;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            color: #06f;
+            text-decoration: underline;
+        }
+
+        .table tr:nth-child(odd) {
+            background-color: #dcecf9;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+	</style> -->
 
 </head>
 
+<body>
+	<div id="wrapper">
+		<header class="topbar">
+			<div class="container">
+				<div class="row">
+					<!-- social icon-->
+					<div class="col-sm-3">
+						<ul class="social-network">
+							<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-linkedin"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-pinterest"></i></a></li>
+							<li><a class="waves-effect waves-dark" href="#"><i class="fa fa-google-plus"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-sm-9">
+						<div class="row">
+							<ul class="info">
+								<li><i
+										class="icon-info-blocks material-icons">question_answer</i><span>info@Arrive.com</span>
+								</li>
+								<li><i class="icon-info-blocks material-icons">perm_phone_msg</i><span>+(012) 345
+										6789</span></li>
+							</ul>
+							<div class="clr"></div>
+						</div>
+					</div>
+					<!-- info -->
 
+				</div>
+			</div>
+		</header>
 
-<section background = "../static/img/img-75.jpg">
-    <style type="text/css">
-        .mydiv{
-            width: 65px;
-            height: 35px;
-            border-left: 1px solid #ccc;
-            border-top: 1px solid rgb(212, 20, 20);
-            border-bottom: 1px solid #ccc;
-            border-right: 1px solid #ccc
-        }
-    </style>
-    <div>
-        <p><span class="opacity-8">请填写您的 <b>高考信息</b></span></p>
-        <form action="/predictfenshuxian" method="POST">
-            <div>
-                <select>
-                    <option selected="selected" value='' disabled>省份</option>
-                    <option >山东</option>
-                </select>
-                <input type="number" required="required" class="input-9 ae-5 fromCenter" name="input_range" value='' placeholder="排位"
-                        step="1" min="1" val=""/>
-                <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="location">
-                    <option selected="selected" value='' disabled>目标区域</option>
-                    <option value="1">长三角</option>
-                    <option value="0">京津冀</option>
-                    <option value="2">内陆</option>
-                    <option value="-1">不限</option>
-                </select>
-                <select required="required" type="prov" class="input-9 ae-4 fromCenter" name="title">
-                    <option selected="selected" value='' disabled>学校等级</option>
-                    <option value="0">985及以上</option>
-                    <option value="1">211及以上</option>
-                    <option value="-1">不限</option>
-                </select>
+		<!-- start header -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/index"><i
+								class="icon-info-blocks material-icons">language</i>高考志愿推荐平台</a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li><a class="waves-effect waves-dark" href="/index">首页</a></li>
+							<li class="dropdown active">
+								<a href="#" data-toggle="dropdown"
+									class="dropdown-toggle waves-effect waves-dark">志愿推荐<b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a class="waves-effect waves-dark" href="/about">Company</a></li>
+									<li><a class="waves-effect waves-dark" href="#">Our Team</a></li>
+									<li><a class="waves-effect waves-dark" href="#">News</a></li>
+									<li><a class="waves-effect waves-dark" href="#">Investors</a></li>
+								</ul>
+							</li>
+							<li><a class="waves-effect waves-dark" href="/services">分数查询</a></li>
+							<li><a class="waves-effect waves-dark" href="/predict">分数预测</a></li>
+							<li><a class="waves-effect waves-dark" href="/pricing">团队</a></li>
+							<li><a class="waves-effect waves-dark" href="/load">登录/注册</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header><!-- end header -->
+		<section id="inner-headline">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2 class="pageTitle">智能推荐</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <section>
+            <div class="center">
+                <h4 class="title_2NEfO">
+                    <span>当前成绩</span> 
+                    
+                </h4> 
+                <ul class="info_24_vt">
+                    <li>高考地区：四川</li> 
+                    <li>选考科目：物/化/生</li> 
+                    <li>高考分数：750分</li> 
+                    <li>对应排名：100位</li>
+                </ul> 
+                
+                <div class="minimum_3T--u">
+                    <div role="separator" class="ant-divider ant-divider-horizontal ant-divider-with-text-center">
+                        <span class="ant-divider-inner-text">分数线</span>
+                    </div> 
+                <div>
+                <div class="minimum-group_YQX4M">
+                    <span>425分</span> 
+
+                    <span>本科批</span>
+                </div>
+            </div> <!---->
+        </section>
+        
+        <section class="section-padding whyWe nav-bg">
+            <table id="store" class="table">
+                <thead>
+                <tr>
+                    <th>录取概率</th>
+                    <th>招生院校专业组</th>
+                    <th>招生计划</th>
+                    <th>2020招录</th>
+                    <th>2021招录</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in collegelast %}
+                    <tr>
+                        <td> {{ item.gailv }}</td>
+                        <td> {{ item.school_name }}</td>
+                        <td> {{ item.plan }}</td>
+                        <td> {{ item.num2020 }}</td>
+                        <td> {{ item.num2021 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="service section-padding secondary-bg">
+            <div class="container">
+                
+        
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <span>01</span>
+                                <img src="static/picture/services-1.png" alt="" class="img-fluid">
+                            </div>
+                            <table id="store" class="table">
+                                <thead>
+                                <tr>
+                                    <th>学校</th>
+                                    <th>专业</th>
+                                    <th>分数线</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in collegelast %}
+                                    <tr>
+                                        <td> {{ item.school_name }}</td>
+                                        <td> {{ item.major_text }}</td>
+                                        <td> {{ item.rank_int }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="#" class="btn btn-main2">冲一冲</a>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <span>02</span>
+                                <img src="static/picture/services-2.png" alt="" class="img-fluid">
+                            </div>
+                            <table id="store" class="table">
+                                <thead>
+                                <tr>
+                                    <th>学校</th>
+                                    <th>专业</th>
+                                    <th>分数线</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in collegelast %}
+                                    <tr>
+                                        <td> {{ item.school_name }}</td>
+                                        <td> {{ item.major_text }}</td>
+                                        <td> {{ item.rank_int }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="#" class="btn btn-main2">稳一稳</a>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <span>03</span>
+                                <img src="static/picture/services-3.png" alt="" class="img-fluid">
+                            </div>
+                            <table id="store" class="table">
+                                <thead>
+                                <tr>
+                                    <th>学校</th>
+                                    <th>专业</th>
+                                    <th>分数线</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in collegelast %}
+                                    <tr>
+                                        <td> {{ item.school_name }}</td>
+                                        <td> {{ item.major_text }}</td>
+                                        <td> {{ item.rank_int }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <a href="#" class="btn btn-main2">保一保</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-    </div>
-</section>
+        </section>
+			
+	<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
+	<!-- javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="materialize/js/materialize.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.fancybox.pack.js"></script>
+	<script src="js/jquery.fancybox-media.js"></script>
+	<script src="js/jquery.flexslider.js"></script>
+	<script src="js/animate.js"></script>
+	<!-- Vendor Scripts -->
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/animate.js"></script>
+	<script src="js/custom.js"></script>
+
+    <!-- Main jQuery -->
+    <script data-cfasync="false" src="static/js2/email-decode.min.js"></script><script src="static/js2/jquery.js"></script>
+    <!-- Bootstrap 4.3 -->
+    <script src="static/js2/bootstrap.js"></script>
+    <!-- Counterup -->
+    <script src="static/js2/waypoint.js"></script>
+    <script src="static/js2/jquery.counterup.min.js"></script>
+    <!--  Slick Carousel-->
+    <script src="static/js2/slick.min.js"></script>
+    <script src="static/js2/owl.carousel.min.js"></script>
+    <script src="static/js2/contact.js"></script>
+    <script src="static/js2/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 10px;
+  }
+  .navbar-nav .nav-link {
+    padding: 14px 20px;
+    border-right: 0px;
+  }
+  .banner .banner-content h1 {
+    font-size: 70px;
+  }
+  .banner .banner-content p {
+    padding-right: 0px;
+  }
+  .about-info {
+    margin-top: 40px;
+  }
+  .service-item {
+    margin-bottom: 65px;
+  }
+  .about-content {
+    margin-top: 40px;
+  }
+  .deal-info.section-heading {
+    padding-left: 0px;
+    margin-top: 60px;
+  }
+  .banner-img img {
+    max-width: 100%;
+    height: auto;
+  }
+  .author .author-img {
+    float: none;
+    margin-bottom: 20px;
+  }
+  .comments .media {
+    display: block;
+  }
+  .comments .media .media-body {
+    padding-left: 0px;
+  }
+  .blog-navigation .next-post {
+    text-align: left;
+    float: none;
+    margin-top: 30px;
+  }
+  .blog-navigation a {
+    display: block;
+  }
+  .border-right {
+    border-color: transparent !important;
+  }
+  .service-item.style-2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-navigation {
+    padding: 20px 10px;
+  }
+  .navbar-nav .nav-link {
+    padding: 14px 20px;
+  }
+  .banner .banner-content h1 {
+    font-size: 35px;
+  }
+  .banner-btn .btn {
+    margin-bottom: 10px;
+  }
+  .section-heading h2 {
+    font-size: 34px;
+  }
+  .section-heading .subheading {
+    font-size: 72px;
+    top: -8px;
+  }
+  .about-info ul li {
+    width: 100%;
+  }
+  .cta .cta-content {
+    padding: 30px;
+  }
+  .cta .cta-content h2 {
+    font-size: 26px;
+  }
+  .deal-img::before {
+    position: relative;
+  }
+  .deal-info.section-heading h2 {
+    font-size: 38px;
+  }
+  .deal-info.section-heading p {
+    padding: 0px;
+  }
+  .feature-item {
+    display: block;
+  }
+  .feature-item .feature-img {
+    margin-bottom: 30px;
+    margin-right: 0px;
+  }
+  .author .author-img {
+    float: none;
+    margin-bottom: 20px;
+  }
+  .comments .media {
+    display: block;
+  }
+  .comments .media .media-body {
+    padding-left: 0px;
+  }
+  .blog-navigation .next-post {
+    text-align: left;
+    float: none;
+    margin-top: 30px;
+  }
+  .blog-navigation a {
+    display: block;
+  }
+  .border-right {
+    border-color: transparent !important;
+  }
+}
