@@ -173,7 +173,44 @@
 			</div>
 		</section>
 
-        <section>
+        <section  class ="center" id="content">
+			<div class="container">
+                <div class="col-sm-4 info-blocks">
+                    <!-- <div class="info-blocks-in"> -->
+                        <div class="about-image">
+                            <img src="static/img/left1.png" width="220" height="450">
+                        </div>
+                    <!-- </div> -->
+                </div>
+
+                <div class="col-sm-4 info-blocks">
+                    <div class="info-blocks-in">
+                        <i class="icon-info-blocks material-icons">perm_identity</i>
+                        <h3>个人信息</h3>
+                        <div class="line"></div>
+                        <div class="center">
+                            <form action='/getCollegeInfo' method="post">
+                                <div ><span><strong>请输入意向地区：</strong></span><input name="area" type="text"/></div>
+                                <div ><span><strong>请输入排名：</strong></span><input name="area" type="text"/></div>
+                                <br>
+                                <div class="center"><input type="submit" value="查看"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 info-blocks">
+                    <!-- <div class="info-blocks-in"> -->
+                        <div class="about-image">
+                            <img src="static/img/right1.jpg" width="220" height="450">
+                        </div>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section>
             <div class="center">
                 <h4 class="title_2NEfO">
                     <span>当前成绩</span> 
@@ -196,8 +233,8 @@
 
                     <span>本科批</span>
                 </div>
-            </div> <!---->
-        </section>
+            </div>
+        </section> -->
         
         <section class="section-padding whyWe nav-bg">
             <table id="store" class="table">
