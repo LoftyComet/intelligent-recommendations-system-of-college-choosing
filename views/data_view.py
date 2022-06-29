@@ -9,7 +9,7 @@ from config import db
 from dbmodel.collegeinfo import Collegeinfo
 from dbmodel.majorinfo import Majorinfo
 from dbmodel.user import User
-from dbmodel.divbymajor import DivById
+from dbmodel.divbymajor import DivByMajor
 from collegeRecommend import select50
 
 """
@@ -21,15 +21,44 @@ data = Blueprint('data', __name__)
 def get_college_info():
     if request.method == 'POST': # 判断用户请求是否是post请求
         college_data = []
-        school_name=request.form.get('school') #
+        school_name=request.form.get('school') 
+        major_name=request.form.get('major') 
+        region_name=request.form.get('region')
         print(school_name)
-        print("---------------------------")
-        college_data = db.session.query(Collegeinfo).filter(Collegeinfo.school_name==school_name).all()        
+        print(major_name)
+        print(region_name)
+        # 接收到地区
+        if (region_name != ""):
+            if (school_name != ""):
+                if (major_name != ""):
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.school_name==school_name,DivByMajor.province_name==region_name,DivByMajor.spname==major_name).all()        
+                else:
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.school_name==school_name,DivByMajor.province_name==region_name).all()        
+            else:
+                if (major_name != ""):
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.province_name==region_name,DivByMajor.spname==major_name).all()        
+                else:
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.school_name==school_name).all()        
+        else:
+            if (school_name != ""):
+                if (major_name != ""):
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.school_name==school_name,DivByMajor.spname==major_name).all()        
+                else:
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.school_name==school_name).all()        
+            else:
+                if (major_name != ""):
+                    college_data = db.session.query(DivByMajor).filter(DivByMajor.spname==major_name).all()        
+                else:
+                    college_data = []
+                        
+        
+
+
+
         for x in college_data:
             print("查询到的学校有：",x.school_name)
         print("---------------------------")
     return render_template("services.html",collegelast=college_data)
-    # return render_template("services.html")
 
 @data.route('/getMajorInfo', methods=['GET','POST'])
 def get_major_info():

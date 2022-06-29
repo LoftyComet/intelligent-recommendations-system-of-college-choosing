@@ -163,7 +163,7 @@
 						<div class="about-logo">
 
 								<form action='/getCollegeInfo' method="post">
-									<div class="center"><span style="color: #FFFFFF; "><strong>按地区查询：</strong></span><input name="location" type="text" id="location" onkeydown="onSearch()" value=""/></div>
+									<div class="center"><span style="color: #FFFFFF; "><strong>按地区查询：</strong></span><input name="region" type="text" id="region" onkeydown="onSearch()" value=""/></div>
 									<div class="center"><span style="color: #FFFFFF; "><strong>按院校查询：</strong></span><input name="school" type="text" id="school" onkeydown="onSearch()" value=""/></div>
 									<div class="center">
 										<span style="color: #FFFFFF; "><strong>按专业查询：</strong></span>
@@ -235,11 +235,11 @@
 									<tbody>
 										{% for item in collegelast %}
         								<tr>
-            								<td> {{ item.year_int }}</td>
+            								<td> {{ item.year }}</td>
             								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.school_name }}</td>
-            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.major_text }}</td>
+            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.spname }}</td>
             								<td> {{ item.major_situation_text }}</td>
-            								<td> {{ item.rank_int }}</td>
+            								<td> {{ item.min1 }}</td>
         								</tr>
     									{% endfor %}
 									</tbody>

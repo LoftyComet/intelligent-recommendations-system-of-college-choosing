@@ -8,3 +8,4 @@ class User(db.Model):
     gender = db.Column(db.String(50)) #性别
     household_registration = db.Column(db.String(50)) #户籍信息
     email = db.Column(db.String(50)) #邮箱
+    rank = db.Column(db.Integer) #邮箱
