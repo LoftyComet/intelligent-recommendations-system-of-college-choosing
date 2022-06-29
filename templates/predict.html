@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<script src="static/js/echarts.js"></script>
+	<script src="static/js/predict_pro_line.js"></script>
 
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -120,18 +121,19 @@
 			</div>
 		</header><!-- end header -->
 
-		<section id="inner-headline">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="pageTitle">智能预测</h2>
-					</div>
-				</div>
-			</div>
+		<section >
+			<iframe
+				id="pageTitle"
+				name="分数预测"
+				scrolling="no"
+				frameborder="no" border="0"
+				width="100%"
+				height="200"
+				src="static/pageTitle/pageTitle.html">
+			</iframe>
 		</section>
-				<!-- Start Gallery 1-2 -->
+
 		<section>
-			<script src="static/js/predict_pro_line.js"></script>
 			<div class="auto_height">
 				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
 					<br>
@@ -177,7 +179,6 @@
 
 						<strong style="margin-left:30pt;">类别:  </strong>
 						<select class ="center sel" id="select_type" onchange="onSelectType();">
-<!--                            	<option selected="selected" value='' disabled>-请选择-</option>-->
 							<option value="0" selected="selected">理科</option>
 							<option value="0">文科</option>
 
@@ -186,19 +187,7 @@
 					<br>
 
 				<div id="main" style="width: 1200px;height:400px;margin:auto"></div>
-<!--				<script>onSelectPro();</script>-->
 			</div>
-		</section>
-
-		<section id="content">
-<!--			<div class="container">-->
-
-		</section>
-		<section id="content2">
-<!--			<div class="container">-->
-			<div id="main2" style="width: 1200px;height:400px;margin:auto"></div>
-			<p>fffff</p>
-
 		</section>
 
 		<!--// End Gallery 1-2 -->
