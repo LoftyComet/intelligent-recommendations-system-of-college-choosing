@@ -14,9 +14,9 @@ from dbmodel.predictdataW import PredictDataW
 
 
 def select50(rank,predictdata):
-    if predictdata=="文科":
+    if predictdata==0: #文科
         PredictData = PredictDataW
-    elif predictdata=="理科":
+    elif predictdata==1: #理科
         PredictData = PredictDataL
     college_data = db.session.query(PredictData).order_by(PredictData.RankMin).all()
     school_list=[]

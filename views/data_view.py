@@ -1,4 +1,5 @@
 import json
+from operator import index
 import numpy as np
 from flask import Blueprint, jsonify, render_template, request
 
@@ -191,22 +192,41 @@ def register():
 @data.route('/getPrediction', methods=['GET', 'POST'])
 def get_prediction():
     if request.method == 'POST':  # 判断用户请求是否是post请求
-
+        region = request.form.get('region')
         kind_name = int(request.form.get('kind_name'))
         score = int(request.form.get('score'))
+        print("score",score)
         # 通过一分一段表计算出2022年四川省排名
         rank = int(db.session.query(JuniorIntro).filter(
-            JuniorIntro.score == score, JuniorIntro.lw == kind_name).all()[0])
+            JuniorIntro.score == score, JuniorIntro.lw == kind_name).all()[0].total)
         # 以下根据排名计算出推荐学校
         df1 = select50(rank, kind_name)
         # print(df1["school_name"])
         print("------------------")
-        schools = np.array(df1["school_name"]).tolist()
-        predicted = np.array(df1["predict"]).tolist()
+        schools1 = np.array(df1["school_name"]).tolist()[::-1]
+        predicted1 = np.array(df1["predict"]).tolist()[::-1]
+        regions1 = np.array(df1["region"]).tolist()[::-1]
+        regions = []
+        schools = []
+        predicted = []
+        # 根据意向地区筛选学校
+        if region!="":
+            for i in range(len(regions1)):
+                if regions1[i]==region:
+                    regions.append(regions1[i])
+                    schools.append(schools1[i])
+                    predicted.append(predicted1[i])
+        else:
+            regions = regions1
+            schools = schools1
+            predicted = predicted1
+
+
         # 根据0.6 0.8 划分稳 冲 保
         rush = []  # 冲吖~
         attempt = []  # 稳一稳
         safe = []  # 摆烂
+
         for i in range(len(predicted)):
             if float(predicted[i]) < 0.6:
                 rush.append(schools[i])
@@ -216,13 +236,25 @@ def get_prediction():
                 safe.append(schools[i])
         # 选出前三甲
         rush = rush[:3]
+        print(rush)
         attempt = attempt[:3]
+        print(attempt)
         safe = safe[:3]
-        selected = rush + attempt + safe
+        print(safe)
+        # selected = rush + attempt + safe
         # 根据推荐的学校名字调取专业信息,其中专业最低排名大于用户排名
-        for college in selected:
-            majors = db.session.query(DivByMajor).filter(
-                DivByMajor.school_name == college, DivByMajor.min_section > rank).all()
+        rush_majors = []
+        attempt_majors = []
+        safe_majors = []
+        for college in rush:
+            rush_majors = rush_majors + db.session.query(DivByMajor).filter(
+                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <2000).all()
+        for college in attempt:
+            attempt_majors = attempt_majors + db.session.query(DivByMajor).filter(
+                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <3500).all()
+        for college in safe:
+            safe_majors = safe_majors + db.session.query(DivByMajor).filter(
+                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <5000).all()
 
-    return render_template("predict.html", predictlist=schools)
+    return render_template("test.html", rush=rush_majors,attempt=attempt_majors,safe=safe_majors)
 
