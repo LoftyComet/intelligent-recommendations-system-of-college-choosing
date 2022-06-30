@@ -1,3 +1,13 @@
+'''
+Author: LoftyComet 1277173875@qq.com
+Date: 2022-06-29 15:22:46
+LastEditors: LoftyComet 1277173875@qq.com
+LastEditTime: 2022-06-30 10:55:49
+FilePath: \practice\intelligent-recommendations-system-of-college-choosing\compute\createchart.py
+Description: 
+
+Copyright (c) 2022 by LoftyComet 1277173875@qq.com, All Rights Reserved. 
+'''
 # -*- codeing = utf-8 -*-
 # @Time :2022/6/29 15:09
 # @Author:Voyage
@@ -22,7 +32,7 @@ spark = SparkSession \
 #数据预处理
 
 #使用上传的最新数据（不需要类型转换）
-df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\2022四川文科一分一段表数据.xlsx")
+df = pd.read_excel(r"C:\Users\61X\MyUniverse\SourceCode\PythonProjects\practice\intelligent-recommendations-system-of-college-choosing\compute\data\predict\2022四川理科一分一段表数据.xlsx")
 # df = df.replace(pd.NA,'')#空值替换
 # df = df.fillna(0)
 # df = df.replace(pd.NA,'')#空值替换
