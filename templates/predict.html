@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<script src="static/js/echarts.js"></script>
+	<script src="static/js/predict_pro_line.js"></script>
 
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -95,20 +96,17 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/index">
-							<div >
-								<img src="static/img/logo.jpg" width="53" height="53">
-								<i class="icon-info-blocks material-icons"></i>高考志愿推荐平台
-							</div>
-						</a>
+						<a class="navbar-brand" href="/index"><i
+								class="icon-info-blocks material-icons">language</i>高考志愿推荐平台</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li><a class="waves-effect waves-dark" href="/index">首页</a></li>
-							<li class="dropdown"><a class="waves-effect waves-dark" href="/test">志愿推荐</a>
+							<li class="dropdown">
+								<a  class="waves-effect waves-dark">志愿推荐</a>
 							</li>
 							<li><a class="waves-effect waves-dark" href="/services">分数查询</a></li>
-							<li class="active"><a href="/predict" class="waves-effect waves-dark">分数预测</a></li>
+							<li class="active"><a  class="waves-effect waves-dark" href="/predict">分数预测</a></li>
 							<li><a class="waves-effect waves-dark" href="/pricing">团队</a></li>
 							<li><a class="waves-effect waves-dark" href="/load">登录/注册</a></li>
 						</ul>
@@ -117,14 +115,19 @@
 			</div>
 		</header><!-- end header -->
 
-		<section id="inner-headline">
-			<div class="about-image">
-				<img src="static/img/yuce.png" width="600" height="340">
-			</div>
+		<section >
+			<iframe
+				id="pageTitle"
+				name="分数线预测"
+				scrolling="no"
+				frameborder="no" border="0"
+				width="100%"
+				height="200"
+				src="static/pageTitle/pageTitle.html">
+			</iframe>
 		</section>
-				<!-- Start Gallery 1-2 -->
+
 		<section>
-			<script src="static/js/predict_pro_line.js"></script>
 			<div class="auto_height">
 				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
 					<br>
@@ -170,7 +173,6 @@
 
 						<strong style="margin-left:30pt;">类别:  </strong>
 						<select class ="center sel" id="select_type" onchange="onSelectType();">
-<!--                            	<option selected="selected" value='' disabled>-请选择-</option>-->
 							<option value="0" selected="selected">理科</option>
 							<option value="0">文科</option>
 
@@ -178,20 +180,8 @@
 					</div>
 					<br>
 
-				<div id="main" style="width: 1200px;height:400px;margin:auto"></div>
-<!--				<script>onSelectPro();</script>-->
+				<div id="main" style="width: 1200px;height:500px;margin:auto"></div>
 			</div>
-		</section>
-
-		<section id="content">
-<!--			<div class="container">-->
-
-		</section>
-		<section id="content2">
-<!--			<div class="container">-->
-			<div id="main2" style="width: 1200px;height:400px;margin:auto"></div>
-			<p>fffff</p>
-
 		</section>
 
 		<!--// End Gallery 1-2 -->
