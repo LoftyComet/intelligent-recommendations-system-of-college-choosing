@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+ 
+</head>
+<style>
+.mod-tab .tab{
+  float:left;
+  padding:5px 20px;
+  border-top:1px solid #ccc;
+  border-left:1px solid #ccc;
+  background-color:#ddd;
+}
+.header .tab:last-child{
+  border-right:1px solid #ccc;
+}
+.content{
+  border:1px solid #ccc;
+  width:300px;
+  height:200px;
+}
+.header::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+ 
+.mod-tab .header .active{
+  background-color:#fff;
+}
+ 
+.mod-tab .content .panel{
+  display:none
+}
+.mod-tab .content .active{
+  display:block;
+}
+</style>
+<body>
+<div class="mod-tab">
+  <div class="header">
+    
+      <button class="tab active">1</button>
+      <button class="tab">2</button>
+      <button class="tab">3</button>
+      <button class="tab">4</button>
+  </div>
+  <div class="content">
+    <div class="panel active">
+      <div>panel1</div>
+      <div>anel1</div>
+      <div>nel1</div>
+    </div>
+    <div class="panel">panel2</div>
+    <div class="panel">panel3</div>
+    <div class="panel">panel4</div>
+  </div>
+</div>
+</body>
+<script>
+$('.mod-tab .tab').on('click',function(e){
+//   console.log($(this))
+ $(this).addClass('active') 
+        .siblings().removeClass('active')
+         console.log($(this).index())
+ 
+ $(this).parents('.mod-tab')
+        .find('.panel')
+        .eq($(this).index())
+        .addClass('active')
+        .siblings()
+        .removeClass('active')
+})
+</script>
+</html>

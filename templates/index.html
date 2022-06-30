@@ -17,7 +17,9 @@
 	<link href="static/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
+	<link href="static/css/style2.css" rel="stylesheet" />
 	<script src="static/js/echarts.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="x5-orientation" content="portrait">
@@ -46,6 +48,20 @@
 </head>
 
 <body>
+	<script>
+			function one(){
+        		this.radioButton= true;
+    		}
+    		function two(){
+        		this.radioButton= false;
+    		}
+	</script>
+
+	<script>
+		function myFunction(){
+			document.getElementById("demo").innerHTML="My First JavaScript Function";
+		}
+	</script>
 	<div id="wrapper" class="home-page">
 		<header class="topbar">
 			<div class="container">
@@ -146,19 +162,24 @@
 								<p>平台简介</p>
 							</div>
 							<ul class="withArrow">
-								<li><span class="fa fa-angle-right"></span> 优势1</li>
-								<li><span class="fa fa-angle-right"></span> 优势2</li>
-								<li><span class="fa fa-angle-right"></span> 优势3</li>
-								<li><span class="fa fa-angle-right"></span> 。。。</li>
+								<li><span class="fa fa-angle-right"></span> 我们能够根据分数推荐最适合你的学校与专业</li>
+								<br>
+								<li><span class="fa fa-angle-right"></span> 我们可以根据你选择的偏好向你推荐学校与专业</li>
+								<br>
+								<li><span class="fa fa-angle-right"></span> 我们收集了热门报考的院校与专业供你参考</li>
+								<br>
+								<li><span class="fa fa-angle-right"></span> 在这里你可以了解到一手的高考快讯</li>
 							</ul>
 							<a href="#" class="btn btn-primary waves-effect waves-dark">了解更多</a>
 						</div>
 					</div>
-					<div class="col-md-7 col-sm-7">
-						<div class="about-image">
-							<img src="static/img/shouyetu.jpeg" alt="About Images">
-						</div>
-					</div>
+					<!-- <div class="col-md-7 col-sm-7"> -->
+						<!-- <div class="about-image"> -->
+							<div class="right">
+								<img src="static/img/shouyetu.jpeg" width="680" height="480">
+							</div>
+						<!-- </div> -->
+					<!-- </div> -->
 				</div>
 			</div>
 		</section>
@@ -176,14 +197,32 @@
 		<section>
             <div no-log="">
 				<div class="c-rect tabs_1qqRP" style="height: 0.56rem; margin-top: 0.09rem;">
-					<div class="tab-item_uhucX tab-item-selected_XOlVs" style="width: calc((100% - 8px) / 2); background: url(&quot;https://search-operate.cdn.bcebos.com/63b14585cc64c3eaf21a05b59f1383a0.png&quot;) 100% / auto 100% no-repeat rgb(79, 142, 255); color: rgb(255, 255, 255); height: 0.5rem;">
-            			<div class="before_3OcGo" style="background-image: url(&quot;https://search-operate.cdn.bcebos.com/37b0171c99fa474ef7789c9d81a5fcee.png&quot;);"></div>
-            			<div class="c-line-clamp1 title_2TZmG sub-title-selected_5JERF" style="font-size: 0.16rem;">最热院校</div>
-        			</div>
-        			<div class="tab-item_uhucX " style="width: calc((100% - 8px) / 2); background: url(&quot;https://search-operate.cdn.bcebos.com/1911d7fa57408c5bd4cbbdc59721fbe5.png&quot;) 100% / auto 100% no-repeat rgb(244, 248, 255); color: rgb(85, 130, 255); height: 0.5rem;">
-						<div class="c-line-clamp1 title_2TZmG " style="font-size: 0.16rem;">最热专业</div>
+					<!-- <div @click="one()" > -->
+						<div class="tab-item_uhucX tab-item-selected_XOlVs" style="width: calc((100% - 8px) / 2); background: url(&quot;https://search-operate.cdn.bcebos.com/63b14585cc64c3eaf21a05b59f1383a0.png&quot;) 100% / auto 100% no-repeat rgb(79, 142, 255); color: rgb(255, 255, 255); height: 0.5rem;">
+            			<!-- <div class="before_3OcGo" style="background-image: url(&quot;https://search-operate.cdn.bcebos.com/37b0171c99fa474ef7789c9d81a5fcee.png&quot;);"></div> -->
+            				<div class="c-line-clamp1 title_2TZmG sub-title-selected_5JERF" style="font-size: 0.16rem;">
+								<div class = "butt">
+									<el-radio-group v-model="radioButton" size="medium" >
+										<el-radio-button :label="true" >最热院校</el-radio-button>
+									</el-radio-group>
+								</div>
+							</div>
+        				<!-- </div> -->
 					</div>
+					<!-- <div @click="two()" > -->
+        				<div class="tab-item_uhucX " style="width: calc((100% - 8px) / 2); background: url(&quot;https://search-operate.cdn.bcebos.com/1911d7fa57408c5bd4cbbdc59721fbe5.png&quot;) 100% / auto 100% no-repeat rgb(244, 248, 255); color: rgb(85, 130, 255); height: 0.5rem;">
+							<div class="c-line-clamp1 title_2TZmG " style="font-size: 0.16rem;">
+								<div class = "butt">
+									<el-radio-group v-model="radioButton" size="medium" >
+										<el-radio-button :label="false" >最热专业</el-radio-button>
+									</el-radio-group>
+								</div>
+							</div>
+						</div>
+					<!-- </div> -->
 				</div>
+				<div>
+				<div style="height: 70%" v-show="radioButton">
 				<div style="margin-top: 0.18rem;">
 					<a href="https://www.baidu.com/s?word=%E8%A5%BF%E5%8D%97%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
 						<div class="list-item_wxDyD">
@@ -203,79 +242,112 @@
 						</div>
 					</a>
 					<a href="https://www.baidu.com/s?word=%E8%8B%8F%E5%B7%9E%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
-						<div class="list-item_wxDyD"><div class="list-content_3d9Dj">
-							<div class="index_cuqNi" style="min-width: 0.2rem;">2</div>
-							<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/118.jpg&quot;);"></div>
-							<div class="content_1yELs c-line-clamp1">
-								<div class="title_1B-XF c-line-clamp1">苏州大学</div>
+						<div class="list-item_wxDyD">
+							<div class="list-content_3d9Dj">
+								<div class="index_cuqNi" style="min-width: 0.2rem;">2</div>
+								<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/118.jpg&quot;);"></div>
+								<div class="content_1yELs c-line-clamp1">
+									<div class="title_1B-XF c-line-clamp1">苏州大学</div>
+								</div>
+							</div>
+							<div class="num_68qLy c-line-clamp1">
+								<span class="text_3umJH c-color-gray">142706热度</span>
+								<div class="progress-bar-bg_2SY70">
+									<div class="progress-bar_3aGw1" style="width: 97.8321%;"></div>
+								</div>
 							</div>
 						</div>
-						<div class="num_68qLy c-line-clamp1">
-							<span class="text_3umJH c-color-gray">142706热度</span>
-							<div class="progress-bar-bg_2SY70">
-								<div class="progress-bar_3aGw1" style="width: 97.8321%;"></div>
+					
+					</a>
+					<a href="https://www.baidu.com/s?word=%E6%88%90%E9%83%BD%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
+						<div class="list-item_wxDyD">
+							<div class="list-content_3d9Dj">
+								<div class="index_cuqNi" style="min-width: 0.2rem;">3</div>
+								<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/2491.jpg&quot;);"></div>
+								<div class="content_1yELs c-line-clamp1">
+									<div class="title_1B-XF c-line-clamp1">成都大学</div>
+								</div>
+							</div>
+							<div class="num_68qLy c-line-clamp1">
+								<span class="text_3umJH c-color-gray">134710热度</span>
+								<div class="progress-bar-bg_2SY70">
+									<div class="progress-bar_3aGw1" style="width: 97.3568%;"></div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</a>
-				<a href="https://www.baidu.com/s?word=%E6%88%90%E9%83%BD%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
-					<div class="list-item_wxDyD">
-						<div class="list-content_3d9Dj">
-							<div class="index_cuqNi" style="min-width: 0.2rem;">3</div>
-							<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/2491.jpg&quot;);"></div>
-							<div class="content_1yELs c-line-clamp1">
-								<div class="title_1B-XF c-line-clamp1">成都大学</div>
+					</a>
+					<a href="https://www.baidu.com/s?word=%E5%8D%8E%E5%8C%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
+						<div class="list-item_wxDyD">
+							<div class="list-content_3d9Dj">
+								<div class="index_cuqNi" style="min-width: 0.2rem;">4</div>
+								<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/597.jpg&quot;);"></div>
+								<div class="content_1yELs c-line-clamp1">
+									<div class="title_1B-XF c-line-clamp1">华北理工大学</div>
+								</div>
+							</div>
+							<div class="num_68qLy c-line-clamp1">
+								<span class="text_3umJH c-color-gray">130623热度</span>
+								<div class="progress-bar-bg_2SY70">
+									<div class="progress-bar_3aGw1" style="width: 97.1028%;"></div>
+								</div>
 							</div>
 						</div>
-						<div class="num_68qLy c-line-clamp1">
-							<span class="text_3umJH c-color-gray">134710热度</span>
-							<div class="progress-bar-bg_2SY70">
-								<div class="progress-bar_3aGw1" style="width: 97.3568%;"></div>
+					</a>
+					<a href="https://www.baidu.com/s?word=%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
+						<div class="list-item_wxDyD">
+							<div class="list-content_3d9Dj">
+								<div class="index_cuqNi" style="min-width: 0.2rem;">5</div>
+								<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/284.jpg&quot;);"></div>
+								<div class="content_1yELs c-line-clamp1">
+									<div class="title_1B-XF c-line-clamp1">深圳大学</div>
+								</div>
+							</div>
+							<div class="num_68qLy c-line-clamp1">
+								<span class="text_3umJH c-color-gray">124243热度</span>
+								<div class="progress-bar-bg_2SY70">
+									<div class="progress-bar_3aGw1" style="width: 96.6901%;"></div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</a>
-				<a href="https://www.baidu.com/s?word=%E5%8D%8E%E5%8C%97%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
-					<div class="list-item_wxDyD">
-						<div class="list-content_3d9Dj">
-							<div class="index_cuqNi" style="min-width: 0.2rem;">4</div>
-							<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/597.jpg&quot;);"></div>
-							<div class="content_1yELs c-line-clamp1">
-								<div class="title_1B-XF c-line-clamp1">华北理工大学</div>
-							</div>
-						</div>
-						<div class="num_68qLy c-line-clamp1">
-							<span class="text_3umJH c-color-gray">130623热度</span>
-							<div class="progress-bar-bg_2SY70">
-								<div class="progress-bar_3aGw1" style="width: 97.1028%;"></div>
-							</div>
-						</div>
-					</div>
-				</a>
-				<a href="https://www.baidu.com/s?word=%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6&amp;sa=searchpromo_gkdsj_h5_home_trend_university" target="_self" class="c-blocka list-link_1ESnc ">
-					<div class="list-item_wxDyD">
-						<div class="list-content_3d9Dj">
-							<div class="index_cuqNi" style="min-width: 0.2rem;">5</div>
-							<div class="img-wrap_3P769" style="background-image: url(&quot;https://static-data.eol.cn/upload/logo/284.jpg&quot;);"></div>
-							<div class="content_1yELs c-line-clamp1">
-								<div class="title_1B-XF c-line-clamp1">深圳大学</div>
-							</div>
-						</div>
-						<div class="num_68qLy c-line-clamp1">
-							<span class="text_3umJH c-color-gray">124243热度</span>
-							<div class="progress-bar-bg_2SY70">
-								<div class="progress-bar_3aGw1" style="width: 96.6901%;"></div>
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<a target="_self" href="https://motion.baidu.com/activity/gaokao2022/trend?sa=searchpromo_gkdsj_h5_home_trend_more" class="c-blocka" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-				<div class="show-more_GhrBp">
-					<div class="text_2tRAb">查看更多</div>
-					<div class="icon-wrapper_275pL"></div>
+					</a>
 				</div>
-			</a>
+				</div>
+				<div v-show="!radioButton">
+				<div style="margin-top: 0.18rem;">
+					<a href="https://www.baidu.com/s?word=%E7%94%B5%E5%AD%90%E4%BF%A1%E6%81%AF%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A&amp;sa=searchpromo_gkdsj_h5_home_trend_major" target="_self" class="c-blocka list-link_1ESnc border_1gSud">
+						<div class="list-item_wxDyD">
+							<div class="list-content_3d9Dj">
+								<div class="index_cuqNi" style="min-width: 0.2rem;">1</div>
+								<div class="content_1yELs c-line-clamp1" style="margin-left: 0px;">
+									<div class="title_1B-XF c-line-clamp1">电子信息工程</div>
+								</div>
+							</div>
+							<div class="num_68qLy c-line-clamp1">
+								<span class="text_3umJH c-color-gray">124570热度</span>
+								<div class="progress-bar-bg_2SY70">
+									<div class="progress-bar_3aGw1" style="width: 100%;"></div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a href="https://www.baidu.com/s?word=%E7%94%B5%E6%B0%94%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%85%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%93%E4%B8%9A&amp;sa=searchpromo_gkdsj_h5_home_trend_major" target="_self" class="c-blocka list-link_1ESnc border_1gSud">
+					<!--79--><div class="list-item_wxDyD"><div class="list-content_3d9Dj"><div class="index_cuqNi" style="min-width: 0.2rem;">2</div><!--80--><div class="content_1yELs c-line-clamp1" style="margin-left: 0px;"><div class="title_1B-XF c-line-clamp1">电气工程及其自动化</div><!--81--></div></div><div class="num_68qLy c-line-clamp1"><span class="text_3umJH c-color-gray">120547热度</span><div class="progress-bar-bg_2SY70"><div class="progress-bar_3aGw1" style="width: 99.7202%;"></div></div></div></div><!--79-->
+				</a><a href="https://www.baidu.com/s?word=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A&amp;sa=searchpromo_gkdsj_h5_home_trend_major" target="_self" class="c-blocka list-link_1ESnc border_1gSud">
+					<!--83--><div class="list-item_wxDyD"><div class="list-content_3d9Dj"><div class="index_cuqNi" style="min-width: 0.2rem;">3</div><!--84--><div class="content_1yELs c-line-clamp1" style="margin-left: 0px;"><div class="title_1B-XF c-line-clamp1">计算机科学与技术</div><!--85--></div></div><div class="num_68qLy c-line-clamp1"><span class="text_3umJH c-color-gray">120490热度</span><div class="progress-bar-bg_2SY70"><div class="progress-bar_3aGw1" style="width: 99.7162%;"></div></div></div></div><!--83-->
+				</a><a href="https://www.baidu.com/s?word=%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A&amp;sa=searchpromo_gkdsj_h5_home_trend_major" target="_self" class="c-blocka list-link_1ESnc border_1gSud">
+					<!--87--><div class="list-item_wxDyD"><div class="list-content_3d9Dj"><div class="index_cuqNi" style="min-width: 0.2rem;">4</div><!--88--><div class="content_1yELs c-line-clamp1" style="margin-left: 0px;"><div class="title_1B-XF c-line-clamp1">软件工程</div><!--89--></div></div><div class="num_68qLy c-line-clamp1"><span class="text_3umJH c-color-gray">74782热度</span><div class="progress-bar-bg_2SY70"><div class="progress-bar_3aGw1" style="width: 95.6508%;"></div></div></div></div><!--87-->
+				</a><a href="https://www.baidu.com/s?word=%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E4%B8%93%E4%B8%9A&amp;sa=searchpromo_gkdsj_h5_home_trend_major" target="_self" class="c-blocka list-link_1ESnc border_1gSud">
+					<!--91--><div class="list-item_wxDyD"><div class="list-content_3d9Dj"><div class="index_cuqNi" style="min-width: 0.2rem;">5</div><!--92--><div class="content_1yELs c-line-clamp1" style="margin-left: 0px;"><div class="title_1B-XF c-line-clamp1">电子商务</div><!--93--></div></div><div class="num_68qLy c-line-clamp1"><span class="text_3umJH c-color-gray">74351热度</span><div class="progress-bar-bg_2SY70"><div class="progress-bar_3aGw1" style="width: 95.6015%;"></div></div></div></div><!--91-->
+				</a><!--73--></div>
+				</div>
+				</div>
+
+				<a target="_self" href="https://motion.baidu.com/activity/gaokao2022/trend?sa=searchpromo_gkdsj_h5_home_trend_more" class="c-blocka" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+					<div class="show-more_GhrBp">
+						<div class="text_2tRAb">查看更多</div>
+						<div class="icon-wrapper_275pL"></div>
+					</div>
+				</a>
 			</div>
 		</section>
 		</article>
