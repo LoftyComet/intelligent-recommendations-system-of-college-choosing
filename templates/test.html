@@ -192,13 +192,13 @@
                         <h3>个人信息</h3>
                         <div class="line"></div>
                         <div class="center">
-                            <form action='/getCollegeInfo' method="post">
-                                <div ><span><strong>意向地区：</strong></span><input name="area" type="text"/></div>
-                                <div ><span><strong>输入成绩：</strong></span><input name="socre" type="text"/></div>
+                            <form action='/getPrediction' method="post">
+                                <div ><span><strong>意向地区：</strong></span><input name="region" type="text" value=""/></div>
+                                <div ><span><strong>输入成绩：</strong></span><input name="score" type="text" value=""/></div>
                                 <br>
-								<div class="center">
-                                    <label style="color: #000000; "><input type="checkbox" name="wenke" value=1 onclick="chkbox(this);">文科</label>
-                                    <label style="color: #000000; "><input type="checkbox" name="like" value=1 onclick="chkbox(this);">理科</label>
+								<div class="center" id="radioDiv">
+                                    <label style="color: #000000; "><input type="radio" name="kind_name" value=0 checked='checked'>文科</label>
+                                    <label style="color: #000000; "><input type="radio" name="kind_name" value=1>理科</label>
                                 </div>
                                 <br>
                                 <div class="center"><input type="submit" value="查看"></div>
@@ -263,11 +263,11 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in collegelast %}
+                                    {% for item in rush %}
                                     <tr>
                                         <td> {{ item.school_name }}</td>
-                                        <td> {{ item.major_text }}</td>
-                                        <td> {{ item.rank_int }}</td>
+                                        <td> {{ item.spname }}</td>
+                                        <td> {{ item.min_section }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -291,11 +291,11 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in collegelast %}
+                                    {% for item in attempt %}
                                     <tr>
                                         <td> {{ item.school_name }}</td>
-                                        <td> {{ item.major_text }}</td>
-                                        <td> {{ item.rank_int }}</td>
+                                        <td> {{ item.spname }}</td>
+                                        <td> {{ item.min_section }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -319,11 +319,11 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {% for item in collegelast %}
+                                    {% for item in safe %}
                                     <tr>
                                         <td> {{ item.school_name }}</td>
-                                        <td> {{ item.major_text }}</td>
-                                        <td> {{ item.rank_int }}</td>
+                                        <td> {{ item.spname }}</td>
+                                        <td> {{ item.min_section }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -366,6 +366,21 @@
     <script src="static/js2/owl.carousel.min.js"></script>
     <script src="static/js2/contact.js"></script>
     <script src="static/js2/script.js"></script>
+    <script>
+			
+        $("#radioDiv input[type='radio']").click(function(){
+            console.log(111)
+            //1.先移除之前元素的checked
+            $("#radioDiv input[type='radio']:checked").removeAttr("checked");
+            //2.给当前点击的单选框加checked
+            $(this).attr("checked","true")
+            
+            //3.测试打印值
+            console.log($("#radioDiv input[type='radio']:checked").val())
+            
+        })
+        
+    </script>
 </body>
 
 </html>
