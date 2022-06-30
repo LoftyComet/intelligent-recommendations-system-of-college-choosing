@@ -13,6 +13,16 @@ section.hero {
     margin-left: 20px
   }
 
+.leftt{
+    width: 49%;
+    float:left;
+}
+
+.rightt{
+    width: 50%;
+    float:right;
+}
+
 /* Switch开关样式 */
 /* 必须是input为 checkbox class 添加 switch 才能实现以下效果 */
 input[type='checkbox'].switch{
