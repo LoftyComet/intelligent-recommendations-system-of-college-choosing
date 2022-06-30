@@ -27,6 +27,10 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 	<style>
+		.white_background
+		{
+			background:#ffffff;
+		}
 		.auto_height
 		{
 			height:auto;
@@ -45,7 +49,7 @@
 			margin-top:auto;
 			margin-bottom:auto;
 			padding:4px 6px;
-			font-size:14px;
+			font-size:18px;
 			border-radius:8pt;
 			cursor:pointer;
 			outline:none;
@@ -54,8 +58,8 @@
 
 </head>
 
-<body>
-	<div id="wrapper">
+<body class="white_background">
+	<div id="wrapper" >
 		<header class="topbar">
 			<div class="container">
 				<div class="row">
@@ -125,63 +129,65 @@
 			</iframe>
 		</section>
 
-		<section id="content">
-			<div class="auto_height">
-				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
-					<br>
-					<div class = "center f20 auto_height"align="center">
-						<strong >专业:  </strong>
-						<select class ="center sel" style="margin-right:30pt;" id="select_pro" name="select_pro" onchange="onSelectPro();"  >
+		<section >
+<!--			<div >-->
+				<div class = "center f20 auto_height"
+					 align="center"
+					 style="padding-top:16pt;padding-bottom:16pt;">
+					<strong >专业:  </strong>
+					<select class ="center  sel"
+							style="margin-right:30pt;"
+							id="select_pro"
+							name="select_pro"
+							onchange="onSelectPro();"  >
 <!--                            	<option selected="selected"  value='' disabled>-请选择-</option>-->
-							<option value="11">北京</option>
-							<option value="12">天津</option>
-							<option value="13">河北</option>
-							<option value="14">山西</option>
-							<option value="15">内蒙古</option>
-							<option value="21">辽宁</option>
-							<option value="22">吉林</option>
-							<option value="23">黑龙江</option>
-							<option value="31">上海</option>
-							<option value="32">江苏</option>
-							<option value="33">浙江</option>
-							<option value="34">安徽</option>
-							<option value="35">福建</option>
-							<option value="36">江西</option>
-							<option value="37">山东</option>
-							<option value="41">河南</option>
-							<option value="42">湖北</option>
-							<option value="43">湖南</option>
-							<option value="44">广东</option>
-							<option value="45">广西</option>
-							<option value="46">海南</option>
-							<option value="50">重庆</option>
-							<option value="51">四川</option>
-							<option value="52">贵州</option>
-							<option value="53">云南</option>
-							<option value="54">西藏</option>
-							<option value="61">陕西</option>
-							<option value="62">甘肃</option>
-							<option value="63">青海</option>
-							<option value="64">宁夏</option>
-							<option value="65">新疆</option>
+						<option value="11">北京</option>
+						<option value="12">天津</option>
+						<option value="13">河北</option>
+						<option value="14">山西</option>
+						<option value="15">内蒙古</option>
+						<option value="21">辽宁</option>
+						<option value="22">吉林</option>
+						<option value="23">黑龙江</option>
+						<option value="31">上海</option>
+						<option value="32">江苏</option>
+						<option value="33">浙江</option>
+						<option value="34">安徽</option>
+						<option value="35">福建</option>
+						<option value="36">江西</option>
+						<option value="37">山东</option>
+						<option value="41">河南</option>
+						<option value="42">湖北</option>
+						<option value="43">湖南</option>
+						<option value="44">广东</option>
+						<option value="45">广西</option>
+						<option value="46">海南</option>
+						<option value="50">重庆</option>
+						<option value="51">四川</option>
+						<option value="52">贵州</option>
+						<option value="53">云南</option>
+						<option value="54">西藏</option>
+						<option value="61">陕西</option>
+						<option value="62">甘肃</option>
+						<option value="63">青海</option>
+						<option value="64">宁夏</option>
+						<option value="65">新疆</option>
 <!--							<option value="81">香港</option>-->
 <!--							<option value="82">澳门</option>-->
 
-						</select>
+					</select>
 
-						<strong style="margin-left:30pt;">类别:  </strong>
-						<select class ="center sel" id="select_type" onchange="onSelectType();">
-							<option value="0" selected="selected">理科</option>
-							<option value="0">文科</option>
+					<strong style="margin-left:30pt;">类别:  </strong>
+					<select class ="center sel" id="select_type" onchange="onSelectType();">
+						<option value="0" selected="selected">理科</option>
+						<option value="0">文科</option>
 
-						</select>
-					</div>
-					<br>
+					</select>
+				</div>
 
-				<div id="main" style="width: 1200px;height:500px;margin:auto"></div>
-			</div>
+				<div id="predict_chart" style="width: 1200px;height:500px;margin:auto"></div>
+<!--			</div>-->
 		</section>
-
 
 	</div>
 

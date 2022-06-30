@@ -172,7 +172,7 @@ function refreshChart()
     }
 
 	// 统计结束，开始画表
-	var myChart = echarts.init(document.getElementById('main'));
+	var myChart = echarts.init(document.getElementById('predict_chart'));
 
 	option.title.text=pro_id_to_name[proId];
 
