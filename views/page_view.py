@@ -32,9 +32,9 @@ def load():
 def predict():
     return render_template("predict.html")
 
-@page.route('/pricing')
+@page.route('/team')
 def pricing():
-    return render_template("pricing.html")
+    return render_template("team.html")
 
 @page.route('/services')
 def services():

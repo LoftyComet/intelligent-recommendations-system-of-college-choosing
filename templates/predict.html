@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<script src="static/js/echarts.js"></script>
-	<script src="static/js/predict_pro_line.js"></script>
+	<script src="static/predict_lines/predict_pro_line.js"></script>
 
 	<!-- css -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -72,9 +72,9 @@
 					<div class="col-sm-9">
 						<div class="row">
 							<ul class="info">
-								<li><i class="icon-info-blocks material-icons">question_answer</i><span>cqu@gaokaotuijian.com</span>
+								<li style="list-style-type:none;"><i class="icon-info-blocks material-icons">question_answer</i><span>cqu@gaokaotuijian.com</span>
 								</li>
-								<li><i class="icon-info-blocks material-icons">perm_phone_msg</i><span>+(012) 3456789</span></li>
+								<li style="list-style-type:none;"><i class="icon-info-blocks material-icons">perm_phone_msg</i><span>+(012) 3456789</span></li>
 							</ul>
 							<div class="clr"></div>
 						</div>
@@ -102,12 +102,10 @@
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li><a class="waves-effect waves-dark" href="/index">首页</a></li>
-							<li class="dropdown">
-								<a  class="waves-effect waves-dark">志愿推荐</a>
-							</li>
+							<li class="dropdown"><a  class="waves-effect waves-dark" href="/test">志愿推荐</a></li>
 							<li><a class="waves-effect waves-dark" href="/services">分数查询</a></li>
 							<li class="active"><a  class="waves-effect waves-dark" href="/predict">分数预测</a></li>
-							<li><a class="waves-effect waves-dark" href="/pricing">团队</a></li>
+							<li><a class="waves-effect waves-dark" href="/team">团队</a></li>
 							<li><a class="waves-effect waves-dark" href="/load">登录/注册</a></li>
 						</ul>
 					</div>
@@ -115,19 +113,19 @@
 			</div>
 		</header><!-- end header -->
 
-		<section >
+		<section style="width:100%; height:200px">
 			<iframe
 				id="pageTitle"
 				name="分数线预测"
 				scrolling="no"
-				frameborder="no" border="0"
+				frameborder="no"
 				width="100%"
 				height="200"
 				src="static/pageTitle/pageTitle.html">
 			</iframe>
 		</section>
 
-		<section>
+		<section id="content">
 			<div class="auto_height">
 				<!--<b><span class="opacity-8">请填写您要查看的预测信息</span></b>-->
 					<br>
@@ -184,28 +182,29 @@
 			</div>
 		</section>
 
-		<!--// End Gallery 1-2 -->
+
 	</div>
-	
-	</div>
+
+
 	<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
-	<!-- javascript
-    ================================================== -->
+
+
+	<!-- javascript================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="materialize/js/materialize.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<script src="static/materialize/js/materialize.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/jquery.fancybox.pack.js"></script>
+	<script src="static/js/jquery.fancybox-media.js"></script>
+	<script src="static/js/jquery.flexslider.js"></script>
+	<script src="static/js/animate.js"></script>
 	<!-- Vendor Scripts -->
-	<script src="js/modernizr.custom.js"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="static/js/modernizr.custom.js"></script>
+	<script src="static/js/jquery.isotope.min.js"></script>
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/animate.js"></script>
+	<script src="static/js/custom.js"></script>
 
 </body>
 

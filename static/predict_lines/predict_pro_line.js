@@ -8,7 +8,7 @@ load_linesInfo();
 
 function load_linesInfo()
 {
-	var url = "static/lines_info/lines_info.json"
+	var url = "static/predict_lines/lines_info.json"
 	var request = new XMLHttpRequest();
 	request.open("get", url);
 	request.send(null);
@@ -146,7 +146,7 @@ function refreshChart()
         let year=item['year'];
         let batch_name=item['batch_name'];
         let score=item['score'];
-        console.log(year,batch_name,score);
+//        console.log(year,batch_name,score);
         if(! (batch_name in datas))
         {
             // window.alert("new {}");
