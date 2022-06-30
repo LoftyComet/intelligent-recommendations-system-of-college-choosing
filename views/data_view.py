@@ -1,5 +1,3 @@
-import email
-from itertools import count
 import json
 import numpy as np
 from flask import Blueprint, jsonify, render_template, request
@@ -227,3 +225,4 @@ def get_prediction():
                 DivByMajor.school_name == college, DivByMajor.min_section > rank).all()
 
     return render_template("predict.html", predictlist=schools)
+
