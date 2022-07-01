@@ -2,7 +2,7 @@
 Author: LoftyComet 1277173875@qq.com
 Date: 2022-06-24 09:32:58
 LastEditors: LoftyComet 1277173875@qq.com
-LastEditTime: 2022-07-01 15:18:18
+LastEditTime: 2022-07-01 16:59:32
 FilePath: \practice\intelligent-recommendations-system-of-college-choosing\views\data_view.py
 Description: 
 
@@ -52,6 +52,15 @@ def get_college_info():
         school_name = request.form.get('school')
         major = request.form.get('major')
         region_name = request.form.get('region')
+        # regions = ["",
+        #            "华东",
+        #            "华南",
+        #            "华中",
+        #            "华北",
+        #            "西南",
+        #            "西北",
+        #            "东北"]
+        # region_name = regions[int(region_name)]
         majors = ["",
                   "机械类",
                   "海洋科学类",
@@ -61,7 +70,34 @@ def get_college_info():
                   "海洋工程类",
                   "测绘类",
                   "电气类",
-                  "环境科学与工程类"]
+                  "环境科学与工程类",
+                  "电子信息类",
+                  "经济学类",
+                  "食品科学与工程类",
+                  "生物科学类",
+                  "航空装备类",
+                  "护理类",
+                  "电子商务",
+                  "旅游类",
+                  "畜牧业类",
+                  "医学技术类",
+                  "财务会计类",
+                  "汽车制造类",
+                  "自动化类",
+                  "农业类",
+                  "航空运输类",
+                  "教育类",
+                  "金融学类",
+                  "管理科学与工程类",
+                  "药学类",
+                  "数学类",
+                  "材料类",
+                  "环境科学与工程类",
+                  "能源动力类",
+                  "临床医学类",
+                  "土木类",
+                  "法学类",
+                  "哲学类"]
         print(major)
         if major != "":
             major_name = majors[int(major)]
@@ -69,7 +105,7 @@ def get_college_info():
             major_name = ""
         print(school_name)
         print(major_name)
-        print(region_name)
+        print("11111111",region_name)
         #!此段代码为三流程序员所写
         # 子查询文理科
         if (islike and not iswenke) or (not islike and iswenke):
