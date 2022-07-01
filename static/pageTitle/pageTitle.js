@@ -103,7 +103,7 @@ function draw()
 	noStroke();
 	fill(118, 168, 161,128);
 	rectMode(CENTER);
-	rect(width/2,height/2,textW*1.2,titleSize*1.5,20);
+	rect(width/2,height/2,textW+titleSize*1.5,titleSize*1.5,20);
 	
 	textSize(titleSize);
 	textAlign(CENTER, CENTER);
