@@ -207,14 +207,14 @@
                                     </select>
                                 </div>
                                 <br>
-                                <div ><span><strong>输入成绩：</strong></span><input name="socre" type="text"/></div>
+                                <div ><span><strong>输入成绩：</strong></span><input name="socre" type="text" required="required"></div>
                                 <br>
 								<div class="center">
                                     <label style="color: #000000; "><input type="checkbox" name="wenke" value=1 onclick="chkbox(this);">文科</label>&nbsp;&nbsp;
                                     <label style="color: #000000; "><input type="checkbox" name="like" value=1 onclick="chkbox(this);">理科</label>
                                 </div>
                                 <br>
-                                <div class="center"><input type="submit" value="查看"></div>
+                                <div class="center"><input type="submit" value="查看" ></div>
                             </form>
                         </div>
                     </div>
@@ -379,6 +379,10 @@
     <script src="static/js2/owl.carousel.min.js"></script>
     <script src="static/js2/contact.js"></script>
     <script src="static/js2/script.js"></script>
+
+    <script src="load/jqBootstrapValidation.js"></script>
+	<script src="load/load_me.js"></script>
+
     <script>
 			
         $("#radioDiv input[type='radio']").click(function(){
