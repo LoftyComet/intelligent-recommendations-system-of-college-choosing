@@ -823,7 +823,7 @@
 				<br>
 				<br>
 				<br>
-				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<div class="col-md-4 col-sm-4 col-xs-12 text-center leftt">
 					<div class="panel panel-pricing">
 
 						<div class="panel-body text-center">
@@ -853,7 +853,7 @@
 				</div>
 
 
-				<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<div class="col-md-4 col-sm-4 col-xs-12 text-center rightt">
 					<div class="panel panel-pricing">
 
 						<div class="panel-body text-center">
@@ -888,8 +888,9 @@
 
 				<div class="row">
 					<div class="panel panel-pricing">
+						<div>
 						<div class="panel-body text-center">
-							<!--<p class="p-price">就业率</p>-->
+							<!-- <p class="p-price">就业率</p> -->
 						</div>
 						<div class="panel-body">
 							<p class="p-price">就业率</p>
@@ -931,6 +932,50 @@
 
 
 							</script>
+							<div class="panel-body text-center">
+								<!-- <p class="p-price">就业趋势</p> -->
+							</div>
+							<div class="panel-body">
+								<p class="p-price">就业趋势</p>
+								<div id="main" style="width: 600px;height:400px;"></div>
+								<script type="text/javascript">
+	
+									// 基于准备好的dom，初始化echarts实例
+									var myChart = echarts.init(document.getElementById('main'));
+	
+									// 指定图表的配置项和数据
+									var option = {
+										title: {
+											text: '专业就业前景'
+										},
+										tooltip: {},
+										legend: {
+											data: ['最低值','最高值']
+										},
+										xAxis: {
+											data: ["衬衫", "羊毛衫", "雪纺衫"]
+										},
+										yAxis: {},
+										series: [
+											{
+												name: '最高值',
+												type: 'line',
+												data: [3, 4, 5]
+											},
+											{
+												name: '最低值',
+												type: 'line',
+												data: [5, 20, 36]
+											}]
+									};
+	
+	
+									// 使用刚指定的配置项和数据显示图表。
+									myChart.setOption(option);
+	
+	
+								</script>
+						</div>
 						</div>
 						<div class="panel-footer">
 							<a class="btn sub-btn text-center" href="#">learn more</a>
