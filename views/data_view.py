@@ -1,20 +1,45 @@
+'''
+Author: LoftyComet 1277173875@qq.com
+Date: 2022-06-24 09:32:58
+LastEditors: LoftyComet 1277173875@qq.com
+LastEditTime: 2022-07-01 14:43:08
+FilePath: \practice\intelligent-recommendations-system-of-college-choosing\views\data_view.py
+Description: 
+
+Copyright (c) 2022 by LoftyComet 1277173875@qq.com, All Rights Reserved. 
+'''
+'''
+ ┌───┐   ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
+ │Esc│   │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│  ┌┐    ┌┐    ┌┐
+ └───┘   └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┴───┘ └───┴───┴───┘  └┘    └┘    └┘
+ ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐ ┌───┬───┬───┐ ┌───┬───┬───┬───┐
+ │~ `│! 1│@ 2│# 3│$ 4│% 5│^ 6│& 7│* 8│( 9│) 0│_ -│+ =│ BacSp │ │Ins│Hom│PUp│ │N L│ / │ * │ - │
+ ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤ ├───┼───┼───┤ ├───┼───┼───┼───┤
+ │ Tab │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │{ [│} ]│ | \ │ │Del│End│PDn│ │ 7 │ 8 │ 9 │   │
+ ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤ └───┴───┴───┘ ├───┼───┼───┤ + │
+ │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │: ;│" '│ Enter  │               │ 4 │ 5 │ 6 │   │
+ ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────────┤     ┌───┐     ├───┼───┼───┼───┤
+ │ Shift  │ Z │ X │ C │ V │ B │ N │ M │< ,│> .│? /│  Shift   │     │ ↑ │     │ 1 │ 2 │ 3 │   │
+ ├─────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤ ┌───┼───┼───┐ ├───┴───┼───┤ E││
+ │ Ctrl│    │Alt │         Space         │ Alt│    │    │Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │←─┘│
+ └─────┴────┴────┴───────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
+'''
+
+
+"""
+本视图专门用于处理ajax数据
+"""
 import json
 from operator import index
 import numpy as np
 from flask import Blueprint, jsonify, render_template, request
-
 from config import db
-
 from dbmodel.collegeinfo import Collegeinfo
 from dbmodel.majorinfo import Majorinfo
 from dbmodel.user import User
 from dbmodel.divbymajor import DivByMajor
 from dbmodel.juniorintro import JuniorIntro
 from collegeRecommend import select50
-
-"""
-本视图专门用于处理ajax数据
-"""
 data = Blueprint('data', __name__)
 
 
@@ -52,34 +77,34 @@ def get_college_info():
                 type_name = "理科"
             else:
                 type_name = "文科"
-            
+
             if (region_name != ""):
                 if (school_name != ""):
                     if (major_name != ""):
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.school_name == school_name, DivByMajor.province_name == region_name, DivByMajor.level3_name == major_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.school_name == school_name, DivByMajor.province_name == region_name, DivByMajor.level3_name == major_name, DivByMajor.type_name == type_name).all()
                     else:
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.school_name == school_name, DivByMajor.province_name == region_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.school_name == school_name, DivByMajor.province_name == region_name, DivByMajor.type_name == type_name).all()
                 else:
                     if (major_name != ""):
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.province_name == region_name, DivByMajor.level3_name == major_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.province_name == region_name, DivByMajor.level3_name == major_name, DivByMajor.type_name == type_name).all()
                     else:
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.province_name == region_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.province_name == region_name, DivByMajor.type_name == type_name).all()
             else:
                 if (school_name != ""):
                     if (major_name != ""):
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.school_name == school_name, DivByMajor.level3_name == major_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.school_name == school_name, DivByMajor.level3_name == major_name, DivByMajor.type_name == type_name).all()
                     else:
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.school_name == school_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.school_name == school_name, DivByMajor.type_name == type_name).all()
                 else:
                     if (major_name != ""):
                         college_data = db.session.query(DivByMajor).filter(
-                            DivByMajor.level3_name == major_name,DivByMajor.type_name==type_name).all()
+                            DivByMajor.level3_name == major_name, DivByMajor.type_name == type_name).all()
                     else:
                         college_data = []
         else:
@@ -112,9 +137,6 @@ def get_college_info():
                             DivByMajor.level3_name == major_name).all()
                     else:
                         college_data = []
-        
-
-
 
         for x in college_data:
             print("查询到的学校有：", x.school_name)
@@ -126,7 +148,8 @@ def get_college_info():
 def get_major_info():
     if request.method == 'POST':  # 判断用户请求是否是post请求
 
-        majors = ["计算机科学与技术", "经济学", "公安管理学", "汉语言文学", "柬埔寨语", "生物技术", "材料科学与工程", "电子信息工程", "None"]
+        majors = ["计算机科学与技术", "经济学", "公安管理学", "汉语言文学",
+                  "柬埔寨语", "生物技术", "材料科学与工程", "电子信息工程", "None"]
         major = request.form.get('major')
         print(major)
         college_name = request.form.get('college')
@@ -158,11 +181,13 @@ def get_major_info():
 
         # 处理学校简介
         college_description = ""
-        college_description = college_name + "位于" + college_data[0].address + ",是一所" + college_data[0].school_nature_name + college_data[0].type_name + college_data[0].school_type_name
+        college_description = college_name + "位于" + \
+            college_data[0].address + ",是一所" + college_data[0].school_nature_name + \
+            college_data[0].type_name + college_data[0].school_type_name
         if college_data[0].f985 == 1:
             college_description = college_description + ",是一所985高校"
         if college_data[0].f211 == 1:
-            college_description = college_description + ",是一所211高校。"  
+            college_description = college_description + ",是一所211高校。"
 
         # 处理毕业去向
         detail_pos_0 = major_data[0].detail_pos_1
@@ -202,10 +227,6 @@ def get_major_info():
         temp6["name"] = detail_pos_5
         temp6["value"] = job_rate_5
         datas.append(temp6)
-        
-
-
-
 
         jsonlist["years"] = years
         jsonlist["rates_min"] = rates_min
@@ -241,9 +262,17 @@ def register():
 def get_prediction():
     if request.method == 'POST':  # 判断用户请求是否是post请求
         region = request.form.get('region')
+        regions = ["华东",
+                   "华南",
+                   "华中",
+                   "华北",
+                   "西南",
+                   "西北",
+                   "东北"]
+        region = regions[int(region)]
         kind_name = int(request.form.get('kind_name'))
         score = int(request.form.get('score'))
-        print("score",score)
+        print("score", score)
         # 通过一分一段表计算出2022年四川省排名
         rank = int(db.session.query(JuniorIntro).filter(
             JuniorIntro.score == score, JuniorIntro.lw == kind_name).all()[0].total)
@@ -258,9 +287,9 @@ def get_prediction():
         schools = []
         predicted = []
         # 根据意向地区筛选学校
-        if region!="":
+        if region != "":
             for i in range(len(regions1)):
-                if regions1[i]==region:
+                if regions1[i] == region:
                     regions.append(regions1[i])
                     schools.append(schools1[i])
                     predicted.append(predicted1[i])
@@ -268,7 +297,6 @@ def get_prediction():
             regions = regions1
             schools = schools1
             predicted = predicted1
-
 
         # 根据0.6 0.8 划分稳 冲 保
         rush = []  # 冲吖~
@@ -296,13 +324,12 @@ def get_prediction():
         safe_majors = []
         for college in rush:
             rush_majors = rush_majors + db.session.query(DivByMajor).filter(
-                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <2000).all()
+                DivByMajor.school_name == college, DivByMajor.min_section > rank, DivByMajor.min_section - rank < 2000).all()
         for college in attempt:
             attempt_majors = attempt_majors + db.session.query(DivByMajor).filter(
-                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <3500).all()
+                DivByMajor.school_name == college, DivByMajor.min_section > rank, DivByMajor.min_section - rank < 3500).all()
         for college in safe:
             safe_majors = safe_majors + db.session.query(DivByMajor).filter(
-                DivByMajor.school_name == college, DivByMajor.min_section > rank,DivByMajor.min_section - rank <5000).all()
+                DivByMajor.school_name == college, DivByMajor.min_section > rank, DivByMajor.min_section - rank < 5000).all()
 
-    return render_template("test.html", rush=rush_majors,attempt=attempt_majors,safe=safe_majors)
-
+    return render_template("test.html", rush=rush_majors, attempt=attempt_majors, safe=safe_majors)

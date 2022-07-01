@@ -1078,7 +1078,7 @@
 					</div>
 
 					<div class="panel-footer">
-						<a class="btn sub-btn" href="#">learn more</a>
+						<a class="btn sub-btn" href="#" id="website">learn more</a>
 					</div>
 				</div>
 			</div>
@@ -1384,7 +1384,8 @@
 					$('#major_name').html(data["major_name"])
 					$('#description').html(data["description"])
 					$('#address').html(data["address"])
-					console.log(data["datas"][0]["name"])
+					// $('#website').removeAttr("href")
+					// $('#website').attr("href","http://www.baidu.com")
 					option2['series'][0]["data"] = data["datas"];
 					myChart2.setOption(option2);
 				}
