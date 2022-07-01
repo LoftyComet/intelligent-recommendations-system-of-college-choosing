@@ -141,24 +141,12 @@
 						<div class="about-logo">
 
 								<form action='/getCollegeInfo' method="post">
-									<div class="center">
-										<span style="color: #FFFFFF;"><strong>按地区查询： </strong></span>
-										<select name="region" id="region" style="width:180px;height:30px;">
-											<option value="" selected>--请选择--</option>
-											<option value="1">华东</option>
-											<option value="2">华南</option>
-											<option value="3">华中</option>
-											<option value="4">华北</option>
-											<option value="5">西南</option>
-											<option value="6">西北</option>
-											<option value="7">东北</option>
-										</select>
-									</div>
+									<div class="center"><span style="color: #FFFFFF;"><strong>按省份查询： </strong></span><input name="region" type="text" id="region" onkeydown="onSearch()" value="" style="width:180px;height:30px;"/></div>
 									<div class="center"><span style="color: #FFFFFF;"><strong>按院校查询： </strong></span><input name="school" type="text" id="school" onkeydown="onSearch()" value="" style="width:180px;height:30px;"/></div>
 									<div class="center">
 										<span style="color: #FFFFFF;"><strong>按专业查询：</strong></span>
 										<select name="major" id="longer" style="width:180px;height:30px;">
-											<option value="" selected>--请选择--</option>
+											<option value="0" selected>--请选择--</option>
 											<option value="1">机械类</option>
 											<option value="2">海洋科学类</option>
 											<option value="3">化工与制药类</option>
