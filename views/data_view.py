@@ -126,7 +126,7 @@ def get_college_info():
 def get_major_info():
     if request.method == 'POST':  # 判断用户请求是否是post请求
 
-        majors = ["计算机科学与技术", "新闻", "金融", "医学", "数学", "建筑", "土木", "机械", "None"]
+        majors = ["计算机科学与技术", "经济学", "公安管理学", "汉语言文学", "柬埔寨语", "生物技术", "材料科学与工程", "电子信息工程", "None"]
         major = request.form.get('major')
         print(major)
         college_name = request.form.get('college')
@@ -145,7 +145,7 @@ def get_major_info():
             print("查询到的学校有：", x.school_name)
         print("---------------------------")
         jsonlist = {}
-        # # 处理就业率
+        # 处理就业率
         years = ["2019", "2020", "2021"]
         # rates_max = [float(major_data[0].rate_1),float(major_data[0].rate_1),float(major_data[0].rate_1)]
         rate1s = major_data[0].rate_1.split("-")
@@ -156,18 +156,66 @@ def get_major_info():
         rates_min = [int(rate1s[1][:-1]), int(rate2s[1][:-1]),
                      int(rate3s[1][:-1])]
 
-        # # 添加年份就业率字典方便转换为json
-        # for i in range(len(years)):
-        #     ratesjson.update(years[i],rates[i])
+        # 处理学校简介
+        college_description = ""
+        college_description = college_name + "位于" + college_data[0].address + ",是一所" + college_data[0].school_nature_name + college_data[0].type_name + college_data[0].school_type_name
+        if college_data[0].f985 == 1:
+            college_description = college_description + ",是一所985高校"
+        if college_data[0].f211 == 1:
+            college_description = college_description + ",是一所211高校。"  
+
+        # 处理毕业去向
+        detail_pos_0 = major_data[0].detail_pos_1
+        job_rate_0 = major_data[0].job_rate_1
+        detail_pos_1 = major_data[0].detail_pos_2
+        job_rate_1 = major_data[0].job_rate_2
+        detail_pos_2 = major_data[0].detail_pos_3
+        job_rate_2 = major_data[0].job_rate_3
+        detail_pos_3 = major_data[0].detail_pos_4
+        job_rate_3 = major_data[0].job_rate_4
+        detail_pos_4 = major_data[0].detail_pos_5
+        job_rate_4 = major_data[0].job_rate_5
+        detail_pos_5 = major_data[0].detail_pos_6
+        job_rate_5 = major_data[0].job_rate_6
+        datas = []
+        temp1 = {}
+        temp2 = {}
+        temp3 = {}
+        temp4 = {}
+        temp5 = {}
+        temp6 = {}
+        temp1["name"] = detail_pos_0
+        temp1["value"] = job_rate_0
+        datas.append(temp1)
+        temp2["name"] = detail_pos_1
+        temp2["value"] = job_rate_1
+        datas.append(temp2)
+        temp3["name"] = detail_pos_2
+        temp3["value"] = job_rate_2
+        datas.append(temp3)
+        temp4["name"] = detail_pos_3
+        temp4["value"] = job_rate_3
+        datas.append(temp4)
+        temp5["name"] = detail_pos_4
+        temp5["value"] = job_rate_4
+        datas.append(temp5)
+        temp6["name"] = detail_pos_5
+        temp6["value"] = job_rate_5
+        datas.append(temp6)
+        
+
+
+
+
         jsonlist["years"] = years
         jsonlist["rates_min"] = rates_min
         jsonlist["rates_max"] = rates_max
         jsonlist["college_name"] = college_name
         jsonlist["major_name"] = major_name
         jsonlist["description"] = major_data[0].description
-        jsonlist["address"] = college_data[0].address
+        jsonlist["address"] = college_description
+        jsonlist["datas"] = datas
     return jsonify(json.dumps(jsonlist, ensure_ascii=False))
-    # return render_template("index.html",collegelast=college_data,majorlast=major_data,years=years,rates=rates))
 
 
 @data.route('/register', methods=['GET', 'POST'])
