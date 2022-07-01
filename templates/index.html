@@ -795,7 +795,7 @@
 			<form method="post" id="major">
 				<div>
 					<strong>学校: </strong>
-					<input type="text" style="border:1px solid black; " name="college">
+					<input type="text" style="border:1px solid black; " name="college" checked="checked">
 
 					<strong>专业: </strong>
 					<select class="center" name="major">
@@ -1058,7 +1058,7 @@
 				success: function (data) {
 					//字符串转为json
 					data = eval("(" + data + ")");
-					option['xAxis']['data'] = data["year"];
+					option['xAxis']['data'] = data["years"];
 					option['series'][0]['data'] = data["rates_min"];
 					option['series'][1]['data'] = data["rates_max"];
 					myChart.setOption(option);

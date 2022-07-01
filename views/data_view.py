@@ -2,7 +2,7 @@
 Author: LoftyComet 1277173875@qq.com
 Date: 2022-06-24 09:32:58
 LastEditors: LoftyComet 1277173875@qq.com
-LastEditTime: 2022-07-01 14:43:08
+LastEditTime: 2022-07-01 15:18:18
 FilePath: \practice\intelligent-recommendations-system-of-college-choosing\views\data_view.py
 Description: 
 
@@ -262,7 +262,8 @@ def register():
 def get_prediction():
     if request.method == 'POST':  # 判断用户请求是否是post请求
         region = request.form.get('region')
-        regions = ["华东",
+        regions = ["",
+                   "华东",
                    "华南",
                    "华中",
                    "华北",
