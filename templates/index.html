@@ -620,14 +620,14 @@
 				<div class="col-md-4 md-margin-bottom-40">
 					<div class="card small">
 						<div class="card-image">
-							<img class="img-responsive" src="static/img/shuju1.png" alt="">
-							<span class="card-title">分数线</span>
+							<img class="img-responsive" src="static/img/keshihua/tu1.jpg" width="400" height="180">
+							<!-- <span class="card-title">分数线</span> -->
 						</div>
 
 						<div class="card-content">
 
 							<p>
-								重庆大学计算机学院近年分数线变化
+								2013-2021年四川省高考报名人数变化
 							</p>
 
 						</div>
@@ -636,12 +636,12 @@
 				<div class="col-md-4 md-margin-bottom-40">
 					<div class="card small">
 						<div class="card-image">
-							<img class="img-responsive" src="static/img/shuju2.png" alt="">
-							<span class="card-title">招生人数</span>
+							<img class="img-responsive" src="static/img/keshihua/tu2.jpg" width="400" height="180">
+							<!-- <span class="card-title">招生人数</span> -->
 						</div>
 						<div class="card-content">
 							<p>
-								重庆大学计算机学院近年招生人数变化
+								2021年四川省高考分数段分布人数
 							</p>
 						</div>
 					</div>
@@ -649,12 +649,12 @@
 				<div class="col-md-4 md-margin-bottom-40">
 					<div class="card small">
 						<div class="card-image">
-							<img class="img-responsive" src="static/img/shuju3.png" alt="">
-							<span class="card-title">分数线</span>
+							<img class="img-responsive" src="static/img/keshihua/tu3.jpg" width="320" height="170">
+							<!-- <span class="card-title">分数线</span> -->
 						</div>
 						<div class="card-content">
 							<p>
-								......
+								2021年四川省高考各批次录取分数线及上线情况
 							</p>
 						</div>
 					</div>
@@ -692,7 +692,7 @@
 								</a>
 							</li>
 							<br><br>
-							<br><br>
+							
 
 							<li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-4 fromCenter">
 								<a href="https://www.52souxue.com/a/jianzhang/22525.html" target="_blank"
@@ -708,7 +708,7 @@
 								</a>
 							</li>
 							<br><br>
-							<br><br>
+							
 
 							<li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-5 fromCenter">
 								<a href="http://www.gaosan.com/gaokao/486430.html" target="_blank" class="box-74">
@@ -723,7 +723,7 @@
 								</a>
 							</li>
 							<br><br>
-							<br><br>
+							
 
 
 							<li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-5 fromCenter">
@@ -764,7 +764,7 @@
 			<form method="post" id="major">
 				<div>
 					<strong>学校: </strong>
-					<input type="text" style="border:1px solid black; " name="college">
+					<input type="text" style="border:1px solid black; " name="college" checked="checked">
 
 					<strong>专业: </strong>
 					<select class="center" name="major">
@@ -810,7 +810,7 @@
 					</div>
 
 					<div class="panel-footer">
-						<a class="btn sub-btn" href="#">learn more</a>
+						<a class="btn sub-btn" href="https://mnzy.gaokao.cn/" id="website">learn more</a>
 					</div>
 				</div>
 			</div>
@@ -841,7 +841,7 @@
 
 
 					<div class="panel-footer">
-						<a class="btn sub-btn" href="#">learn more</a>
+						<a class="btn sub-btn" href="https://mnzy.gaokao.cn/">learn more</a>
 					</div>
 				</div>
 				<!--panel panel-pricing close-->
@@ -856,7 +856,7 @@
 							<!-- <p class="p-price">就业率</p> -->
 						</div>
 						<div class="panel-body">
-							<p class="p-price">专业就业前景</p>
+							<p class="p-price">就业率</p>
 							<div id="main" style="width: 600px;height:400px;"></div>
 							<script type="text/javascript">
 
@@ -866,7 +866,7 @@
 								// 指定图表的配置项和数据
 								var option = {
 									title: {
-										text: '就业率'
+										text: ''
 									},
 									tooltip: {},
 									legend: {
@@ -901,7 +901,7 @@
 								<!-- <p class="p-price">就业趋势</p> -->
 							</div>
 							<div class="panel-body">
-								<p class="p-price">专业就业前景</p>
+								<p class="p-price">就业去向</p>
 								<div id="main2" style="width: 600px;height:400px;"></div>
 								<script type="text/javascript">
 
@@ -911,7 +911,7 @@
 									// 指定图表的配置项和数据
 									var option2 = {
 										title: {
-											text: '就业去向'
+											text: ''
 										},
 
 										series: [
@@ -937,7 +937,7 @@
 							</div>
 						</div>
 						<div class="panel-footer">
-							<a class="btn sub-btn text-center" href="#">learn more</a>
+							<!-- <a class="btn sub-btn text-center" href="#">learn more</a> -->
 						</div>
 					</div>
 				</div>
@@ -1027,7 +1027,7 @@
 				success: function (data) {
 					//字符串转为json
 					data = eval("(" + data + ")");
-					option['xAxis']['data'] = data["year"];
+					option['xAxis']['data'] = data["years"];
 					option['series'][0]['data'] = data["rates_min"];
 					option['series'][1]['data'] = data["rates_max"];
 					myChart.setOption(option);
@@ -1035,7 +1035,8 @@
 					$('#major_name').html(data["major_name"])
 					$('#description').html(data["description"])
 					$('#address').html(data["address"])
-					console.log(data["datas"][0]["name"])
+					// $('#website').removeAttr("href")
+					// $('#website').attr("href","http://www.baidu.com")
 					option2['series'][0]["data"] = data["datas"];
 					myChart2.setOption(option2);
 				}

@@ -32,70 +32,6 @@
     <link rel="stylesheet" href="static/css2/style.css">
     
     <link rel="stylesheet" href="static/css2/responsive.css">
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
-    <!-- <style>
-		.center {
-            text-align: center;
-        }
-		table {
-            width: 70%;
-            background: #ccc;
-            margin: 15px auto;
-            border-collapse: collapse;
-            table-layout: fixed;
-            white-space: nowrap;
-        }
-
-        td {
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        th {
-            background: #eee;
-            font-weight: normal;
-            height: 25px;
-            line-height: 25px;
-            text-align: center;
-            border: 1px solid #ccc;
-        }
-
-        tr {
-            background: #fff;
-        }
-
-        tr:hover {
-            background: #cc0;
-            overflow: visible;
-            white-space: normal;
-        }
-
-        td a {
-            color: #06f;
-            text-decoration: none;
-        }
-
-        td a:hover {
-            color: #06f;
-            text-decoration: underline;
-        }
-
-        .table tr:nth-child(odd) {
-            background-color: #dcecf9;
-        }
-
-        .table tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-	</style> -->
 
 </head>
 
@@ -161,11 +97,11 @@
                         <h3>个人信息</h3>
                         <div class="line"></div>
                         <div class="center">
-                            <form action='/getCollegeInfo' method="post">
+                            <form action='/getPrediction' method="post">
                                 <div >
                                     <span><strong>意向地区：</strong></span>
-                                    <select name="area" id="area" style="width:180px;height:30px;>
-                                        <option value=""  selected>--请选择--</option>
+                                    <select name="region" id="region" style="width:180px;height:30px;">
+                                        <option value="0"  selected>--请选择--</option>
                                         <option value="1">华东</option>
                                         <option value="2">华南</option>
                                         <option value="3">华中</option>
@@ -176,15 +112,16 @@
                                     </select>
                                 </div>
                                 <br>
-                                <div ><span><strong>输入成绩：</strong></span><input name="socre" type="text" style="width:180px;height:30px;/></div>
+                                <div ><span><strong>输入成绩：</strong></span><input name="socre" type="text" required="required"></div>
+                                <br>
 								<div class="center">
                                 <br>
                                 <br>
-                                    <label style="color: #000000; "><input type="checkbox" name="wenke" value=1 onclick="chkbox(this);">文科</label>&nbsp;&nbsp;
-                                    <label style="color: #000000; "><input type="checkbox" name="like" value=1 onclick="chkbox(this);">理科</label>
+                                    <label style="color: #000000; "><input type="radio" name="kind_name" value=0 checked="checked">文科</label>&nbsp;&nbsp;
+                                    <label style="color: #000000; "><input type="radio" name="kind_name" value=1>理科</label>
                                 </div>
                                 <br>
-                                <div class="center"><input type="submit" value="查看"></div>
+                                <div class="center"><input type="submit" value="查看" ></div>
                             </form>
                         </div>
                     </div>
@@ -201,30 +138,7 @@
             </div>
         </section>
         
-        <section class="section-padding whyWe nav-bg">
-            <table id="store" class="table">
-                <thead>
-                <tr>
-                    <th>录取概率</th>
-                    <th>招生院校专业组</th>
-                    <th>招生计划</th>
-                    <th>2020招录</th>
-                    <th>2021招录</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {% for item in collegelast %}
-                    <tr>
-                        <td> {{ item.gailv }}</td>
-                        <td> {{ item.school_name }}</td>
-                        <td> {{ item.plan }}</td>
-                        <td> {{ item.num2020 }}</td>
-                        <td> {{ item.num2021 }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </section>
+        
 
         <section class="service section-padding secondary-bg">
             <div class="container">
@@ -349,6 +263,10 @@
     <script src="static/js2/owl.carousel.min.js"></script>
     <script src="static/js2/contact.js"></script>
     <script src="static/js2/script.js"></script>
+
+    <script src="load/jqBootstrapValidation.js"></script>
+	<script src="load/load_me.js"></script>
+
     <script>
 			
         $("#radioDiv input[type='radio']").click(function(){

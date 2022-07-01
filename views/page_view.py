@@ -1,3 +1,15 @@
+'''
+Author: LoftyComet 1277173875@qq.com
+Date: 2022-06-24 09:33:22
+LastEditors: LoftyComet 1277173875@qq.com
+LastEditTime: 2022-07-01 11:02:53
+FilePath: \practice\intelligent-recommendations-system-of-college-choosing\views\page_view.py
+Description: 
+
+Copyright (c) 2022 by LoftyComet 1277173875@qq.com, All Rights Reserved. 
+'''
+
+
 # -*- coding:utf-8 -*-
 from flask import Blueprint, render_template
 
