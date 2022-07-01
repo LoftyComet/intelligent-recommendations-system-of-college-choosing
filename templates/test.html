@@ -132,7 +132,7 @@
                                 <div >
                                     <span><strong>意向地区：</strong></span>
                                     <select name="region" id="region" style="width:180px;height:30px;">
-                                        <option value=""  selected>--请选择--</option>
+                                        <option value="0"  selected>--请选择--</option>
                                         <option value="1">华东</option>
                                         <option value="2">华南</option>
                                         <option value="3">华中</option>
@@ -168,30 +168,7 @@
             </div>
         </section>
         
-        <section class="section-padding whyWe nav-bg">
-            <table id="store" class="table">
-                <thead>
-                <tr>
-                    <th>录取概率</th>
-                    <th>招生院校专业组</th>
-                    <th>招生计划</th>
-                    <th>2020招录</th>
-                    <th>2021招录</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {% for item in collegelast %}
-                    <tr>
-                        <td> {{ item.gailv }}</td>
-                        <td> {{ item.school_name }}</td>
-                        <td> {{ item.plan }}</td>
-                        <td> {{ item.num2020 }}</td>
-                        <td> {{ item.num2021 }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </section>
+        
 
         <section class="service section-padding secondary-bg">
             <div class="container">
