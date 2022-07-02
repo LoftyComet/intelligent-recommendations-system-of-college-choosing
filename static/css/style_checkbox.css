@@ -1,0 +1,222 @@
+.checkbox-wrap {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    top: 30%;
+    height: 40%;
+    background-color: white;
+}
+
+input[type="checkbox"] {
+    /*
+    display: none;这样会让tab键无法选取自定义的checkbox，所以使用下面的方法
+    clip 属性剪裁绝对定位元素。
+    */
+    position: absolute;
+    clip: rect(0, 0, 0, 0)
+}
+
+input[type="checkbox"]+.circle,
+input[type="checkbox"]+.square,
+input[type="checkbox"]+.mark {
+    display: inline-block;
+    /* width: 48%; */
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/*圆形checkbox*/
+
+.circle::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #EEE;
+    vertical-align: middle;
+    margin-right: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    transition: background ease-in .3s;
+}
+
+input[type="checkbox"]:checked+.circle::before {
+    background-color: rgb(53, 183, 111);
+    border: 5px #EEE solid;
+}
+/*方形checkbox*/
+
+.square::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    vertical-align: middle;
+    margin-right: 5px;
+    border:1px solid #c9c9c9;
+    border-radius: 20%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    transition: background ease-in .3s;
+}
+
+input[type="checkbox"]:checked+.square::before {
+    background-color: #0e3655;
+    border: 5px #fff solid;
+}
+/*打勾checkbox*/
+
+.mark::before {
+    content: '\a0';
+    display: inline-block;
+    border: 1px solid silver;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked+.mark::before {
+    content: '\2713';
+    color: #FA8E53;
+}
+/*开关式checkbox*/
+
+.sc {
+    margin-left: 20px;
+}
+/*no1*/
+
+.sc1 {
+    width: 40px;
+    height: 10px;
+    background: #555;
+    /*margin: 20px 80px;*/
+    position: relative;
+    border-radius: 3px;
+}
+
+.sc1 .switch {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    background: #FA8E53;
+}
+
+.sc1 input[type=checkbox]:checked+label {
+    left: 27px;
+}
+/*no2*/
+
+.sc2 {
+    background: #333;
+    width: 116px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.sc2:before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 14px;
+    height: 2px;
+    width: 90px;
+    background: #d4d4d4;
+}
+
+.sc2 .switch {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 12px;
+    background: #fff;
+}
+
+.sc2 input[type=checkbox]:checked+.switch {
+    left: 84px;
+    background: #FA8E53;
+}
+/*no3*/
+
+.sc3 {
+    width: 120px;
+    height: 40px;
+    background: #333;
+    margin: 20px 60px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.sc3::before {
+    content: 'On';
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    height: 2px;
+    color: #FA8E53;
+    font-size: 16px;
+}
+
+.sc3::after {
+    content: 'Off';
+    position: absolute;
+    top: 12px;
+    left: 84px;
+    height: 2px;
+    color: #ddd;
+    font-size: 16px;
+}
+
+.sc3 .switch {
+    display: block;
+    width: 52px;
+    height: 22px;
+    border-radius: 50px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 12px;
+    background: #ddd;
+}
+
+.sc3 input[type=checkbox]:checked+.switch {
+    left: 60px;
+    background: #FA8E53;
+}
