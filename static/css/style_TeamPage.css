@@ -107,45 +107,42 @@
     top: 10.875vw;/*180px;*/
     margin: 0;
     font-size: 1.67vw;/*24pt;*/
-    text-align: top;
     color: #000000;
     transition: 0.6s;
 }
 
-.h2_memberCard 
+.h2_memberCard
 {
     position: absolute;
-    /* width: 100%; */  
+    /* width: 100%; */
+    max-width: 10vw;
     top: 12.956vw;/*220px;*/
     margin: 0;
     font-weight: normal;
     font-size: 1.389vw;/*20pt;*/
-    text-align: top;
     color: #000000;
     /* border-bottom: 1px solid var(--h2_border_color); */
     transition: 0.6s;
 }
 
-.memberCard:hover .h1_memberCard 
+.memberCard:hover .h1_memberCard
 {
     position: absolute;
     top: 18.679vw;/*320px;*/
     margin: 0;
     font-size: 1.67vw;/*24pt;*/
-    text-align: top;
     color:#ffffff;
     transition: 0.6s;
 }
 
 
-.memberCard:hover .h2_memberCard 
+.memberCard:hover .h2_memberCard
 {
     position: absolute;
     top: 20.79vw;/*360px;*/
     margin: 0;
     font-weight: normal;
     font-size: 1.389vw;/*20pt;*/
-    text-align: top;
     color:#ffffff;
     transition: 0.6s;
 }

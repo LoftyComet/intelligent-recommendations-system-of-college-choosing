@@ -1,0 +1,9 @@
+.translucent_background
+{
+    display: inline-block;
+    /* box-shadow: 0 0 6px rgba(0,0,0,.6); */
+    border-radius: 30pt;
+    background: rgba(255,255,255,.66);
+    padding:20pt;
+    margin:30pt;
+}

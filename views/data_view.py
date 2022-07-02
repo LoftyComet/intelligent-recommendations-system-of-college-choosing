@@ -40,18 +40,29 @@ from dbmodel.user import User
 from dbmodel.divbymajor import DivByMajor
 from dbmodel.juniorintro import JuniorIntro
 from collegeRecommend import select50
+from FractionalQueryPageGlobal import *
 data = Blueprint('data', __name__)
 
 
 @data.route('/getCollegeInfo', methods=['GET', 'POST'])
 def get_college_info():
     if request.method == 'POST':  # 判断用户请求是否是post请求
+
+        min_year_id=request.form.get('min_year')
+        max_year_id=request.form.get('max_year')
+
         college_data = []
         iswenke = request.form.get('wenke')
         islike = request.form.get('like')
+        print("is理科",islike,"iswenke",iswenke)
         school_name = request.form.get('school')
         major = request.form.get('major')
-        region_name = request.form.get('region')
+        region_id= int(request.form.get('region'))
+        print("regin_id",type(region_id),region_id)
+        if(region_id in pro_id_to_name):
+            region_name = pro_id_to_name[region_id]
+        else:
+            region_name=""
         # regions = ["",
         #            "华东",
         #            "华南",
@@ -177,13 +188,26 @@ def get_college_info():
         for x in college_data:
             print("查询到的学校有：", x.school_name)
         print("---------------------------")
-    return render_template("services.html", collegelast=college_data)
+
+        haslike="false"
+        haswenke="false"
+        if islike:
+            haslike="true"
+        if iswenke:
+            haswenke="true"
+        return render_template("services.html",**{"school": school_name,
+                                                  "major_id":major,
+                                                  "region_id":region_id,
+                                                  "collegelast":college_data,
+                                                  "min_year_id":min_year_id,
+                                                  "max_year_id":max_year_id,
+                                                  "haslike":haslike,
+                                                  "haswenke":haswenke})
 
 
 @data.route('/getMajorInfo', methods=['GET', 'POST'])
 def get_major_info():
     if request.method == 'POST':  # 判断用户请求是否是post请求
-
         majors = ["计算机科学与技术", "经济学", "公安管理学", "汉语言文学",
                   "柬埔寨语", "生物技术", "材料科学与工程", "电子信息工程", "None"]
         major = request.form.get('major')

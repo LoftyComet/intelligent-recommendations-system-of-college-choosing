@@ -50,7 +50,13 @@ def pricing():
 
 @page.route('/services')
 def services():
-    return render_template("services.html")
+    return render_template("services.html",**{"school": "",
+                                              "major_id":"0",
+                                              "region_id":"0",
+                                              "min_year_id":"2019",
+                                              "max_year_id":"2021",
+                                              "haslike":"true",
+                                              "haswenke":"true"})
 
 @page.route('/test')
 def test():

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>高考志愿推荐平台</title>
+	<title>分数线查询-高考志愿推荐平台</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<meta name="author" content="http://webthemez.com" />
@@ -15,6 +15,10 @@
 	<link href="static/css/flexslider.css" rel="stylesheet" />
 	<link href="static/css/style.css" rel="stylesheet" />
 	<link href="static/css/style2.css" rel="stylesheet" />
+	<link href="static/css/translucent_background.css" rel="stylesheet">
+	<link href="static/css/style_FractionalQueryPage.css" rel="stylesheet">
+	<link href="static/css/style_checkbox.css" rel="stylesheet">
+
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -78,13 +82,11 @@
             background-color: #ffffff;
         }
 	</style>
+
 </head>
 
-<body>
-	<style type="text/css">
-		#longer{width: 173px;}
-	</style>
-	<div id="wrapper">
+<body class="hero" style="min-height:100vh;">
+	<div id="wrapper" style="">
 		<!-- start header -->
 		<header>
 			<div class="navbar navbar-default navbar-static-top">
@@ -130,124 +132,242 @@
 			</iframe>
 		</section>
 		
-		<section class="hero">
-			<br></br>
+		<section  style=" text-align:center;">
+			<div class="container content translucent_background" style=" margin-top:4.25vh;">
+				<form action='/getCollegeInfo' method="post">
 
-			<div class="container content" >
-				<!-- Service Blcoks -->
+					<div class="conditionsContainer" style=" justify-content: center; /* 水平居中 */">
 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="about-logo">
-
-								<form action='/getCollegeInfo' method="post">
-									<div class="center"><span style="color: #FFFFFF;"><strong>按省份查询： </strong></span><input name="region" type="text" id="region" onkeydown="onSearch()" value="" style="width:180px;height:30px;"/></div>
-									<div class="center"><span style="color: #FFFFFF;"><strong>按院校查询： </strong></span><input name="school" type="text" id="school" onkeydown="onSearch()" value="" style="width:180px;height:30px;"/></div>
-									<div class="center">
-										<span style="color: #FFFFFF;"><strong>按专业查询：</strong></span>
-										<select name="major" id="longer" style="width:180px;height:30px;">
-											<option value="0" selected>--请选择--</option>
-											<option value="1">机械类</option>
-											<option value="2">海洋科学类</option>
-											<option value="3">化工与制药类</option>
-											<option value="4">计算机类</option>
-											<option value="5">统计学类</option>
-											<option value="6">海洋工程类</option>
-											<option value="7">测绘类</option>
-											<option value="8">电气类</option>
-											<option value="9">环境科学与工程类</option>
-											<option value="10">电子信息类</option>
-											<option value="11">经济学类</option>
-											<option value="12">食品科学与工程类</option>
-											<option value="13">生物科学类</option>
-											<option value="14">航空装备类</option>
-											<option value="15">护理类</option>
-											<option value="16">电子商务类</option>
-											<option value="17">旅游类</option>
-											<option value="18">畜牧业类</option>
-											<option value="19">医学技术类</option>
-											<option value="20">财务会计类</option>
-											<option value="21">汽车制造类</option>
-											<option value="22">自动化类</option>
-											<option value="23">农业类</option>
-											<option value="24">航空运输类</option>
-											<option value="25">教育类</option>
-											<option value="26">金融学类</option>
-											<option value="27">管理科学与工程类</option>
-											<option value="28">药学类</option>
-											<option value="29">数学类</option>
-											<option value="30">材料类</option>
-											<option value="31">环境科学与工程类</option>
-											<option value="32">能源动力类</option>
-											<option value="33">临床医学类</option>
-											<option value="34">土木类</option>
-											<option value="35">法学类</option>
-											<option value="36">哲学类</option>
-										</select>
-									</div>
-									<br></br>
-									<div class="center">
-										<label style="color: #FFFFFF; "><input type="checkbox" name="wenke" value=1>文科</label>&nbsp;&nbsp;
-                        				<label style="color: #FFFFFF; "><input type="checkbox" name="like" value=1>理科</label>
-									</div>
-
-									<br>
-									<div class="center"><input type="submit" value="查询"></div>
-									
-								</form>
-								<br></br>
-								<br></br>
-								<table id="store" class="table">
-									<thead>
-									<tr>
-										<th>年份</th>
-										<th>学校</th>
-										<th>专业</th>
-										<th>所在地区</th>
-										<th>分数线</th>
-										<th>文理分科</th>
-									</tr>
-									</thead>
-									<tbody>
-										{% for item in collegelast %}
-        								<tr>
-            								<td> {{ item.year }}</td>
-            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.school_name }}</td>
-            								<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.spname }}</td>
-            								<td> {{ item.province_name }}</td>
-            								<td> {{ item.min1 }}</td>
-											<td> {{ item.type_name }}</td>
-        								</tr>
-    									{% endfor %}
-									</tbody>
-								</table>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-								<br></br>
-
+						<div class="conditionsContainer conditionsContainer_column items">
+							<span class="title">
+								<strong>筛选年份</strong>
+							</span>
+							<span class="conditionsContainer items">
+								<select id="min_year" name="min_year"  class="items conditionSelect" style="">
+										<option value="2019" >2019</option>
+										<option value="2020">2020</option>
+										<option value="2021">2021</option>
+								</select>
+								<strong  style="display: flex; align-items: center; font-size: 20pt; margin-left:10px ; margin-right:10px;">-</strong>
+								<select id="max_year" name="max_year" class="items conditionSelect" style="">
+										<option value="2019" >2019</option>
+										<option value="2020">2020</option>
+										<option value="2021" selected="selected">2021</option>
+								</select>
+							</span>
 						</div>
-					</div>
-				</div>
-				
-				
 
+						<div class="conditionsContainer conditionsContainer_column items">
+							<span class="title">
+								<strong>筛选学校</strong>
+							</span>
+							<span class="items">
+								<input type="text" id="school" name="school" class="conditionSelect" style="width: 100%;" >
+							</span>
+						</div>
+
+						<div class="conditionsContainer conditionsContainer_column items">
+							<span class="title">
+								<strong>筛选专业</strong>
+							</span>
+							<span class="items">
+								<select name="major" id="major" class="conditionSelect" style="width: 100%;">
+									<option value="0" selected>--请选择--</option>
+									<option value="1">机械类</option>
+									<option value="2">海洋科学类</option>
+									<option value="3">化工与制药类</option>
+									<option value="4">计算机类</option>
+									<option value="5">统计学类</option>
+									<option value="6">海洋工程类</option>
+									<option value="7">测绘类</option>
+									<option value="8">电气类</option>
+									<option value="9">环境科学与工程类</option>
+									<option value="10">电子信息类</option>
+									<option value="11">经济学类</option>
+									<option value="12">食品科学与工程类</option>
+									<option value="13">生物科学类</option>
+									<option value="14">航空装备类</option>
+									<option value="15">护理类</option>
+									<option value="16">电子商务类</option>
+									<option value="17">旅游类</option>
+									<option value="18">畜牧业类</option>
+									<option value="19">医学技术类</option>
+									<option value="20">财务会计类</option>
+									<option value="21">汽车制造类</option>
+									<option value="22">自动化类</option>
+									<option value="23">农业类</option>
+									<option value="24">航空运输类</option>
+									<option value="25">教育类</option>
+									<option value="26">金融学类</option>
+									<option value="27">管理科学与工程类</option>
+									<option value="28">药学类</option>
+									<option value="29">数学类</option>
+									<option value="30">材料类</option>
+									<option value="31">环境科学与工程类</option>
+									<option value="32">能源动力类</option>
+									<option value="33">临床医学类</option>
+									<option value="34">土木类</option>
+									<option value="35">法学类</option>
+									<option value="36">哲学类</option>
+								</select>
+							</span>
+						</div>
+
+						<div class="conditionsContainer conditionsContainer_column items">
+							<span class="title">
+								<strong>筛选地区</strong>
+							</span>
+							<span class="items">
+								<select id="region" name="region" class="conditionSelect"  style="width: 100%;">
+									<option value="0">--请选择--</option>
+									<option value="11">北京</option>
+									<option value="12">天津</option>
+									<option value="13">河北</option>
+									<option value="14">山西</option>
+									<option value="15">内蒙古</option>
+									<option value="21">辽宁</option>
+									<option value="22">吉林</option>
+									<option value="23">黑龙江</option>
+									<option value="31">上海</option>
+									<option value="32">江苏</option>
+									<option value="33">浙江</option>
+									<option value="34">安徽</option>
+									<option value="35">福建</option>
+									<option value="36">江西</option>
+									<option value="37">山东</option>
+									<option value="41">河南</option>
+									<option value="42">湖北</option>
+									<option value="43">湖南</option>
+									<option value="44">广东</option>
+									<option value="45">广西</option>
+									<option value="46">海南</option>
+									<option value="50">重庆</option>
+									<option value="51">四川</option>
+									<option value="52">贵州</option>
+									<option value="53">云南</option>
+									<option value="54">西藏</option>
+									<option value="61">陕西</option>
+									<option value="62">甘肃</option>
+									<option value="63">青海</option>
+									<option value="64">宁夏</option>
+									<option value="65">新疆</option>
+								</select>
+							</span>
+						</div>
+
+					</div>
+
+					<div class="conditionsContainer " style=" justify-content: center; /* 水平居中 */">
+<!--										<label style="color: #FFFFFF; "><input type="checkbox" name="wenke" value=1>文科</label>&nbsp;&nbsp;-->
+<!--                        				<label style="color: #FFFFFF; "><input type="checkbox" name="like" value=1>理科</label>-->
+						<input type="checkbox" id="like" name="like" value=1 >
+						<label for="like" class="square" style="color: #0e3655; font-size: 24px;">理科</label>
+
+						<input type="checkbox" id="wenke" name="wenke" value=1 >
+						<label for="wenke" class="square"  style="color: #0e3655; font-size: 24px;/*24pt;*/">文科</label>
+
+					</div>
+
+					<div class="center">
+						<input type="submit" value="查询"
+							style="
+								margin-top:20px;
+								width:100px;
+								height:45px;
+								font-size: 20px;
+								color: #ffffff;
+								background-color: #43ca83;
+
+								-moz-border-radius: 5px;
+
+								-webkit-border-radius: 5px;
+
+								border-radius:10px;
+								text-decoration: none;
+
+								cursor: pointer;
+
+								border:none;">
+					</div>
+
+<!--					设置数据-->
+					<script>
+						document.getElementById('school').value = {{school|tojson}}
+
+						var region=document.getElementById("region");
+						for(i in region.options)
+						{
+							if(region.options[i].value=={{region_id|tojson}})
+							{
+								region.options[i].selected=true;
+							}
+						}
+
+						var major=document.getElementById("major");
+						for(i in major.options)
+						{
+							if(major.options[i].value=={{major_id|tojson}})
+							{
+								major.options[i].selected=true;
+							}
+						}
+
+						var min_year=document.getElementById("min_year");
+						for(i in min_year.options)
+						{
+							if(min_year.options[i].value=={{min_year_id|tojson}})
+							{
+								min_year.options[i].selected=true;
+							}
+						}
+
+						var max_year=document.getElementById("max_year");
+						for(i in max_year.options)
+						{
+							if(max_year.options[i].value=={{max_year_id|tojson}})
+							{
+								max_year.options[i].selected=true;
+							}
+						}
+
+
+						document.getElementById('like').checked = {{haslike}}
+						document.getElementById('wenke').checked = {{haswenke}}
+					</script>
+
+
+
+				</form>
+				<!--没有返回的数据就不绘制表-->
+				{% if collegelast|length >0 %}
+				<table id="store" class="table">
+					<thead>
+					<tr>
+						<th>年份</th>
+						<th>学校</th>
+						<th>专业</th>
+						<th>所在地区</th>
+						<th>分数线</th>
+						<th>文理分科</th>
+					</tr>
+					</thead>
+					<tbody>
+						{% for item in collegelast %}
+						<tr>
+							<td> {{ item.year }}</td>
+							<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.school_name }}</td>
+							<td style="text-overflow:ellipsis;word-break:keep-all; white-space:nowrap;"> {{ item.spname }}</td>
+							<td> {{ item.province_name }}</td>
+							<td> {{ item.min1 }}</td>
+							<td> {{ item.type_name }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{% endif %}
 
 			</div>
-			
-			
+
 		</section>
 		
 	</div>
@@ -255,19 +375,19 @@
 	<!-- javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="materialize/js/materialize.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<script src="static/materialize/js/materialize.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/jquery.fancybox.pack.js"></script>
+	<script src="static/js/jquery.fancybox-media.js"></script>
+	<script src="static/js/jquery.flexslider.js"></script>
+	<script src="static/js/animate.js"></script>
 	<!-- Vendor Scripts -->
-	<script src="js/modernizr.custom.js"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="static/js/modernizr.custom.js"></script>
+	<script src="static/js/jquery.isotope.min.js"></script>
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/animate.js"></script>
+	<script src="static/js/custom.js"></script>
 </body>
 </html>

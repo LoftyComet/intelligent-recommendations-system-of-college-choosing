@@ -1,0 +1,62 @@
+.conditionsContainer
+{
+    /* display: inline-block; */
+    display: flex;
+    /* display: table; */
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.conditionsContainer_column
+{
+    flex-flow: column;
+}
+
+.conditionsContainer .title
+{
+    /* float:left; */
+    color: #0e3655; 
+    font-size: 1.67vw;/*24pt;*/
+}
+
+.conditionsContainer .items
+{
+    float:left;
+    flex:1;
+    /* display: table-cell; */
+}
+
+.conditionSelect
+{
+    border:1px solid #c9c9c9;
+    background-color:#fff;
+    color:#666;
+    margin-top:auto;
+    margin-bottom:auto;
+    width: 80%;
+    padding:4px 6px;
+    font-size:18px;
+    border-radius:8pt;
+    cursor:pointer;
+    outline:none;
+}
+
+.conditionsCheckbox
+{
+    display: inline-block;
+    /* content: " "; */
+    width: 120px;
+    height:120px;
+    border: 20px ;/*solid #fff;*/
+    border-radius:20px;
+    /* border-top: none; */
+    /* border-right: none; */
+    /* transform: rotate(-45deg); */
+    /* top: 5px; */
+    /* left: 3px; */
+    /* position: absolute; */
+    opacity: 0;
+
+}
+
+
